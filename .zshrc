@@ -17,7 +17,7 @@ HISTFILE=~/.zsh_history
 # Use modern completion system
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit
-compinit
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
