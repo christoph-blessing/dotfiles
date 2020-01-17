@@ -2,7 +2,7 @@
 
 autoload -Uz promptinit
 promptinit
-prompt fire
+prompt bigfade
 
 setopt histignorealldups sharehistory
 
