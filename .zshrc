@@ -40,3 +40,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 if uname -r | grep -q 'Microsoft' ; then
 	export DOCKER_HOST=tcp://localhost:2375
 fi
+
+# Set environment variable specifying directory for screen
+export SCREENDIR=$HOME/.screen
