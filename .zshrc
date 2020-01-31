@@ -43,3 +43,8 @@ fi
 
 # Set environment variable specifying directory for screen
 export SCREENDIR=$HOME/.screen
+
+# Colorize ls output
+alias ls='ls --color=auto'
+# Use long listing format
+alias ll='ls -la'
