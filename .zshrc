@@ -1,8 +1,9 @@
 # Set up the prompt
+fpath=(~/.zsh/pure $fpath)
 
 autoload -Uz promptinit
 promptinit
-prompt bigfade
+prompt pure
 
 setopt histignorealldups sharehistory
 
