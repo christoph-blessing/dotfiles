@@ -52,3 +52,13 @@ alias ll='ls -la'
 
 # Fix for not being able to use backspace after switching to insert mode
 bindkey "^?" backward-delete-char
+
+# Fix pressing / right after ESC showing history and not searching
+vi-search-fix() {
+zle vi-cmd-mode
+zle .vi-history-search-backward
+}
+
+autoload vi-search-fix
+zle -N vi-search-fix
+bindkey -M viins '\e/' vi-search-fix
