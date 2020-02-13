@@ -2,4 +2,4 @@
 	email = chris24.blessing@gmail.com
 	name = christoph
 [core]
-	autocrlf = true
+	autocrlf = input
