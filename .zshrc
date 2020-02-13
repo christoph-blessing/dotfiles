@@ -49,3 +49,6 @@ export SCREENDIR=$HOME/.screen
 alias ls='ls --color=auto'
 # Use long listing format
 alias ll='ls -la'
+
+# Fix for not being able to use backspace after switching to insert mode
+bindkey "^?" backward-delete-char
