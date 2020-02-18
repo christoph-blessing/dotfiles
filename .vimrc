@@ -7,6 +7,11 @@ set wildmenu
 set showcmd
 set hlsearch
 
+" Indent lines with 4 spaces
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
 " Automatic package manager installation
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
