@@ -62,3 +62,9 @@ zle .vi-history-search-backward
 autoload vi-search-fix
 zle -N vi-search-fix
 bindkey -M viins '\e/' vi-search-fix
+
+# Add Go to path
+export PATH=/usr/local/go/bin:$PATH
+
+# For bspwm
+export XDG_CONFIG_HOME=$HOME/.config
