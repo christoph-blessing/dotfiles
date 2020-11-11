@@ -12,8 +12,8 @@ then
     exit
 fi
 
-ln -s $PWD/.zshrc ~/.zshrc
-ln -s $PWD/.zshenv ~/.zshenv
+ln -f -s $PWD/.zshrc ~/.zshrc
+ln -f -s $PWD/.zshenv ~/.zshenv
 
 mkdir ~/.config/nvim
-ln -s $PWD/init.vim ~/.config/nvim/init.vim
+ln -f -s $PWD/init.vim ~/.config/nvim/init.vim
