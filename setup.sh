@@ -15,5 +15,5 @@ fi
 ln -f -s $PWD/.zshrc ~/.zshrc
 ln -f -s $PWD/.zshenv ~/.zshenv
 
-mkdir ~/.config/nvim
+mkdir -p ~/.config/nvim
 ln -f -s $PWD/init.vim ~/.config/nvim/init.vim
