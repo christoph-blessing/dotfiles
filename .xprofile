@@ -1,2 +1,0 @@
-xrandr --output DP-2 --mode 5120x1440 --rate 120
-xsetroot -grey
