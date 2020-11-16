@@ -47,9 +47,7 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
 
-# Use ls with color by default
 alias ls="ls --color"
-# Use long listing format
 alias ll='ls -la'
-# Specify config for mbsync
+alias s='ssh'
 alias mbsync="mbsync --config ~/.config/mbsync/mbsyncrc"
