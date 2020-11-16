@@ -1,5 +1,6 @@
 [user]
-	email = chris.blessing@protonmail.com
-	name = Chris
+    email = chris.blessing@protonmail.com
+    name = Chris
 [core]
-	autocrlf = input
+    autocrlf = input
+    editor = nvim
