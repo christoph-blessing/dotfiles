@@ -5,6 +5,8 @@ bindkey -v
 
 zstyle :compinstall filename '/home/chris/.zshrc'
 
+zstyle ":completion:*:(ssh|rsync|scp):*" hosts $hosts
+
 autoload -Uz compinit
 compinit
 
