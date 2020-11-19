@@ -53,3 +53,4 @@ alias ls="ls --color"
 alias ll='ls -la'
 alias s='ssh'
 alias mbsync="mbsync --config ~/.config/mbsync/mbsyncrc"
+alias v="nvim"
