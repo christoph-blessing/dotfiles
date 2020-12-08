@@ -55,3 +55,4 @@ alias s='ssh'
 alias mbsync="mbsync --config ~/.config/mbsync/mbsyncrc"
 alias v="nvim"
 alias n="neomutt"
+alias gs="git status"
