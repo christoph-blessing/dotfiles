@@ -16,7 +16,7 @@ if [[ -z "${DISPLAY}" && "${XDG_VTNR}" -eq 1 ]]; then
 fi
 
 # Set prompt
-PS1="%F{131}%B%n@%m%b%f %F{186}%1~%f %F{139}%#%f "
+PROMPT=$'%{\x1b[38;2;191;97;106m%}%n@%m%{\x1b[0m%} %{\x1b[38;2;235;203;139m%}%1~%{\x1b[0m%} %{\x1b[38;2;180;142;173m%}%#%{\x1b[0m%} '
 
 # Fix for not being able to use backspace after switching to insert mode
 bindkey "^?" backward-delete-char
