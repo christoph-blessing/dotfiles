@@ -15,8 +15,19 @@ if [[ -z "${DISPLAY}" && "${XDG_VTNR}" -eq 1 ]]; then
     exec startx
 fi
 
+# Get name of current git branch
+function git_branch_name {
+    branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+    if [[ $branch == "" ]]; then
+        :
+    else
+        echo ' %{\x1b[38;2;216;222;233m%}on%{\x1b[0m%} %{\x1b[38;2;180;142;173m%}'$branch'%{\x1b[0m%}'
+    fi
+}
+
 # Set prompt
-PROMPT=$'%{\x1b[38;2;191;97;106m%}%n@%m%{\x1b[0m%} %{\x1b[38;2;235;203;139m%}%1~%{\x1b[0m%} %{\x1b[38;2;180;142;173m%}%#%{\x1b[0m%} '
+setopt PROMPT_SUBST
+PROMPT=$'%{\x1b[38;2;191;97;106m%}%n@%m%{\x1b[0m%} %{\x1b[38;2;216;222;233m%}in%{\x1b[0m%} %{\x1b[38;2;235;203;139m%}%1~%{\x1b[0m%}$(git_branch_name) %{\x1b[38;2;216;222;233m%}%#%{\x1b[0m%} '
 
 # Fix for not being able to use backspace after switching to insert mode
 bindkey "^?" backward-delete-char
