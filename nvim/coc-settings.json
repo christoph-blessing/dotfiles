@@ -3,6 +3,7 @@
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "black",
     "python.autoComplete.addBrackets": true,
+    "python.venvFolders": ["venv"],
     "python.linting.pylintEnabled": true,
     "python.linting.pylintPath": "pylint",
     "python.linting.mypyEnabled": true,
