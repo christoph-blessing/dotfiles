@@ -15,4 +15,4 @@ inoremap [ []<left>
 inoremap { {}<left>
 
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
-autocmd FileType yaml,markdown setlocal shiftwidth=2
+autocmd FileType yaml,markdown,json setlocal shiftwidth=2
