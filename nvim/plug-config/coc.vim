@@ -164,10 +164,10 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" Set up key binding for executing Python file in VS Code terminal
-autocmd FileType python nmap <F9> :CocCommand python.execInTerminal<CR>
-autocmd FileType python imap <F9> <ESC>:CocCommand python.execInTerminal<CR>
+" Set up key binding for executing current Python file
+autocmd FileType python nmap <F9> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
+autocmd FileType python imap <F9> <ESC>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
 
 " Set up key binding for running PyTest
-autocmd FileType python nmap <F10> :! pytest<CR>
-autocmd FileType python imap <F10> <ESC>:! pytest<CR>
+autocmd FileType python nmap <F10> :!pytest<CR>
+autocmd FileType python imap <F10> <ESC>:!pytest<CR>
