@@ -6,11 +6,10 @@ endif
 
 " Specify plugins
 call plug#begin()
-" Nord theme (https://www.nordtheme.com/)
 Plug 'arcticicestudio/nord-vim'
-" Surround stuff with brackets and stuff
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
