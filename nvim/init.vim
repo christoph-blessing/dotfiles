@@ -1,5 +1,6 @@
+source ~/.config/nvim/ale.vim
 source ~/.config/nvim/plugins.vim
-source ~/.config/nvim/plug-config/coc.vim
+source ~/.config/nvim/plug-config/supertab.vim
 
 colorscheme nord
 set expandtab

@@ -8,8 +8,10 @@ endif
 call plug#begin()
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-surround'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'davidhalter/jedi-vim'
+Plug 'ervandew/supertab'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
