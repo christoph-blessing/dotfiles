@@ -67,6 +67,8 @@ alias mbsync="mbsync --config ~/.config/mbsync/mbsyncrc"
 alias v="nvim"
 alias n="neomutt"
 alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
 
 autoload bashcompinit && bashcompinit
 complete -C '/usr/bin/aws_completer' aws
