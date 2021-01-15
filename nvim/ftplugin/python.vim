@@ -5,3 +5,6 @@ let g:ale_python_flake8_options = '--max-line-length 120'
 
 let b:ale_linters = ['mypy', 'pylint', 'flake8', 'pydocstyle']
 let b:ale_fixers = ['black', 'isort']
+
+map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
