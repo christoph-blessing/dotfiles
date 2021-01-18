@@ -72,3 +72,5 @@ alias gc="git commit"
 
 autoload bashcompinit && bashcompinit
 complete -C '/usr/bin/aws_completer' aws
+
+export PYTHONBREAKPOINT=ipdb.set_trace
