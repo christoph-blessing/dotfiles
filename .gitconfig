@@ -1,6 +1,7 @@
 [user]
     email = chris.blessing@protonmail.com
-    name = Chris
+    name = Christoph Blessing
+	signingkey = 5A97DB0A9832810B
 [core]
     autocrlf = input
     editor = nvim
