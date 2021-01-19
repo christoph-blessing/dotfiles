@@ -69,6 +69,7 @@ alias n="neomutt"
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
+alias gp="git push"
 
 autoload bashcompinit && bashcompinit
 complete -C '/usr/bin/aws_completer' aws
