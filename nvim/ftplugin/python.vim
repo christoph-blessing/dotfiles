@@ -1,3 +1,7 @@
+"Update the file on disk after 2 seconds without input
+set updatetime=2000
+autocmd CursorHold,CursorHoldI * update
+
 "Configuration for Asynchronous Lint Engine (ALE)
 let g:ale_python_auto_pipenv = 1
 let g:ale_python_mypy_options = '--ignore-missing-imports'
