@@ -68,7 +68,7 @@ alias v="nvim"
 alias n="neomutt"
 alias gs="git status"
 alias ga="git add"
-alias gc="git commit"
+alias gc="git commit -S"
 alias gp="git push"
 
 autoload bashcompinit && bashcompinit
