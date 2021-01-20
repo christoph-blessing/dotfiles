@@ -12,6 +12,7 @@ Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
