@@ -9,6 +9,8 @@ let b:ale_linters = ['pyls', 'mypy', 'pylint', 'flake8', 'pydocstyle']
 let b:ale_fixers = ['black', 'isort']
 
 "Key mappings
+map <F6> :exec 'ALERename'<CR>
+imap <F6> <esc>:exec 'ALERename'<CR>
 map <buffer> <F9> :w<CR>:sp<CR>:exec 'term python' shellescape(@%, 1)<CR>i
 imap <buffer> <F9> <esc>:w<CR>:sp<CR>:exec 'term python' shellescape(@%, 1)<CR>i
 map <buffer> <F10> :w<CR>:sp<CR>:exec 'term pytest'<CR>
