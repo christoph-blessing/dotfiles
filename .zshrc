@@ -70,6 +70,7 @@ alias gs="git status"
 alias ga="git add"
 alias gc="git commit -S"
 alias gp="git push"
+alias gch="git checkout"
 
 autoload bashcompinit && bashcompinit
 complete -C '/usr/bin/aws_completer' aws
