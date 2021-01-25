@@ -73,6 +73,7 @@ alias gc="git commit -S -m"
 alias gd="git diff"
 alias gp="git push"
 alias gm="git merge"
+alias gb="git branch"
 alias gch="git checkout"
 
 autoload bashcompinit && bashcompinit
