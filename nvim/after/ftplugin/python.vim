@@ -3,7 +3,7 @@ set omnifunc=ale#completion#OmniFunc
 "Configuration for Asynchronous Lint Engine (ALE)
 let g:ale_python_auto_pipenv = 1
 let g:ale_python_mypy_options = '--ignore-missing-imports'
-let b:ale_linters = ['pyls', 'mypy', 'pydocstyle']
+let b:ale_linters = ['pyls', 'mypy', 'pydocstyle', 'flake8']
 let b:ale_fixers = ['black', 'isort']
 
 "Key mappings
