@@ -13,6 +13,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'ervandew/supertab'
+Plug 'kassio/neoterm'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
