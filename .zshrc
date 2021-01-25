@@ -69,7 +69,7 @@ alias n="neomutt"
 
 alias gs="git status"
 alias ga="git add"
-alias gc="git commit -S"
+alias gc="git commit -S -m"
 alias gd="git diff"
 alias gp="git push"
 alias gch="git checkout"
