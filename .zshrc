@@ -7,6 +7,8 @@ zstyle :compinstall filename '/home/chris/.zshrc'
 
 zstyle ":completion:*:(ssh|rsync|scp):*" hosts $hosts
 
+fpath=( ~/.zfunc "${fpath[@]}" )
+
 autoload -Uz compinit
 compinit
 
