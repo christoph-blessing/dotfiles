@@ -1,8 +1,12 @@
 set omnifunc=ale#completion#OmniFunc
 
+let python_version = get(json_decode(system('pdm info --env')), 'python_version')
+let bin_path = getcwd() . '/__pypackages__/' . python_version . '/bin/'
+
 "Configuration for Asynchronous Lint Engine (ALE)
-let g:ale_python_auto_pipenv = 1
+let g:ale_python_mypy_executable = bin_path . 'mypy'
 let g:ale_python_mypy_options = '--ignore-missing-imports'
+let g:ale_python_pyls_executable = bin_path . 'pyls'
 let b:ale_linters = ['pyls', 'mypy', 'pydocstyle', 'flake8']
 let b:ale_fixers = ['black', 'isort']
 
