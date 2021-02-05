@@ -6,6 +6,7 @@ let bin_path = getcwd() . '/__pypackages__/' . python_version . '/bin/'
 "Configuration for Asynchronous Lint Engine (ALE)
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 let g:ale_python_pyls_executable = bin_path . 'pyls'
+let g:ale_python_pylint_options = '--ignore-patterns=test_.*?\.py'
 let b:ale_linters = ['pyls', 'mypy', 'pydocstyle', 'flake8', 'pyflakes', 'pylint']
 let b:ale_fixers = ['black', 'isort']
 
