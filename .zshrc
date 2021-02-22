@@ -70,6 +70,7 @@ alias v="nvim"
 alias n="neomutt"
 
 alias gs="git status"
+alias gl="git log"
 alias ga="git add"
 alias gc="git commit -S -m"
 alias gd="git diff"
