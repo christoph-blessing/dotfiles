@@ -86,3 +86,6 @@ complete -C '/usr/bin/aws_completer' aws
 
 export PYTHONBREAKPOINT=ipdb.set_trace
 export PYTHONPATH='/home/chris/.local/pipx/venvs/pdm/lib/python3.9/site-packages/pdm/pep582':$PYTHONPATH
+
+# Enter normal mode by pressing jj
+bindkey 'jj' vi-cmd-mode
