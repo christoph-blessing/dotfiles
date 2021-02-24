@@ -18,6 +18,8 @@ inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
 
+imap jj <Esc>
+
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 autocmd FileType yaml,markdown,json setlocal shiftwidth=2
 autocmd FileType python setlocal completeopt-=preview
