@@ -1,7 +1,7 @@
 [user]
     email = 33834216+cblessing24@users.noreply.github.com
     name = Christoph Blessing
-	signingkey = 5A97DB0A9832810B
+	signingkey = 238EC530C6096DB9
 [core]
     autocrlf = input
     editor = nvim
