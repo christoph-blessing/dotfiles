@@ -23,13 +23,13 @@ function git_branch_name {
     if [[ $branch == "" ]]; then
         :
     else
-        echo ' %{\x1b[38;2;216;222;233m%}on%{\x1b[0m%} %{\x1b[38;2;180;142;173m%}'$branch'%{\x1b[0m%}'
+        echo ' %{\x1b[38;2;235;219;178m%}on%{\x1b[0m%} %{\x1b[38;2;211;134;155m%}'$branch'%{\x1b[0m%}'
     fi
 }
 
 # Set prompt
 setopt PROMPT_SUBST
-PROMPT=$'%{\x1b[38;2;191;97;106m%}%n@%m%{\x1b[0m%} %{\x1b[38;2;216;222;233m%}in%{\x1b[0m%} %{\x1b[38;2;235;203;139m%}%1~%{\x1b[0m%}$(git_branch_name) %{\x1b[38;2;216;222;233m%}%#%{\x1b[0m%} '
+PROMPT=$'%{\x1b[38;2;251;73;52m%}%n@%m%{\x1b[0m%} %{\x1b[38;2;235;219;178m%}in%{\x1b[0m%} %{\x1b[38;2;250;198;47m%}%1~%{\x1b[0m%}$(git_branch_name) %{\x1b[38;2;216;222;233m%}%#%{\x1b[0m%} '
 
 # Fix for not being able to use backspace after switching to insert mode
 bindkey "^?" backward-delete-char
@@ -68,6 +68,7 @@ alias s='ssh'
 alias mbsync="mbsync --config ~/.config/mbsync/mbsyncrc"
 alias v="nvim"
 alias n="neomutt"
+alias nb="newsboat"
 
 alias gs="git status"
 alias gl="git log"
