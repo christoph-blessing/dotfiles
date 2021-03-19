@@ -6,7 +6,7 @@ endif
 
 " Specify plugins
 call plug#begin()
-Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'

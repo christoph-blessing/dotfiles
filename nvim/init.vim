@@ -3,10 +3,11 @@ source ~/.config/nvim/plug-config/ale.vim
 source ~/.config/nvim/plug-config/airline.vim
 source ~/.config/nvim/plug-config/supertab.vim
 
-colorscheme nord
+colorscheme gruvbox
 set hidden
 set expandtab
 set number relativenumber
+set clipboard+=unnamedplus
 set updatetime=100
 setlocal spell spelllang=en_us
 
