@@ -81,6 +81,7 @@ alias gpl="git pull"
 alias gm="git merge"
 alias gb="git branch"
 alias gch="git checkout"
+alias grb="git rebase"
 
 autoload bashcompinit && bashcompinit
 complete -C '/usr/bin/aws_completer' aws
