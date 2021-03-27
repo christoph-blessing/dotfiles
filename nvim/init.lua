@@ -7,4 +7,5 @@ require("lsp")
 
 require("nv-compe")
 require("nv-treesitter")
+require("nv-ts-rainbow")
 require("nv-autopairs")

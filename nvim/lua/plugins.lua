@@ -9,4 +9,5 @@ return require"packer".startup(function()
     use "windwp/nvim-autopairs"
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use "hrsh7th/vim-vsnip"
+    use "p00f/nvim-ts-rainbow"
 end)
