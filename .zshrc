@@ -1,6 +1,8 @@
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt hist_ignore_all_dups
+
 bindkey -v
 
 zstyle :compinstall filename '/home/chris/.zshrc'
