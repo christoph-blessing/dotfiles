@@ -14,4 +14,7 @@ return require"packer".startup(function()
     use "kyazdani42/nvim-web-devicons"
     use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
     use "norcalli/nvim-colorizer.lua"
+    use "unblevable/quick-scope"
+    use "romgrk/barbar.nvim"
+    use "phaazon/hop.nvim"
 end)
