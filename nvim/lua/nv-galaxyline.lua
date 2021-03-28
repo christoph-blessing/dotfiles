@@ -22,6 +22,10 @@ local colors = {
     light_orange = "#fe8019"
 }
 
+require"galaxyline".short_line_list = {"NvimTree", "packer"}
+
+-- Left --
+
 require"galaxyline".section.left[1] = {
     GitBranch = {
         provider = "GitBranch",
@@ -60,6 +64,8 @@ require"galaxyline".section.left[7] = {
 require"galaxyline".section.left[8] = {
     DiagnosticInfo = {provider = "DiagnosticInfo", icon = "  ", highlight = {colors.aqua, colors.bg1}}
 }
+
+-- Right --
 
 require"galaxyline".section.right[1] = {
     LspClient = {
@@ -109,4 +115,29 @@ require"galaxyline".section.right[6] = {
         separator = " ",
         separator_highlight = {colors.bg1, colors.fg1}
     }
+}
+
+require"galaxyline".section.right[7] = {
+    Space = {provider = function() return " " end, highlight = {"NONE", colors.fg1}}
+}
+
+-- Short Line Left --
+
+require"galaxyline".section.short_line_left[1] = {
+    FileTypeName = {
+        provider = "FileTypeName",
+        highlight = {colors.fg1, colors.bg1},
+        separator = " ",
+        separator_highlight = {"None", colors.bg1}
+    }
+}
+
+require"galaxyline".section.short_line_left[2] = {
+    SFileName = {provider = "SFileName", condition = condition.buffer_not_empty, highlight = {colors.fg1, colors.bg1}}
+}
+
+-- Short Line Right --
+
+require"galaxyline".section.short_line_right[1] = {
+    BufferIcon = {provider = "BufferIcon", highlight = {colors.fg1, colors.bg1}}
 }
