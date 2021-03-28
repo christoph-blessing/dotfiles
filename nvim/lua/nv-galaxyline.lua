@@ -18,7 +18,8 @@ local colors = {
     light_yellow = "#fabd2f",
     light_blue = "#83a598",
     light_purple = "#d3869b",
-    light_aqua = "#8ec07c"
+    light_aqua = "#8ec07c",
+    light_orange = "#fe8019"
 }
 
 require"galaxyline".section.left[1] = {
@@ -26,9 +27,9 @@ require"galaxyline".section.left[1] = {
         provider = "GitBranch",
         condition = condition.check_git_workspace,
         icon = "    ",
-        highlight = {colors.fg, colors.orange},
+        highlight = {colors.bg1, colors.fg1},
         separator = "",
-        separator_highlight = {colors.orange, colors.bg1}
+        separator_highlight = {colors.fg1, colors.bg1}
     }
 }
 
@@ -64,39 +65,39 @@ require"galaxyline".section.right[1] = {
     LspClient = {
         provider = "GetLspClient",
         icon = " ",
-        highlight = {colors.bg1, colors.gray},
+        highlight = {colors.bg1, colors.fg1},
         separator = " ",
-        separator_highlight = {colors.bg1, colors.gray}
+        separator_highlight = {colors.bg1, colors.fg1}
     }
 }
 
 require"galaxyline".section.right[2] = {
     FileIcon = {
         provider = "FileIcon",
-        highlight = {colors.gray, colors.bg1},
+        highlight = {colors.fg1, colors.bg1},
         separator = " ",
-        separator_highlight = {colors.gray, colors.bg1}
+        separator_highlight = {colors.fg1, colors.bg1}
 
     }
 }
 
-require"galaxyline".section.right[3] = {FileName = {provider = "FileName", highlight = {colors.gray, colors.bg1}}}
+require"galaxyline".section.right[3] = {FileName = {provider = "FileName", highlight = {colors.fg1, colors.bg1}}}
 
 require"galaxyline".section.right[4] = {
     LineColumn = {
         provider = "LineColumn",
-        highlight = {colors.bg1, colors.gray},
+        highlight = {colors.bg1, colors.fg1},
         separator = " ",
-        separator_highlight = {colors.bg1, colors.gray}
+        separator_highlight = {colors.bg1, colors.fg1}
     }
 }
 
 require"galaxyline".section.right[5] = {
     LinePercent = {
         provider = "LinePercent",
-        highlight = {colors.gray, colors.bg1},
+        highlight = {colors.fg1, colors.bg1},
         separator = " ",
-        separator_highlight = {colors.gray, colors.bg1}
+        separator_highlight = {colors.fg1, colors.bg1}
 
     }
 }
@@ -104,8 +105,8 @@ require"galaxyline".section.right[5] = {
 require"galaxyline".section.right[6] = {
     ScrollBar = {
         provider = "ScrollBar",
-        highlight = {colors.bg1, colors.gray},
+        highlight = {colors.bg1, colors.fg1},
         separator = " ",
-        separator_highlight = {colors.bg1, colors.gray}
+        separator_highlight = {colors.bg1, colors.fg1}
     }
 }
