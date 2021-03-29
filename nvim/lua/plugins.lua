@@ -21,4 +21,5 @@ return require"packer".startup(function()
     use "tpope/vim-fugitive"
     use "kyazdani42/nvim-tree.lua"
     use "airblade/vim-rooter"
+    use "voldikss/vim-floaterm"
 end)
