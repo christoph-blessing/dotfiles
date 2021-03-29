@@ -4,13 +4,13 @@ local isort = {formatCommand = "isort --quiet -", formatStdin = true}
 local black = {formatCommand = "black --quiet -", formatStdin = true}
 
 local flake8 = {
-    lintCommand = "pdm run flake8 --stdin-display-name ${INPUT} -",
+    lintCommand = "flake8 --stdin-display-name ${INPUT} -",
     lintStdin = true,
     lintFormats = {"%f:%l:%c: %m"}
 }
 
 local pylint = {
-    lintCommand = "pdm run pylint --from-stdin --output-format text \z
+    lintCommand = "pylint --from-stdin --output-format text \z
         --msg-template '{path}:{line}:{column}:{C}: [{symbol}] {msg}' ${INPUT}",
     lintStdin = true,
     lintFormats = {"%A%f:%l:%c:%t: %m", "%A%f:%l: %m", "%A%f:(%l): %m", "%-Z%p^%.%#", "%-G%.%#"}
