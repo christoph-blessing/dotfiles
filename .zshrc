@@ -93,3 +93,6 @@ export PYTHONPATH='/home/chris/.local/pipx/venvs/pdm/lib/python3.9/site-packages
 
 # Enter normal mode by pressing jj
 bindkey 'jj' vi-cmd-mode
+
+# Prepend __pypackages__/**/bin to PATH if present in current working directory or one of its ancestors
+source ~/scripts/augment-path.sh
