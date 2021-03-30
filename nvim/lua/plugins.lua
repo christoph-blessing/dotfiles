@@ -22,4 +22,5 @@ return require"packer".startup(function()
     use "kyazdani42/nvim-tree.lua"
     use "airblade/vim-rooter"
     use "voldikss/vim-floaterm"
+    use {"iamcco/markdown-preview.nvim", run = "cd app && npm install"}
 end)
