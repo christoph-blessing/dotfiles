@@ -1,6 +1,6 @@
 vim.o.clipboard = "unnamedplus"
 vim.o.updatetime = 100
-vim.o.timeoutlen = 100
+vim.o.timeoutlen = 200
 vim.o.termguicolors = true
 vim.o.hidden = true
 vim.o.splitbelow = true
