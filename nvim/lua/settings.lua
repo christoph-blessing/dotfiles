@@ -6,6 +6,7 @@ vim.o.hidden = true
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.showmode = false
+vim.o.shortmess = vim.o.shortmess .. "c"
 
 vim.wo.spell = true
 vim.wo.number = true
