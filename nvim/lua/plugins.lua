@@ -24,4 +24,5 @@ return require"packer".startup(function()
     use "voldikss/vim-floaterm"
     use {"iamcco/markdown-preview.nvim", run = "cd app && npm install"}
     use {"nvim-telescope/telescope.nvim", requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}}
+    use "mfussenegger/nvim-dap"
 end)

@@ -19,3 +19,6 @@ require("nv-tree")
 require("nv-floaterm")
 require("nv-quickscope")
 require("nv-telescope")
+require("nv-dap")
+
+vim.cmd("source ~/.config/nvim/vimscript/functions.vim")
