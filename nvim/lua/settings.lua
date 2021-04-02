@@ -1,3 +1,5 @@
+vim.g.python3_host_prog = "/home/chris/venv/pynvim/bin/python"
+
 vim.o.clipboard = "unnamedplus"
 vim.o.updatetime = 100
 vim.o.timeoutlen = 200
