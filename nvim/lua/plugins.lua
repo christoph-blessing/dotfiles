@@ -9,7 +9,7 @@ return require"packer".startup(function()
     use "windwp/nvim-autopairs"
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use "hrsh7th/vim-vsnip"
-    use "p00f/nvim-ts-rainbow"
+    use {"p00f/nvim-ts-rainbow", requires = {"nvim-treesitter/nvim-treesitter"}}
     use "glepnir/galaxyline.nvim"
     use "kyazdani42/nvim-web-devicons"
     use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
