@@ -1,24 +1,15 @@
-require("plugins")
-require("settings")
-require("colorscheme")
-require("keymappings")
+local execute = vim.api.nvim_command
+local fn = vim.fn
 
-require("lsp")
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
-require("nv-compe")
-require("nv-treesitter")
-require("nv-ts-rainbow")
-require("nv-autopairs")
-require("nv-galaxyline")
-require("nv-gitsigns")
-require("nv-colorizer")
-require("nv-barbar")
-require("nv-hop")
-require("nv-autocommands")
-require("nv-tree")
-require("nv-floaterm")
-require("nv-quickscope")
-require("nv-telescope")
-require("nv-dap")
+if fn.empty(fn.glob(install_path)) > 0 then
+    execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
+    execute "packadd packer.nvim"
+    require("plugins")
+    vim.cmd("autocmd User PackerComplete ++once lua require('config')")
+    require("packer").sync()
+else
+    require("config")
+end
 
-vim.cmd("source ~/.config/nvim/vimscript/functions.vim")
