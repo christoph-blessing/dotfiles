@@ -1,4 +1,4 @@
-vim.g.python3_host_prog = "/home/chris/venv/pynvim/bin/python"
+vim.g.python3_host_prog = "/home/$USER/venv/pynvim/bin/python"
 
 vim.o.clipboard = "unnamedplus"
 vim.o.updatetime = 100
