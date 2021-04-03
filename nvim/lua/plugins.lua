@@ -17,7 +17,6 @@ return require"packer".startup(function()
     use "unblevable/quick-scope"
     use "romgrk/barbar.nvim"
     use "phaazon/hop.nvim"
-    use "norcalli/nvim_utils"
     use "tpope/vim-fugitive"
     use "kyazdani42/nvim-tree.lua"
     use "airblade/vim-rooter"
