@@ -6,6 +6,7 @@ local black = {formatCommand = "black --quiet -", formatStdin = true}
 local flake8 = {
     lintCommand = "flake8 --stdin-display-name ${INPUT} -",
     lintStdin = true,
+    lintIgnoreExitCode = true,
     lintFormats = {"%f:%l:%c: %m"}
 }
 
@@ -13,6 +14,7 @@ local pylint = {
     lintCommand = "pylint --from-stdin --output-format text \z
         --msg-template '{path}:{line}:{column}:{C}: [{symbol}] {msg}' ${INPUT}",
     lintStdin = true,
+    lintIgnoreExitCode = true,
     lintFormats = {"%A%f:%l:%c:%t: %m", "%A%f:%l: %m", "%A%f:(%l): %m", "%-Z%p^%.%#", "%-G%.%#"}
 }
 
