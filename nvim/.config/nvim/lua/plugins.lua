@@ -27,4 +27,5 @@ return require"packer".startup(function()
     use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
     use "junegunn/goyo.vim"
     use "mbbill/undotree"
+    use "sheerun/vim-polyglot"
 end)
