@@ -32,6 +32,7 @@ local lua_format = {formatCommand = "lua-format -i --column-limit 120", formatSt
 local pandoc = {formatCommand = "pandoc -f markdown -t gfm -sp --tab-stop 2", formatStdin = true}
 
 return {
+    cmd = {vim.fn.stdpath("data") .. "/lspinstall/efm/efm-langserver"},
     init_options = {documentFormatting = true, codeAction = false},
     filetypes = {"python", "lua", "markdown"},
     settings = {

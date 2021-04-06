@@ -38,9 +38,20 @@ local on_attach = function(client, bufnr)
     end
 end
 
-local server_configs = {efm = require("lsp.efm-general-ls"), pyright = require("lsp.python-ls")}
+local function setup_servers()
+    require("lspinstall").setup()
+    server_configs = {efm = require("lsp.efm-general-ls"), python = require("lsp.python-ls")}
+    local servers = require("lspinstall").installed_servers()
+    for _, server in pairs(servers) do
+        local config = server_configs[server]
+        config.on_attach = on_attach
+        nvim_lsp[server].setup(config)
+    end
+end
 
-for server, config in pairs(server_configs) do
-    config.on_attach = on_attach
-    nvim_lsp[server].setup(config)
+setup_servers()
+
+require("lspinstall").post_install_hook = function()
+    setup_servers()
+    vim.cmd("bufdo e")
 end

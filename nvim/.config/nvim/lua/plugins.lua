@@ -28,4 +28,5 @@ return require"packer".startup(function()
     use "junegunn/goyo.vim"
     use "mbbill/undotree"
     use "sheerun/vim-polyglot"
+    use "kabouzeid/nvim-lspinstall"
 end)
