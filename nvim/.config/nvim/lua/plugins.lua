@@ -21,4 +21,5 @@ return require"packer".startup(function()
     use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
     use "sheerun/vim-polyglot"
     use "kabouzeid/nvim-lspinstall"
+    use "terrortylor/nvim-comment"
 end)
