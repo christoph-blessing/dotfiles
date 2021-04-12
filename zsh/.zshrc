@@ -118,3 +118,7 @@ augment_path() {
 }
 
 precmd() augment_path
+
+# Source fzf key-bindings and completion
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
