@@ -2,7 +2,8 @@ vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")
 
 return require"packer".startup(function()
     use "wbthomason/packer.nvim"
-    use "morhetz/gruvbox"
+    -- use "morhetz/gruvbox"
+    use "sainnhe/gruvbox-material"
     use "tpope/vim-surround"
     use "neovim/nvim-lspconfig"
     use "hrsh7th/nvim-compe"
