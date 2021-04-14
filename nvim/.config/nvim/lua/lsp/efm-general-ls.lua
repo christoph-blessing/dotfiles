@@ -11,15 +11,14 @@ local flake8 = {
 }
 
 local pylint = {
-    lintCommand = "pylint --from-stdin --output-format text \z
-        --msg-template '{path}:{line}:{column}:{C}: [{symbol}] {msg}' ${INPUT}",
+    lintCommand = "~/scripts/pylint.sh ${INPUT}",
     lintStdin = true,
     lintIgnoreExitCode = true,
     lintFormats = {"%A%f:%l:%c:%t: %m", "%A%f:%l: %m", "%A%f:(%l): %m", "%-Z%p^%.%#", "%-G%.%#"}
 }
 
 local mypy = {
-    lintCommand = "~/scripts/mypy-from-stdin.sh ${INPUT}",
+    lintCommand = "~/scripts/mypy.sh ${INPUT}",
     lintStdin = true,
     lintIgnoreExitCode = true,
     lintFormats = {"%f:%l:%c: %trror: %m", "%f:%l:%c: %tarning: %m", "%f:%l:%c: %tote: %m"}
