@@ -19,7 +19,6 @@ return require"packer".startup(function()
     use {"nvim-telescope/telescope.nvim", requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}}
     use "mfussenegger/nvim-dap"
     use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
-    use "sheerun/vim-polyglot"
     use "kabouzeid/nvim-lspinstall"
     use "terrortylor/nvim-comment"
 end)
