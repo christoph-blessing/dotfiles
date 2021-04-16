@@ -11,14 +11,14 @@ local flake8 = {
 }
 
 local pylint = {
-    lintCommand = "~/scripts/pylint.sh ${INPUT}",
+    lintCommand = "~/.config/nvim/scripts/pylint.sh ${INPUT}",
     lintStdin = true,
     lintIgnoreExitCode = true,
     lintFormats = {"%A%f:%l:%c:%t: %m", "%A%f:%l: %m", "%A%f:(%l): %m", "%-Z%p^%.%#", "%-G%.%#"}
 }
 
 local mypy = {
-    lintCommand = "~/scripts/mypy.sh ${INPUT}",
+    lintCommand = "~/.config/nvim/scripts/mypy.sh ${INPUT}",
     lintStdin = true,
     lintIgnoreExitCode = true,
     lintFormats = {"%f:%l:%c: %trror: %m", "%f:%l:%c: %tarning: %m", "%f:%l:%c: %tote: %m"}
