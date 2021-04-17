@@ -1,0 +1,29 @@
+alias ls="ls --color"
+alias ll='ls -la'
+
+alias s="ssh"
+
+alias mbsync="mbsync --config ~/.config/mbsync/mbsyncrc"
+
+alias v="nvim"
+
+alias n="neomutt"
+
+alias nb="newsboat"
+
+alias df="df -h"
+
+alias fzf="fzf-tmux"
+
+alias gs="git status"
+alias gl="git log"
+alias ga="git add"
+alias gc="git commit -m"
+alias gd="git diff"
+alias gr="git reset"
+alias gps="git push"
+alias gpl="git pull"
+alias gm="git merge"
+alias gb="git branch"
+alias gch="git checkout"
+alias grb="git rebase"

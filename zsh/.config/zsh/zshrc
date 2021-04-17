@@ -1,0 +1,71 @@
+HISTFILE="$XDG_DATA_HOME"/zsh/history
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt hist_ignore_all_dups
+
+bindkey -v
+
+zstyle :compinstall filename '/home/chris/.zshrc'
+
+zstyle ":completion:*:(ssh|rsync|scp):*" hosts $hosts
+
+fpath=( ~/.zfunc "${fpath[@]}" )
+
+zstyle ':completion:*' menu select
+autoload -Uz compinit
+compinit
+
+source $ZDOTDIR/aliases
+source $ZDOTDIR/prompt
+source $ZDOTDIR/vim-mode
+
+# Source fzf key-bindings and completion
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+# Run startx on login
+if [[ -z "${DISPLAY}" && "${XDG_VTNR}" -eq 1 ]]; then
+    exec startx
+fi
+
+# SSH agent
+if ! [ -z "${XDG_RUNTIME_DIR}" ]; then
+    if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+        ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+    fi
+    if (( ! ${+SSH_AUTH_SOCK} )); then
+        source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+    fi
+fi
+
+autoload bashcompinit && bashcompinit
+complete -C '/usr/bin/aws_completer' aws
+
+# Prepend __pypackages__/**/bin to PATH if present in current working directory or one of its ancestors
+RAW_PATH=$PATH
+LAST_WD=`pwd`
+augment_path() {
+    setopt nullglob
+    target="__pypackages__/**/bin"
+    if [ "$PWD" = "$LAST_WD" ]; then return 0; fi;
+    path_addition=""
+    scandir=$PWD
+    until [ "$scandir" = "" ]; do
+        resolved_target=($scandir/$~target)
+        if [ ${#resolved_target[@]} != 0 ]; then
+                path_addition=${resolved_target:0:1}:$path_addition
+        fi
+        scandir=${scandir%/*}
+    done
+    PATH=$path_addition:$RAW_PATH
+    LAST_WD=`pwd`
+    unsetopt nullglob
+}
+
+precmd() augment_path
+
+# If tmux is executable, X is running, and not inside a tmux session, then try to attach.
+# If attachment fails, start a new session
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ]; then
+  [ -z "${TMUX}" ] && (tmux attach || tmux) >/dev/null 2>&1
+fi
