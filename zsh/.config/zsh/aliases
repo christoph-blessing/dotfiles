@@ -15,6 +15,12 @@ alias df="df -h"
 
 alias fzf="fzf-tmux"
 
+alias gpg2="gpg2 --homedir $XDG_DATA_HOME/gnupg"
+
+alias xbindkeys="xbindkeys -f $XDG_CONFIG_HOME/xbindkeys/config"
+
+alias monerod="monerod --data-dir $XDG_DATA_HOME/bitmonero"
+
 alias gs="git status"
 alias gl="git log"
 alias ga="git add"
