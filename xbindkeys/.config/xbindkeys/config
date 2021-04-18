@@ -1,0 +1,8 @@
+"changeVolume 5%+"
+        XF86AudioRaiseVolume
+
+"changeVolume 5%-"
+        XF86AudioLowerVolume
+
+"changeVolume toggle"
+        XF86AudioMute
