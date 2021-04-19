@@ -26,3 +26,4 @@ export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 
 ZDOTDIR="$XDG_CONFIG_HOME"/zsh
+eval $(dircolors)
