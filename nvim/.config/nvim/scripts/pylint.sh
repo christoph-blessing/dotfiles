@@ -2,7 +2,7 @@
 
 ignored_patterns=('^test_.+\.py$' 'conftest\.py')
 for ignored_pattern in "${ignored_patterns[@]}"; do
-    if [[ "$(basename "$1")" =~ "$ignored_pattern" ]]; then
+    if [[ "$(basename "$1")" =~ $ignored_pattern ]]; then
         exit 0
     fi
 done
