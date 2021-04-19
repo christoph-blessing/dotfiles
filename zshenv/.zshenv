@@ -3,6 +3,10 @@
 export EDITOR=nvim
 export PYTHONPATH='/home/chris/.local/pipx/venvs/pdm/lib/python3.9/site-packages/pdm/pep582':"$PYTHONPATH"
 
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND='fd'
+export FZF_ALT_C_COMMAND='fd --type d'
+
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_CACHE_HOME="$HOME"/.cache
