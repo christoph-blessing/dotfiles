@@ -20,8 +20,10 @@ source $ZDOTDIR/prompt
 source $ZDOTDIR/vim-mode
 
 # Source fzf key-bindings and completion
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+if [ -x "$(command -v tmux)" ]; then
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
+fi
 
 # Run startx on login
 if [[ -z "${DISPLAY}" && "${XDG_VTNR}" -eq 1 ]]; then
