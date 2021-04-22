@@ -24,7 +24,7 @@ source $ZDOTDIR/prompt
 source $ZDOTDIR/vim-mode
 
 # Source fzf key-bindings and completion
-if [ -x "$(command -v fzf)" ]; then
+if [ -x "$(whence -p fzf)" ]; then
     source /usr/share/fzf/key-bindings.zsh
     source /usr/share/fzf/completion.zsh
 fi
