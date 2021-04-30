@@ -22,12 +22,7 @@ compinit
 source $ZDOTDIR/aliases
 source $ZDOTDIR/prompt
 source $ZDOTDIR/vim-mode
-
-# Source fzf key-bindings and completion
-if [ -x "$(whence -p fzf)" ]; then
-    source /usr/share/fzf/key-bindings.zsh
-    source /usr/share/fzf/completion.zsh
-fi
+source $ZDOTDIR/fzf
 
 # Run startx on login
 if [[ -z "${DISPLAY}" && "${XDG_VTNR}" -eq 1 ]]; then
