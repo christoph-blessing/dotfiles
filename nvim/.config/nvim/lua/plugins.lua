@@ -22,4 +22,6 @@ return require"packer".startup(function()
     use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
     use "kabouzeid/nvim-lspinstall"
     use "terrortylor/nvim-comment"
+    use {"weirongxu/plantuml-previewer.vim", requires = {"tyru/open-browser.vim"}}
+    use "sheerun/vim-polyglot"
 end)
