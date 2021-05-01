@@ -1,4 +1,4 @@
-require "nv-utils"
+require "utils"
 
 nvim_create_augroups({
     formatting = {
