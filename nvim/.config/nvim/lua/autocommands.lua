@@ -9,10 +9,10 @@ nvim_create_augroups({
     run = {
         {
             "FileType", "python",
-            "lua vim.api.nvim_set_keymap('n', '<f9>', \":w<cr>:exec '!python' shellescape(@%, 1)<cr>\", {})"
+            "lua vim.api.nvim_set_keymap('n', '<leader>r', \":w<cr>:exec '!python' shellescape(@%, 1)<cr>\", {})"
         }, {
             "FileType", "python",
-            "lua vim.api.nvim_set_keymap('i', '<f9>', \"<esc>:w<cr>:exec '!python' shellescape(@%, 1)<cr>\", {})"
+            "lua vim.api.nvim_set_keymap('i', '<leader>r', \"<esc>:w<cr>:exec '!python' shellescape(@%, 1)<cr>\", {})"
         }
     }
 })
