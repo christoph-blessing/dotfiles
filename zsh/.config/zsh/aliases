@@ -3,9 +3,9 @@ alias ll='ls -la'
 
 alias mbsync="mbsync --config ~/.config/mbsync/mbsyncrc"
 
-alias v="nvim"
+alias vim="nvim"
 
-alias n="neomutt"
+alias mutt="neomutt"
 
 alias nb="newsboat"
 
