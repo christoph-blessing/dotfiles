@@ -2,7 +2,6 @@ vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")
 
 return require"packer".startup(function()
     use "wbthomason/packer.nvim"
-    -- use "morhetz/gruvbox"
     use "sainnhe/gruvbox-material"
     use "tpope/vim-surround"
     use "neovim/nvim-lspconfig"
@@ -16,7 +15,6 @@ return require"packer".startup(function()
     use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
     use "romgrk/barbar.nvim"
     use "kyazdani42/nvim-tree.lua"
-    use "voldikss/vim-floaterm"
     use {"nvim-telescope/telescope.nvim", requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}}
     use "mfussenegger/nvim-dap"
     use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
