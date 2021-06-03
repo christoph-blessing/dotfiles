@@ -1,3 +1,4 @@
+include /usr/share/doc/newsboat/contrib/colorschemes/plain
 highlight feedlist "---.*---" color6 default bold
 highlight feedlist ".*0/0.." default default invis
 
