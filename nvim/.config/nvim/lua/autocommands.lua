@@ -12,13 +12,7 @@ nvim_create_augroups({
             "lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<cr>:exec '!python' shellescape(@%, 1)<cr>\", {})"
         }, {
             "FileType", "python",
-            "lua vim.api.nvim_buf_set_keymap('0', 'i', '<leader>r', \"<esc>:w<cr>:exec '!python' shellescape(@%, 1)<cr>\", {})"
-        }, {
-            "FileType", "python",
             "lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>tu', \":w<cr>:exec '!pytest tests/unit'<cr>\", {})"
-        }, {
-            "FileType", "python",
-            "lua vim.api.nvim_buf_set_keymap('0', 'i', '<leader>tu', \"<esc>:w<cr>:exec '!pytest tests/unit'<cr>\", {})"
         }
 
     },
@@ -26,9 +20,6 @@ nvim_create_augroups({
         {
             "FileType", "plantuml",
             "lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w !plantuml -p | ~/.config/nvim/scripts/sxiv.sh<cr>\", {})"
-        }, {
-            "FileType", "plantuml",
-            "lua vim.api.nvim_buf_set_keymap('0', 'i', '<leader>r', \"<esc>:w !plantuml -p | ~/.config/nvim/scripts/sxiv.sh<cr>\", {})"
         }
     }
 })
