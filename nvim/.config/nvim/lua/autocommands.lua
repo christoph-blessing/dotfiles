@@ -45,7 +45,7 @@ nvim_create_augroups({
     plantuml = {
         {
             "FileType", "plantuml",
-            "lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w !plantuml -p | ~/.config/nvim/scripts/sxiv.sh<cr>\", {})"
+            "lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":silent w !plantuml -p | ~/.config/nvim/scripts/sxiv.sh<cr>\", {silent = true})"
         }
     }
 })
