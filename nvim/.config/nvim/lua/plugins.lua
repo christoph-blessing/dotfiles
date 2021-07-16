@@ -18,7 +18,7 @@ return require"packer".startup(function()
     use "kyazdani42/nvim-tree.lua"
     use {"nvim-telescope/telescope.nvim", requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}}
     use "mfussenegger/nvim-dap"
-    use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
+    use {"lukas-reineke/indent-blankline.nvim"}
     use "kabouzeid/nvim-lspinstall"
     use "terrortylor/nvim-comment"
     use {"weirongxu/plantuml-previewer.vim", requires = {"tyru/open-browser.vim"}}
