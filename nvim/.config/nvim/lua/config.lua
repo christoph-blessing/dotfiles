@@ -17,5 +17,6 @@ require("nv-tree")
 require("nv-telescope")
 require("nv-dap")
 require("nv-comment")
+require("nv-formatter")
 
 vim.cmd("source ~/.config/nvim/vimscript/functions.vim")

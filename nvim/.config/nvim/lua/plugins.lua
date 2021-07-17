@@ -23,4 +23,5 @@ return require"packer".startup(function()
     use "terrortylor/nvim-comment"
     use {"weirongxu/plantuml-previewer.vim", requires = {"tyru/open-browser.vim"}}
     use "sheerun/vim-polyglot"
+    use "mhartington/formatter.nvim"
 end)
