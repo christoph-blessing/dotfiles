@@ -5,6 +5,7 @@ require("formatter").setup({
             function() return {exe = "black", args = {"--quiet", "-"}, stdin = true} end,
             function() return {exe = "isort", args = {"--quiet", "-"}, stdin = true} end
         },
+        rust = {function() return {exe = "rustfmt", args = {"--emit=stdout"}, stdin = true} end},
         lua = {function() return {exe = "lua-format", args = {"-i", "--column-limit", "120"}, stdin = true} end},
         markdown = {
             function()
