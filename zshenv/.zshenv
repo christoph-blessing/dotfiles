@@ -27,3 +27,4 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo
 
 ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 eval $(dircolors)
+. "/home/chris/.local/share/cargo/env"
