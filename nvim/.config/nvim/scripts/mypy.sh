@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $1 == *test_* ]]
+if [[ $1 == *test_* ]] || [[ $1 == *conftest.py ]]
 then
     exit
 fi
