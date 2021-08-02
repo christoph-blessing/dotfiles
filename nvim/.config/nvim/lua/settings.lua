@@ -1,24 +1,27 @@
 vim.g.python3_host_prog = "/home/$USER/venv/pynvim/bin/python"
 
-vim.o.clipboard = "unnamedplus"
-vim.o.updatetime = 100
-vim.o.timeoutlen = 200
-vim.o.termguicolors = true
-vim.o.hidden = true
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.showmode = false
-vim.o.shortmess = vim.o.shortmess .. "c"
+vim.opt["clipboard"] = "unnamedplus"
+vim.opt["updatetime"] = 100
+vim.opt["timeoutlen"] = 200
+vim.opt["termguicolors"] = true
+vim.opt["hidden"] = true
+vim.opt["splitbelow"] = true
+vim.opt["splitright"] = true
+vim.opt["showmode"] = false
+vim.opt["shortmess"] = vim.o.shortmess .. "c"
 
-vim.wo.spell = true
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.wo.wrap = false
-vim.wo.cursorline = true
-vim.wo.signcolumn = "yes"
+vim.opt["spell"] = true
+vim.opt["number"] = true
+vim.opt["relativenumber"] = true
+vim.opt["wrap"] = false
+vim.opt["cursorline"] = true
+vim.opt["signcolumn"] = "yes"
 
-vim.bo.expandtab = true
-vim.bo.spelllang = "en_us"
-vim.bo.shiftwidth = 4
-vim.bo.tabstop = 4
-vim.bo.smartindent = true
+vim.opt["expandtab"] = true
+vim.opt["spelllang"] = "en_us"
+vim.opt["shiftwidth"] = 4
+vim.opt["tabstop"] = 4
+vim.opt["smartindent"] = true
+
+vim.opt["foldmethod"] = "expr"
+vim.opt["foldexpr"] = "nvim_treesitter#foldexpr()"
