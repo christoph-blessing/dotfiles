@@ -40,7 +40,11 @@ end
 
 local function setup_servers()
     require("lspinstall").setup()
-    server_configs = {efm = require("lsp.efm-general-ls"), python = require("lsp.python-ls"), rust = require("lsp.rust-analyzer")}
+    server_configs = {
+        null_ls = require("lsp.null-ls"),
+        python = require("lsp.python-ls"),
+        rust = require("lsp.rust-analyzer")
+    }
     local servers = require("lspinstall").installed_servers()
     for _, server in pairs(servers) do
         local config = server_configs[server]
