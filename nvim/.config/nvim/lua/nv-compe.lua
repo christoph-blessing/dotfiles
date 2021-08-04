@@ -21,11 +21,7 @@ local replace_termcodes = function(str) return vim.api.nvim_replace_termcodes(st
 
 local check_back_space = function()
     local col = vim.fn.col(".") - 1
-    if col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
-        return true
-    else
-        return false
-    end
+    return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 end
 
 _G.tab_complete = function()
@@ -50,7 +46,12 @@ _G.shift_tab_complete = function()
     end
 end
 
-vim.api.nvim_set_keymap("i", "<C-e>", "compe#close('<C-e>')", {expr = true})
+vim.api.nvim_set_keymap("i", "<C-Space>", "compe#complete()", {silent = true, noremap = true, expr = true})
+vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm('require 'nvim-autopairs'.autopairs_cr()')",
+                        {silent = true, noremap = true, expr = true})
+vim.api.nvim_set_keymap("i", "<C-e>", "compe#close('<C-e>')", {silent = true, noremap = true, expr = true})
+vim.api.nvim_set_keymap("i", "<C-f>", "compe#scroll({ 'delta': +4 })", {silent = true, noremap = true, expr = true})
+vim.api.nvim_set_keymap("i", "<C-d>", "compe#scroll({ 'delta': -4 })", {silent = true, noremap = true, expr = true})
 vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.shift_tab_complete()", {expr = true})
