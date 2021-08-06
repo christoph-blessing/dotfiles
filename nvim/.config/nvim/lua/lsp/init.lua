@@ -38,19 +38,17 @@ local on_attach = function(client, bufnr)
     end
 end
 
+local function setup_server(server)
+    local config = require("lsp." .. server)
+    config.on_attach = on_attach
+    nvim_lsp[server].setup(config)
+end
+
 local function setup_servers()
     require("lspinstall").setup()
-    server_configs = {
-        null_ls = require("lsp.null-ls"),
-        python = require("lsp.python-ls"),
-        rust = require("lsp.rust-analyzer")
-    }
     local servers = require("lspinstall").installed_servers()
-    for _, server in pairs(servers) do
-        local config = server_configs[server]
-        config.on_attach = on_attach
-        nvim_lsp[server].setup(config)
-    end
+    table.insert(servers, "null-ls")
+    for _, server in pairs(servers) do setup_server(server) end
 end
 
 setup_servers()
