@@ -51,6 +51,23 @@ local flake8 = {
 }
 table.insert(sources, flake8)
 
+local pylint = {
+    method = null_ls.methods.DIAGNOSTICS,
+    filetypes = {"python"},
+    generator = helpers.generator_factory({
+        command = "pylint",
+        to_stdin = true,
+        to_stderr = true,
+        args = {"--from-stdin", "--score", "n", "--msg-template", "'{line}:{column}:{C}:{msg}'", "$FILENAME"},
+        format = "line",
+        on_output = function(line, params)
+            local severities = {I = 3, R = 4, C = 4, W = 2, E = 1, F = 1}
+            return find_entries(line, [[(%d+):(%d+):(%w):(.*)]], {"row", "col", "severity", "message"}, severities)
+        end
+    })
+}
+table.insert(sources, pylint)
+
 null_ls.config({sources = sources})
 
 return {}
