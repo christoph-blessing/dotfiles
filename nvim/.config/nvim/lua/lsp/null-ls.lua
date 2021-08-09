@@ -55,10 +55,10 @@ local pylint = {
     method = null_ls.methods.DIAGNOSTICS,
     filetypes = {"python"},
     generator = helpers.generator_factory({
-        command = "pylint",
+        command = "/home/chris/.config/nvim/scripts/pylint.sh",
         to_stdin = true,
         to_stderr = true,
-        args = {"--from-stdin", "--score", "n", "--msg-template", "'{line}:{column}:{C}:{msg}'", "$FILENAME"},
+        args = {"$FILENAME"},
         format = "line",
         on_output = function(line, params)
             local severities = {I = 3, R = 4, C = 4, W = 2, E = 1, F = 1}
