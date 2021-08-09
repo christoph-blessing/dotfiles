@@ -6,4 +6,4 @@ for ignored_pattern in "${ignored_patterns[@]}"; do
         exit 0
     fi
 done
-echo "$(cat)" | pylint --from-stdin --output-format text --msg-template '{path}:{line}:{column}:{C}: [{symbol}] {msg}' "$1"
+echo "$(cat)" | pylint --from-stdin --score n --msg-template '{line}:{column}:{C}:{msg}' "$1"
