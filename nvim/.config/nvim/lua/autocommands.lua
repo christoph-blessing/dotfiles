@@ -1,9 +1,7 @@
 require "utils"
 
 nvim_create_augroups({
-    formatting = {
-        {"BufWritePost", "*", ":silent FormatWrite"}
-    },
+    formatting = {{"BufWritePost", "*", ":silent FormatWrite"}},
     python = {
         {
             "FileType", "python",
@@ -45,6 +43,15 @@ nvim_create_augroups({
             "FileType", "plantuml",
             "lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":silent w !plantuml -p | ~/.config/nvim/scripts/sxiv.sh<cr>\", {silent = true})"
         }
+    },
+    rust = {
+        {
+            "FileType", "rust",
+            "lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<CR>:exec '!cargo run'<CR>\", {})"
+        },
+        {
+            "FileType", "rust",
+            "lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>t', \":w<CR>:exec '!cargo test'<CR>\", {})"
+        }
     }
 })
-
