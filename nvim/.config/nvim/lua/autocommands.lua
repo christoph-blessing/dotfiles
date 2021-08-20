@@ -1,7 +1,6 @@
 require "utils"
 
 nvim_create_augroups({
-    formatting = {{"BufWritePost", "*", ":silent FormatWrite"}},
     python = {
         {
             "FileType", "python",
@@ -48,8 +47,7 @@ nvim_create_augroups({
         {
             "FileType", "rust",
             "lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<CR>:exec '!cargo run'<CR>\", {})"
-        },
-        {
+        }, {
             "FileType", "rust",
             "lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>t', \":w<CR>:exec '!cargo test'<CR>\", {})"
         }

@@ -16,12 +16,20 @@ return require"packer".startup(function()
     use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
     use "romgrk/barbar.nvim"
     use "kyazdani42/nvim-tree.lua"
-    use {"nvim-telescope/telescope.nvim", requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}}
+    use {
+        "nvim-telescope/telescope.nvim",
+        requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
+    }
     use "mfussenegger/nvim-dap"
     use {"lukas-reineke/indent-blankline.nvim"}
     use "kabouzeid/nvim-lspinstall"
     use "terrortylor/nvim-comment"
-    use {"weirongxu/plantuml-previewer.vim", requires = {"tyru/open-browser.vim"}}
-    use "mhartington/formatter.nvim"
-    use {"jose-elias-alvarez/null-ls.nvim", requires = {{"nvim-lua/plenary.nvim"}, {"neovim/nvim-lspconfig"}}}
+    use {
+        "weirongxu/plantuml-previewer.vim",
+        requires = {"tyru/open-browser.vim"}
+    }
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = {{"nvim-lua/plenary.nvim"}, {"neovim/nvim-lspconfig"}}
+    }
 end)
