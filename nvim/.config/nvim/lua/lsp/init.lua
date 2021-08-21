@@ -18,13 +18,6 @@ local on_attach = function(client, bufnr)
     buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
     buf_set_keymap("n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 
-    if client.resolved_capabilities.document_formatting then
-        buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-    elseif client.resolved_capabilities.document_range_formatting then
-        buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-    end
-
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec([[
       hi LspReferenceRead cterm=bold ctermbg=red guibg=#ea6962
@@ -37,7 +30,11 @@ local on_attach = function(client, bufnr)
       augroup END
     ]], false)
     end
+
+    client.resolved_capabilities.document_formatting = false
+
 end
+
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -59,7 +56,6 @@ end
 local function setup_servers()
     require("lspinstall").setup()
     local servers = require("lspinstall").installed_servers()
-    table.insert(servers, "null-ls")
     for _, server in pairs(servers) do setup_server(server) end
 end
 
@@ -69,3 +65,5 @@ require("lspinstall").post_install_hook = function()
     setup_servers()
     vim.cmd("bufdo e")
 end
+
+require("lsp.null-ls")
