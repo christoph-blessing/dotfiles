@@ -1,1 +1,1 @@
-require"nvim-treesitter.configs".setup {rainbow = {enable = true}}
+require("nvim-treesitter.configs").setup({ rainbow = { enable = true } })
