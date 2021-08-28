@@ -77,4 +77,11 @@ nvim_create_augroups({
 			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>t', \":w<CR>:exec '!cargo test'<CR>\", {})",
 		},
 	},
+	markdown = {
+		{
+			"FileType",
+			"markdown",
+			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<CR>:Glow<CR>\", {})",
+		},
+	},
 })

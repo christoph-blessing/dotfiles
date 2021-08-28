@@ -46,4 +46,11 @@ return require("packer").startup(function()
 		"weirongxu/plantuml-previewer.vim",
 		requires = { "tyru/open-browser.vim" },
 	})
+
+	use({
+		"ellisonleao/glow.nvim",
+		run = function()
+			require("glow").download_glow()
+		end,
+	})
 end)
