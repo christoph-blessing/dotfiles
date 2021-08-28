@@ -1,7 +1,10 @@
 [[ ":$PATH:" != *":${HOME}/.local/bin:"* ]] && PATH="${HOME}/.local/bin:${PATH}"
 
 export EDITOR=nvim
-export PYTHONPATH='/home/chris/.local/pipx/venvs/pdm/lib/python3.9/site-packages/pdm/pep582':"$PYTHONPATH"
+export PYTHONPATH="$HOME/.local/pipx/venvs/pdm/lib/python3.9/site-packages/pdm/pep582:$PYTHONPATH"
+
+export GOPATH="$HOME/go"
+[[ ":$PATH:" != *":${GOPATH}/bin:"* ]] && PATH="${GOPATH}/bin:${PATH}"
 
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND='fd'
