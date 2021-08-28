@@ -51,6 +51,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
 	properties = { "documentation", "detail", "additionalTextEdits" },
 }
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 local function setup_server(server)
 	local config = require("lsp." .. server)

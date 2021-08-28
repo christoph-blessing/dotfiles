@@ -84,4 +84,11 @@ nvim_create_augroups({
 			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<CR>:Glow<CR>\", {})",
 		},
 	},
+	lua = {
+		{
+			"FileType",
+			"lua",
+			"lua require('cmp').setup.buffer {sources = {{name = 'buffer'}, {name = 'nvim_lua'}, {name = 'path'}, {name = 'vsnip'}}}",
+		},
+	},
 })

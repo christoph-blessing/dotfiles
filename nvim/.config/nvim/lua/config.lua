@@ -6,7 +6,7 @@ require("autocommands")
 
 require("lsp")
 
-require("nv-compe")
+require("nv-cmp")
 require("nv-treesitter")
 require("nv-ts-rainbow")
 require("nv-autopairs")
