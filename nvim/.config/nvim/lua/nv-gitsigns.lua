@@ -1,1 +1,7 @@
-require("gitsigns").setup()
+M = {}
+
+M.setup = function()
+	require("gitsigns").setup()
+end
+
+return M

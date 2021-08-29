@@ -1,1 +1,7 @@
-require("nvim_comment").setup()
+M = {}
+
+M.setup = function()
+	require("nvim_comment").setup()
+end
+
+return M

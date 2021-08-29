@@ -10,18 +10,46 @@ return require("packer").startup(function()
 		requires = { { "nvim-lua/plenary.nvim" }, { "neovim/nvim-lspconfig" } },
 	})
 
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("nv-treesitter").setup()
+		end,
+		run = ":TSUpdate",
+	})
 
-	use("hrsh7th/vim-vsnip")
-	use("rafamadriz/friendly-snippets")
+	use({ "hrsh7th/vim-vsnip", event = "InsertEnter" })
+	use({ "rafamadriz/friendly-snippets", event = "InsertCharPre" })
 
-	use({ "shadmansaleh/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+	use({
+		"shadmansaleh/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		config = function()
+			require("nv-lualine").setup()
+		end,
+	})
 	use("romgrk/barbar.nvim")
-	use("kyazdani42/nvim-tree.lua")
+	use({
+		"kyazdani42/nvim-tree.lua",
+		config = function()
+			require("nv-tree").setup()
+		end,
+	})
 
 	use("tpope/vim-surround")
-	use("windwp/nvim-autopairs")
-	use({ "p00f/nvim-ts-rainbow", requires = { "nvim-treesitter/nvim-treesitter" } })
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nv-autopairs").setup()
+		end,
+	})
+	use({
+		"p00f/nvim-ts-rainbow",
+		requires = { "nvim-treesitter/nvim-treesitter" },
+		config = function()
+			require("nv-ts-rainbow").setup()
+		end,
+	})
 
 	use("morhetz/gruvbox")
 
@@ -38,18 +66,38 @@ return require("packer").startup(function()
 
 	use("kyazdani42/nvim-web-devicons")
 
-	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
+	use({
+		"lewis6991/gitsigns.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("nv-gitsigns").setup()
+		end,
+	})
 
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+		config = function()
+			require("nv-telescope").setup()
+		end,
 	})
 
-	use("mfussenegger/nvim-dap")
+	use({
+		"mfussenegger/nvim-dap",
+		config = function()
+			require("nv-dap").setup()
+		end,
+	})
 
 	use({ "lukas-reineke/indent-blankline.nvim" })
 
-	use("terrortylor/nvim-comment")
+	use({
+		"terrortylor/nvim-comment",
+		event = "BufRead",
+		config = function()
+			require("nv-comment").setup()
+		end,
+	})
 
 	use({
 		"weirongxu/plantuml-previewer.vim",
@@ -58,6 +106,7 @@ return require("packer").startup(function()
 
 	use({
 		"ellisonleao/glow.nvim",
+		ft = { "markdown" },
 		run = function()
 			require("glow").download_glow()
 		end,
