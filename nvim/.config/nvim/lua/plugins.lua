@@ -101,6 +101,7 @@ return require("packer").startup(function()
 
 	use({
 		"weirongxu/plantuml-previewer.vim",
+		ft = { "plantuml" },
 		requires = { "tyru/open-browser.vim" },
 	})
 
