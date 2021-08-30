@@ -111,4 +111,12 @@ return require("packer").startup(function()
 			require("glow").download_glow()
 		end,
 	})
+
+	use({
+		"akinsho/toggleterm.nvim",
+		event = "BufWinEnter",
+		config = function()
+			require("nv-toggleterm").setup()
+		end,
+	})
 end)
