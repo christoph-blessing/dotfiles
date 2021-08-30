@@ -5,12 +5,12 @@ nvim_create_augroups({
 		{
 			"FileType",
 			"python",
-			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<cr>:exec '!python' shellescape(@%, 1)<cr>\", {})",
+			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<CR>:TermExec cmd='python %'<CR>\", {})",
 		},
 		{
 			"FileType",
 			"python",
-			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>tu', \":w<cr>:exec '!pytest tests/unit'<cr>\", {})",
+			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>t', \":w<CR>:TermExec cmd='pytest tests/unit'<CR>\", {})",
 		},
 		{
 			"FileType",
@@ -69,12 +69,12 @@ nvim_create_augroups({
 		{
 			"FileType",
 			"rust",
-			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<CR>:exec '!cargo run'<CR>\", {})",
+			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<CR>:TermExec cmd='cargo run'<CR>\", {})",
 		},
 		{
 			"FileType",
 			"rust",
-			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>t', \":w<CR>:exec '!cargo test'<CR>\", {})",
+			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>t', \":w<CR>:TermExec cmd='cargo test'<CR>\", {})",
 		},
 	},
 	markdown = {
