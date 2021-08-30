@@ -7,11 +7,11 @@ M.setup = function()
 			theme = "auto",
 			component_separators = { "", "" },
 			section_separators = { "", "" },
-			disabled_filetypes = {},
+			disabled_filetypes = { "toggleterm", "NvimTree" },
 		},
 		sections = {
 			lualine_a = { "mode" },
-			lualine_b = { "branch", "diff", { "diagnostics", sources = { "nvim_lsp", "coc", "ale" } } },
+			lualine_b = { "branch", "diff", { "diagnostics", sources = { "nvim_lsp" } } },
 			lualine_c = { "filename" },
 			lualine_x = { "encoding", "fileformat", "filetype" },
 			lualine_y = { "progress" },
