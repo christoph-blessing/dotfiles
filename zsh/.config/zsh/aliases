@@ -1,5 +1,5 @@
-alias ls="ls --color"
-alias ll='ls -la'
+alias ls=exa
+alias ll="ls -la"
 
 alias mbsync="mbsync --config ~/.config/mbsync/mbsyncrc"
 
