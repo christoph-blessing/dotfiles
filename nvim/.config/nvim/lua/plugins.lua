@@ -120,4 +120,12 @@ return require("packer").startup(function()
 			require("nv-toggleterm").setup()
 		end,
 	})
+
+	use({
+		"folke/which-key.nvim",
+		event = "BufWinEnter",
+		config = function()
+			require("nv-which-key").setup()
+		end,
+	})
 end)
