@@ -127,12 +127,12 @@ super + {Left,Down,Up,Right}
 
 # raise volume
 XF86AudioRaiseVolume
-        changeVolume 5%+
+        changeVolume up
 
 # lower volume
 XF86AudioLowerVolume
-        changeVolume 5%-
+        changeVolume down
 
 # mute/unmute
 XF86AudioMute
-        changeVolume toggle
+        changeVolume mute
