@@ -123,7 +123,7 @@ return require("packer").startup(function()
 
 	use({
 		"folke/which-key.nvim",
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
 		config = function()
 			require("nv-which-key").setup()
 		end,

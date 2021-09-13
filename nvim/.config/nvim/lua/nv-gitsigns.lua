@@ -1,7 +1,7 @@
 M = {}
 
 M.setup = function()
-	require("gitsigns").setup()
+	require("gitsigns").setup({ keymaps = {} })
 end
 
 return M

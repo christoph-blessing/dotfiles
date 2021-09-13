@@ -3,14 +3,9 @@ require("utils")
 nvim_create_augroups({
 	python = {
 		{
-			"FileType",
-			"python",
-			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<CR>:TermExec cmd='python %'<CR>\", {})",
-		},
-		{
-			"FileType",
-			"python",
-			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>t', \":w<CR>:TermExec cmd='pytest tests/unit'<CR>\", {})",
+			"BufEnter",
+			"*.py",
+			"lua require('nv-which-key.python').setup()",
 		},
 		{
 			"FileType",
