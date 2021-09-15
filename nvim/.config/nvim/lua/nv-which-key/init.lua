@@ -66,6 +66,25 @@ M.setup = function()
 			S = { "<cmd>lua require('gitsigns').stage_buffer()<cr>", "Stage Buffer" },
 			U = { "<cmd>lua require('gitsigns').reset_buffer_index()<cr>", "Reset Buffer Index" },
 		},
+
+		d = {
+			name = "Debug",
+			c = { "<cmd>lua require('dap').continue()<cr>", "Continue" },
+			n = { "<cmd>lua require('dap').step_over()<cr>", "Step Over" },
+			i = { "<cmd>lua require('dap').step_into()<cr>", "Step Into" },
+			o = { "<cmd>lua require('dap').step_out()<cr>", "Step Out" },
+			b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+			B = {
+				"<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+				"Set Condition Breakpoint",
+			},
+			p = {
+				"<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>",
+				"Set Log Point Breakpoint",
+			},
+			r = { "<cmd>lua require('dap').repl.open()<cr>", "Open REPL" },
+			l = { "<cmd>lua require('dap').repl.run_last()<cr>", "Run Last" },
+		},
 	}
 
 	local opts = { prefix = "<leader>" }
