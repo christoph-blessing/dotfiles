@@ -18,6 +18,15 @@ return require("packer").startup(function()
 		run = ":TSUpdate",
 	})
 
+	use({
+		"nvim-treesitter/playground",
+		config = function()
+			require("nv-treesitter-playground").setup()
+		end,
+        run = ":TSInstall query",
+        after = "nvim-treesitter"
+	})
+
 	use({ "hrsh7th/vim-vsnip", event = "InsertEnter" })
 	use({ "rafamadriz/friendly-snippets", event = "InsertCharPre" })
 
