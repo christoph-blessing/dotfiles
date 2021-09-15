@@ -4,6 +4,14 @@ M.setup = function()
 	require("toggleterm").setup({
 		open_mapping = [[<C-\>]],
 		hide_numbers = true,
+		size = function(term)
+			if term.direction == "horizontal" then
+				return 20
+			elseif term.direction == "vertical" then
+				return vim.o.columns * 0.5
+			end
+		end,
+		direction = "vertical",
 	})
 
 	vim.cmd("autocmd! TermOpen term://* lua require('nv-toggleterm').set_terminal_keymaps()")
