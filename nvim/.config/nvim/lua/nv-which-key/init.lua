@@ -85,6 +85,12 @@ M.setup = function()
 			r = { "<cmd>lua require('dap').repl.open()<cr>", "Open REPL" },
 			l = { "<cmd>lua require('dap').repl.run_last()<cr>", "Run Last" },
 		},
+
+		e = {
+			name = "Execute",
+			a = { "<cmd>TermExec cmd='!!'<cr>", "Run Last Command Again" },
+			c = { "<cmd>TermExec cmd='clear'<cr>", "Clear Terminal" },
+		},
 	}
 
 	local opts = { prefix = "<leader>" }
