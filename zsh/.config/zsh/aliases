@@ -1,6 +1,8 @@
 alias ls=exa
 alias ll="ls -la"
 
+alias cat="bat"
+
 alias mbsync="mbsync --config ~/.config/mbsync/mbsyncrc"
 
 alias vim="nvim"
@@ -30,3 +32,5 @@ alias gm="git merge"
 alias gb="git branch"
 alias gch="git checkout"
 alias grb="git rebase"
+
+alias cdv="cd ~/dotfiles/nvim/.config/nvim"
