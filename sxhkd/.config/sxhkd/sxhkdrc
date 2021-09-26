@@ -136,3 +136,11 @@ XF86AudioLowerVolume
 # mute/unmute
 XF86AudioMute
         changeVolume mute
+
+#
+# other
+#
+
+# search web
+alt + g
+    ~/scripts/search.sh
