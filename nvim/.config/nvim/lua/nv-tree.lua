@@ -9,6 +9,10 @@ M.setup = function()
 
 	vim.api.nvim_set_keymap("n", "<C-n>", "<CMD>NvimTreeToggle<CR>", { noremap = true, silent = true })
 
+	require("nvim-tree").setup({
+		auto_close = true,
+	})
+
 	local tree_view = require("nvim-tree.view")
 
 	local open = tree_view.open
