@@ -26,8 +26,13 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export PYLINTHOME="$XDG_CACHE_HOME"/pylint
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+[[ ":$PATH:" != *":${CARGO_HOME}/bin:"* ]] && PATH="${CARGO_HOME}/bin:${PATH}"
 
 ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 eval $(dircolors)
 . "/home/chris/.local/share/cargo/env"
+
+GPG_TTY=$(tty)
+export GPG_TTY
