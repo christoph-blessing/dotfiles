@@ -144,3 +144,7 @@ XF86AudioMute
 # search web
 alt + g
     ~/scripts/search.sh
+
+# lock screen
+alt + l
+    slock
