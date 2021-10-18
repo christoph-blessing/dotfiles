@@ -23,8 +23,8 @@ return require("packer").startup(function()
 		config = function()
 			require("nv-treesitter-playground").setup()
 		end,
-        run = ":TSInstall query",
-        after = "nvim-treesitter"
+		run = ":TSInstall query",
+		after = "nvim-treesitter",
 	})
 
 	use({ "hrsh7th/vim-vsnip", event = "InsertEnter" })
@@ -101,7 +101,7 @@ return require("packer").startup(function()
 	use({ "lukas-reineke/indent-blankline.nvim" })
 
 	use({
-		"terrortylor/nvim-comment",
+		"numToStr/Comment.nvim",
 		event = "BufRead",
 		config = function()
 			require("nv-comment").setup()
