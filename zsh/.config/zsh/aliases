@@ -1,6 +1,8 @@
 alias sudo=doas
 
-alias ls=exa
+if type "$exa" > /dev/null; then
+    alias ls=exa
+fi
 alias ll="ls -la"
 
 alias cat="bat"
