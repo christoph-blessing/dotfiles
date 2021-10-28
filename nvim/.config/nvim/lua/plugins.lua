@@ -31,7 +31,7 @@ return require("packer").startup(function()
 	use({ "rafamadriz/friendly-snippets", event = "InsertCharPre" })
 
 	use({
-		"shadmansaleh/lualine.nvim",
+		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		config = function()
 			require("nv-lualine").setup()
