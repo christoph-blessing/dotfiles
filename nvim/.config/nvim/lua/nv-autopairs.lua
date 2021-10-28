@@ -9,4 +9,4 @@ M.setup = function()
 	npairs.add_rule(Rule("|", "|", "rust"))
 end
 
-return M({})
+return M

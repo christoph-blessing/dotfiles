@@ -1,15 +1,21 @@
-alias sudo=doas
+if type doas > /dev/null; then
+    alias sudo=doas
+fi
 
-if type "$exa" > /dev/null; then
+if type exa > /dev/null; then
     alias ls=exa
 fi
 alias ll="ls -la"
 
-alias cat="bat"
+if type bat > /dev/null; then
+    alias cat="bat"
+fi
 
 alias mbsync="mbsync --config ~/.config/mbsync/mbsyncrc"
 
-alias vim="nvim"
+if type nvim > /dev/null; then
+    alias vim="nvim"
+fi
 
 alias mutt="neomutt"
 
