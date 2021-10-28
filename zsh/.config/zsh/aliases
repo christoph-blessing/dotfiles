@@ -1,21 +1,19 @@
-if type doas > /dev/null; then
-    alias sudo=doas
-fi
+function alias_if_exists {
+    if type $2 > /dev/null; then
+        alias $1=$2
+    fi
+    }
 
-if type exa > /dev/null; then
-    alias ls=exa
-fi
+alias_if_exists sudo doas
+
+alias_if_exists ls exa
 alias ll="ls -la"
 
-if type bat > /dev/null; then
-    alias cat="bat"
-fi
+alias_if_exists cat bat
 
 alias mbsync="mbsync --config ~/.config/mbsync/mbsyncrc"
 
-if type nvim > /dev/null; then
-    alias vim="nvim"
-fi
+alias_if_exists vim nvim
 
 alias mutt="neomutt"
 
