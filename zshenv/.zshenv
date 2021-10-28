@@ -40,3 +40,8 @@ fi
 
 GPG_TTY=$(tty)
 export GPG_TTY
+
+infocmp tmux-256color &> /dev/null
+if [ $? -eq 1 ]; then
+    export TERM=xterm-256color
+fi
