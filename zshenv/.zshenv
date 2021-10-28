@@ -32,7 +32,11 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo
 
 ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 eval $(dircolors)
-. "/home/chris/.local/share/cargo/env"
+
+cargo_env='/home/chris/.local/share/cargo/env'
+if [ -f "$cargo_env" ]; then
+    . "$cargo_env"
+fi
 
 GPG_TTY=$(tty)
 export GPG_TTY
