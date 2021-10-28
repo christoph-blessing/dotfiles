@@ -6,13 +6,7 @@ M.setup = function()
 
 	npairs.setup()
 
-	require("nvim-autopairs.completion.cmp").setup({
-		map_cr = true, --  map <CR> on insert mode
-		map_complete = true, -- it will auto insert `(` after select function or method item
-		auto_select = true, -- auto select first item
-	})
-
 	npairs.add_rule(Rule("|", "|", "rust"))
 end
 
-return M
+return M({})
