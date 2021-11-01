@@ -3,9 +3,6 @@
 export EDITOR=nvim
 export PYTHONPATH="$HOME/.local/pipx/venvs/pdm/lib/python3.9/site-packages/pdm/pep582:$PYTHONPATH"
 
-export GOPATH="$HOME/go"
-[[ ":$PATH:" != *":${GOPATH}/bin:"* ]] && PATH="${GOPATH}/bin:${PATH}"
-
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND='fd'
 export FZF_ALT_C_COMMAND='fd --type d'
@@ -26,6 +23,9 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export PYLINTHOME="$XDG_CACHE_HOME"/pylint
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+
+export GOPATH="$XDG_DATA_HOME/go"
+[[ ":$PATH:" != *":${GOPATH}/bin:"* ]] && PATH="${GOPATH}/bin:${PATH}"
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 [[ ":$PATH:" != *":${CARGO_HOME}/bin:"* ]] && PATH="${CARGO_HOME}/bin:${PATH}"
