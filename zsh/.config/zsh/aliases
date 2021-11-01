@@ -41,4 +41,4 @@ alias gb="git branch"
 alias gch="git checkout"
 alias grb="git rebase"
 
-alias cdv="cd ~/dotfiles/nvim/.config/nvim"
+alias cdd="cd $XDG_DATA_HOME/ownCloud/dotfiles/"
