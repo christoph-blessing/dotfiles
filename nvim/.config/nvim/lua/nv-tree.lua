@@ -1,7 +1,6 @@
 local M = {}
 
 M.setup = function()
-	vim.g.nvim_tree_hide_dotfiles = 1
 	vim.g.nvim_tree_quit_on_open = 1
 	vim.g.nvim_tree_indent_markers = 1
 	vim.g.nvim_tree_width = 30
@@ -10,6 +9,9 @@ M.setup = function()
 
 	require("nvim-tree").setup({
 		auto_close = true,
+		filters = {
+			dotfiles = true,
+		},
 	})
 
 	local tree_view = require("nvim-tree.view")
