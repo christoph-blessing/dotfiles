@@ -141,9 +141,9 @@ XF86AudioMute
 # other
 #
 
-# search web
+# search web using Google
 alt + g
-    ~/scripts/search.sh
+    ~/scripts/search_google.sh
 
 # lock screen
 alt + l
