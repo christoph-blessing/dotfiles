@@ -40,5 +40,6 @@ alias gm="git merge"
 alias gb="git branch"
 alias gch="git checkout"
 alias grb="git rebase"
+alias gst="git stash"
 
 alias cdd="cd $XDG_DATA_HOME/ownCloud/dotfiles/"
