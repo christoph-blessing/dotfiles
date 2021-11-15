@@ -43,3 +43,5 @@ alias grb="git rebase"
 alias gst="git stash"
 
 alias cdd="cd $XDG_DATA_HOME/ownCloud/dotfiles/"
+
+alias dc="docker-compose"
