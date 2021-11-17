@@ -23,10 +23,9 @@ M.run_test_under_cursor = function()
 		local node_type = node:type()
 		if node_type == "function_definition" or node_type == "class_definition" then
 			local ident = ts_utils.get_node_text(node:named_child(0))[1]
-			if not starts_with(ident, "test") then
-				break
+			if starts_with(ident, "test") then
+				table.insert(parts, ident)
 			end
-			table.insert(parts, ident)
 		end
 		node = node:parent()
 	end
