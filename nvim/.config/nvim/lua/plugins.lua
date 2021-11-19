@@ -137,4 +137,11 @@ return require("packer").startup(function()
 			require("nv-which-key").setup()
 		end,
 	})
+
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("nv-colorizer").setup()
+		end,
+	})
 end)
