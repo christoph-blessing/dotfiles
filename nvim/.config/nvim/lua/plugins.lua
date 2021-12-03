@@ -144,4 +144,11 @@ return require("packer").startup(function()
 			require("nv-colorizer").setup()
 		end,
 	})
+
+	use({
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project").setup()
+		end,
+	})
 end)

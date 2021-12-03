@@ -53,6 +53,10 @@ M.setup = function()
 				"<cmd>lua require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy({}))<cr>",
 				"Find References",
 			},
+			p = {
+				"<cmd>lua require('telescope').extensions.projects.projects(require('telescope.themes').get_ivy({}))<cr>",
+				"Find Projects",
+			},
 		},
 
 		g = {
