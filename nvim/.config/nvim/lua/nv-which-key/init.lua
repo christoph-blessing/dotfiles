@@ -29,6 +29,7 @@ M.setup = function()
 				"<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics(require('telescope.themes').get_ivy({}))<cr>",
 				"Show Workspace Diagnostics",
 			},
+			t = { "<cmd>lua require('diagnostics').toggle_buffer_diagnostics(0)<cr>", "Toggle Buffer Diagnostics" },
 		},
 
 		f = {
