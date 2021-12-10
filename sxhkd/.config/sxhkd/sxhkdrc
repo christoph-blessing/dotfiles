@@ -152,3 +152,6 @@ alt + l
 # copy oath code to clipboard
 alt + o
     ~/scripts/oath_code.sh
+
+alt + {r,p}
+    systemctl {reboot,poweroff}
