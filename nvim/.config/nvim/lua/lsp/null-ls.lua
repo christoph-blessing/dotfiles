@@ -19,6 +19,7 @@ local sources = {
 	null_ls.builtins.formatting.isort,
 	null_ls.builtins.formatting.rustfmt,
 	null_ls.builtins.formatting.stylua,
+	null_ls.builtins.diagnostics.shellcheck,
 }
 
 local mypy = {
