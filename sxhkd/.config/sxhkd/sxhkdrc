@@ -147,7 +147,7 @@ alt + g
 
 # lock screen
 alt + l
-    slock
+    ~/scripts/lock.sh
 
 # copy oath code to clipboard
 alt + o
