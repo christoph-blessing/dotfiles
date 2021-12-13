@@ -92,8 +92,6 @@ local pylint = {
 }
 table.insert(sources, pylint)
 
-null_ls.config({ sources = sources })
-
 local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true }
 	if client.resolved_capabilities.document_formatting then
@@ -104,4 +102,4 @@ local on_attach = function(client, bufnr)
 	end
 end
 
-require("lspconfig")["null-ls"].setup({ on_attach = on_attach })
+null_ls.setup({ sources = sources, on_attach = on_attach })
