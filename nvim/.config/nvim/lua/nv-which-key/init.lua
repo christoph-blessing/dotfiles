@@ -20,7 +20,7 @@ M.setup = function()
 			i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Show Implementations" },
 			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 			q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-			e = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", "Show Line Diagnostics" },
+			e = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Show Line Diagnostics" },
 			d = {
 				"<cmd>lua require('telescope.builtin').lsp_document_diagnostics(require('telescope.themes').get_ivy({}))<cr>",
 				"Show Document Diagnostics",
