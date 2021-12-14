@@ -20,6 +20,7 @@ local sources = {
 	null_ls.builtins.formatting.rustfmt,
 	null_ls.builtins.formatting.stylua,
 	null_ls.builtins.diagnostics.shellcheck,
+	null_ls.builtins.diagnostics.flake8,
 }
 
 local mypy = {
@@ -48,32 +49,6 @@ local mypy = {
 	}),
 }
 table.insert(sources, mypy)
-
-local flake8 = {
-	method = null_ls.methods.DIAGNOSTICS,
-	filetypes = { "python" },
-	generator = helpers.generator_factory({
-		command = "flake8",
-		to_stdin = true,
-		from_stderr = true,
-		args = { "--stdin-display-name", "$FILENAME", "-" },
-		format = "line",
-		check_exit_code = function(code)
-			return code == 0 or code == 255
-		end,
-		on_output = function(line, params)
-			local severities = { E = 1, D = 1, W = 2, F = 3 }
-			return find_entries(line, [[:(%d+):(%d+): (([EDFW])%w+) (.*)]], {
-				"row",
-				"col",
-				"code",
-				"severity",
-				"message",
-			}, severities)
-		end,
-	}),
-}
-table.insert(sources, flake8)
 
 local pylint = {
 	method = null_ls.methods.DIAGNOSTICS,
