@@ -15,7 +15,19 @@ local find_entries = function(line, pattern, groups, severities)
 end
 
 local sources = {
-	null_ls.builtins.formatting.black,
+	null_ls.builtins.formatting.black.with({
+		condition = function(utils)
+			if not utils.root_has_file("pyproject.toml") then
+				return false
+			end
+			local pipe = io.open("pyproject.toml")
+			for line in pipe:lines() do
+				if line == "[tool.black]" then
+					return true
+				end
+			end
+		end,
+	}),
 	null_ls.builtins.formatting.isort,
 	null_ls.builtins.formatting.rustfmt,
 	null_ls.builtins.formatting.stylua,
