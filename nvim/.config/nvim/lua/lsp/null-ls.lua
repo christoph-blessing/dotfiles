@@ -41,6 +41,7 @@ local sources = {
 
 local mypy = {
 	method = null_ls.methods.DIAGNOSTICS,
+	name = "mypy",
 	filetypes = { "python" },
 	generator = helpers.generator_factory({
 		command = "/home/chris/.config/nvim/scripts/mypy.sh",
@@ -68,6 +69,7 @@ table.insert(sources, mypy)
 
 local pylint = {
 	method = null_ls.methods.DIAGNOSTICS,
+	name = "pylint",
 	filetypes = { "python" },
 	generator = helpers.generator_factory({
 		command = "/home/chris/.config/nvim/scripts/pylint.sh",
