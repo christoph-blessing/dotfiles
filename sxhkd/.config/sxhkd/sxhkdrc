@@ -155,3 +155,6 @@ alt + o
 
 alt + {r,p}
     systemctl {reboot,poweroff}
+
+alt + n
+    dunstctl set-paused toggle
