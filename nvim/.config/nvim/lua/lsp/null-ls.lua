@@ -28,6 +28,15 @@ local create_condition = function(name)
 	end
 end
 
+local create_conditional_source = function(source, name)
+	return function()
+		local condition = create_condition(name)
+		if condition(require("null-ls.utils").make_conditional_utils()) then
+			return source
+		end
+	end
+end
+
 local sources = {
 	null_ls.builtins.formatting.black.with({
 		condition = create_condition("black"),
@@ -71,7 +80,7 @@ local mypy = {
 		end,
 	}),
 }
-table.insert(sources, mypy)
+table.insert(sources, create_conditional_source(mypy, "mypy"))
 
 local pylint = {
 	method = null_ls.methods.DIAGNOSTICS,
@@ -89,7 +98,7 @@ local pylint = {
 		end,
 	}),
 }
-table.insert(sources, pylint)
+table.insert(sources, create_conditional_source(pylint, "pylint.master"))
 
 local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true }
