@@ -153,8 +153,8 @@ alt + l
 alt + o
     ~/scripts/oath_code.sh
 
-alt + {r,p}
-    systemctl {reboot,poweroff}
+alt + {r,p,s}
+    systemctl {reboot,poweroff,suspend}
 
 alt + n
     dunstctl set-paused toggle
