@@ -13,3 +13,20 @@
 	defaultBranch = main
 [commit]
 	gpgSign = true
+[alias]
+    s = status -s
+    sh = show
+    l = log --decorate --graph --oneline
+    a = add
+    c = commit
+    d = diff
+    r = reset
+    t = tag
+    rs = restore
+    ps = push
+    pl = pull
+    m = merge
+    b = branch
+    ch = checkout
+    rb = rebase
+    st = stash
