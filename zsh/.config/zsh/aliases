@@ -27,23 +27,6 @@ alias gpg2="gpg2 --homedir $XDG_DATA_HOME/gnupg"
 
 alias xbindkeys="xbindkeys -f $XDG_CONFIG_HOME/xbindkeys/config"
 
-alias gs="git status"
-alias gsh="git show"
-alias gl="git log"
-alias ga="git add"
-alias gc="git commit"
-alias gd="git diff"
-alias gr="git reset"
-alias gt="git tag"
-alias grs="git restore"
-alias gps="git push"
-alias gpl="git pull"
-alias gm="git merge"
-alias gb="git branch"
-alias gch="git checkout"
-alias grb="git rebase"
-alias gst="git stash"
-
 alias cdd="cd $XDG_DATA_HOME/dotfiles/"
 alias cds="cd $XDG_DATA_HOME/scripts/"
 
