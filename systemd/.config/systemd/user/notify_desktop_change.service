@@ -1,0 +1,8 @@
+[Unit]
+Description=Send notification on desktop change.
+
+[Service]
+ExecStart=/home/chris/scripts/notify_desktop_change.sh
+
+[Install]
+WantedBy=multi-user.target

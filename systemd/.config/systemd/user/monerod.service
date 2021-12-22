@@ -1,0 +1,11 @@
+[Unit]
+Description=Monero Full Node
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/monerod --config-file /home/chris/.config/monerod/monerod.conf --non-interactive
+Restart=always
+
+[Install]
+WantedBy=default.target

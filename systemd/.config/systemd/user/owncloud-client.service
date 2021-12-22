@@ -1,0 +1,12 @@
+[Unit]
+Description=Owncloud client
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/owncloud
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
