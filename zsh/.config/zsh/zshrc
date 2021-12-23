@@ -19,6 +19,10 @@ zstyle ':completion:*' menu select
 autoload -Uz compinit
 compinit
 
+# Use shift+tab for going backward in completion menu
+zmodload -i zsh/complist
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
 source $ZDOTDIR/aliases
 source $ZDOTDIR/prompt
 source $ZDOTDIR/vim-mode
@@ -70,3 +74,4 @@ precmd() augment_path
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ]; then
   [ -z "${TMUX}" ] && (tmux attach || tmux) >/dev/null 2>&1
 fi
+
