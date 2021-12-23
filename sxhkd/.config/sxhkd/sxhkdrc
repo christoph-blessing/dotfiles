@@ -127,15 +127,15 @@ super + {Left,Down,Up,Right}
 
 # raise volume
 XF86AudioRaiseVolume
-        changeVolume up
+        ~/scripts/change_volume.sh up
 
 # lower volume
 XF86AudioLowerVolume
-        changeVolume down
+        ~/scripts/change_volume.sh down
 
 # mute/unmute
 XF86AudioMute
-        changeVolume mute
+        ~/scripts/change_volume.sh mute
 
 #
 # other
