@@ -137,6 +137,24 @@ XF86AudioLowerVolume
 XF86AudioMute
         ~/scripts/change_volume.sh mute
 
+
+#
+# spotify-tui control
+#
+
+XF86AudioPause
+        spt playback --toggle
+
+XF86AudioPlay
+        spt playback --toggle
+
+XF86AudioNext
+        spt playback --next
+
+XF86AudioPrev
+        spt playback --previous
+
+
 #
 # other
 #
