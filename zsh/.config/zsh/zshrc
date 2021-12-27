@@ -1,13 +1,5 @@
 fpath=( $ZDOTDIR/zfunc "${fpath[@]}" )
 
-source $ZDOTDIR/hist.zsh
-source $ZDOTDIR/aliases.zsh
-source $ZDOTDIR/prompt.zsh
-source $ZDOTDIR/vim-mode.zsh
-source $ZDOTDIR/fzf.zsh
-source $ZDOTDIR/tmux.zsh
-source $ZDOTDIR/augment_path.zsh
-source $ZDOTDIR/ssh.zsh
-source $ZDOTDIR/startx.zsh
-source $ZDOTDIR/comp.zsh
-
+for file in $(ls -1 "$ZDOTDIR"/zsh.d/); do
+    source "$ZDOTDIR/zsh.d/$file"
+done
