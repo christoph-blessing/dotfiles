@@ -1,6 +1,8 @@
 nvim/.config/nvim/plugin
 nvim/.config/nvim/.netrwhist
-.zcompdump
-urls
+
 systemd/.config/systemd/user/*.wants/
 systemd/.config/systemd/user/*.socket
+
+zsh/.config/zsh/.chpwd-recent-dirs
+zsh/.config/zsh/.zcompdump
