@@ -23,10 +23,11 @@ compinit
 zmodload -i zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
-source $ZDOTDIR/aliases
-source $ZDOTDIR/prompt
-source $ZDOTDIR/vim-mode
-source $ZDOTDIR/fzf
+source $ZDOTDIR/aliases.zsh
+source $ZDOTDIR/prompt.zsh
+source $ZDOTDIR/vim-mode.zsh
+source $ZDOTDIR/fzf.zsh
+source $ZDOTDIR/tmux.zsh
 
 # Run startx on login
 if [[ -z "${DISPLAY}" && "${XDG_VTNR}" -eq 1 ]]; then
