@@ -1,4 +1,4 @@
-fpath=( ~/.zfunc "${fpath[@]}" )
+fpath=( $ZDOTDIR/zfunc "${fpath[@]}" )
 
 source $ZDOTDIR/hist.zsh
 source $ZDOTDIR/aliases.zsh
