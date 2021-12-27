@@ -1,16 +1,4 @@
-zstyle :compinstall filename '/home/chris/.zshrc'
-
-zstyle ":completion:*:(ssh|rsync|scp):*" hosts $hosts
-
 fpath=( ~/.zfunc "${fpath[@]}" )
-
-zstyle ':completion:*' menu select
-autoload -Uz compinit
-compinit
-
-# Use shift+tab for going backward in completion menu
-zmodload -i zsh/complist
-bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 source $ZDOTDIR/hist.zsh
 source $ZDOTDIR/aliases.zsh
@@ -21,7 +9,5 @@ source $ZDOTDIR/tmux.zsh
 source $ZDOTDIR/augment_path.zsh
 source $ZDOTDIR/ssh.zsh
 source $ZDOTDIR/startx.zsh
-
-autoload bashcompinit && bashcompinit
-complete -C '/usr/bin/aws_completer' aws
+source $ZDOTDIR/comp.zsh
 
