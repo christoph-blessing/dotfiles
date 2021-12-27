@@ -1,3 +1,5 @@
+bindkey -v
+
 # Fix for not being able to use backspace after switching to insert mode
 bindkey "^?" backward-delete-char
 
