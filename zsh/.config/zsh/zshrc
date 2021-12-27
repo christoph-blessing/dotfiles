@@ -29,21 +29,13 @@ source $ZDOTDIR/vim-mode.zsh
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/tmux.zsh
 source $ZDOTDIR/augment_path.zsh
+source $ZDOTDIR/ssh.zsh
 
 # Run startx on login
 if [[ -z "${DISPLAY}" && "${XDG_VTNR}" -eq 1 ]]; then
     exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
 fi
 
-# SSH agent
-if ! [ -z "${XDG_RUNTIME_DIR}" ]; then
-    if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-        ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-    fi
-    if (( ! ${+SSH_AUTH_SOCK} )); then
-        source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-    fi
-fi
 
 autoload bashcompinit && bashcompinit
 complete -C '/usr/bin/aws_completer' aws
