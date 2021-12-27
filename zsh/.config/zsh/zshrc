@@ -22,12 +22,7 @@ source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/tmux.zsh
 source $ZDOTDIR/augment_path.zsh
 source $ZDOTDIR/ssh.zsh
-
-# Run startx on login
-if [[ -z "${DISPLAY}" && "${XDG_VTNR}" -eq 1 ]]; then
-    exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
-fi
-
+source $ZDOTDIR/startx.zsh
 
 autoload bashcompinit && bashcompinit
 complete -C '/usr/bin/aws_completer' aws
