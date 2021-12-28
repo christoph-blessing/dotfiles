@@ -1,6 +1,7 @@
 #! /bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x redshift > /dev/null || redshift &
 pgrep -x xss-lock > /dev/null || xss-lock ~/scripts/lock.sh &
 pgrep -xf '/bin/sh ~/scripts/notify_desktop_change.sh' > /dev/null || /bin/sh ~/scripts/notify_desktop_change.sh &
 
