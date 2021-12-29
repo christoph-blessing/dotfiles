@@ -4,7 +4,6 @@ Description=Sync mail.
 [Service]
 Type=oneshot
 ExecStart=/home/chris/scripts/sync_mail.sh
-Environment="XDG_DATA_HOME=/home/chris/.local/share/"
 
 [Install]
 WantedBy=default.target

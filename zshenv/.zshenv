@@ -45,3 +45,9 @@ infocmp tmux-256color &> /dev/null
 if [ $? -eq 1 ]; then
     export TERM=xterm-256color
 fi
+
+systemctl --user import-environment \
+    XDG_DATA_HOME \
+    XDG_CONFIG_HOME \
+    XDG_CACHE_HOME \
+    GNUPGHOME
