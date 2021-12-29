@@ -143,10 +143,10 @@ XF86AudioMute
 #
 
 XF86AudioPause
-        spt playback --toggle
+        [ $(spt playback --format '%s') = '▶' ] && spt playback --toggle
 
 XF86AudioPlay
-        spt playback --toggle
+        [ $(spt playback --format '%s') = '⏸' ] && spt playback --toggle
 
 XF86AudioNext
         spt playback --next
