@@ -176,3 +176,6 @@ alt + {r,p,s}
 
 alt + n
     dunstctl set-paused toggle
+
+alt + k
+    ~/scripts/change_layout.sh
