@@ -12,26 +12,26 @@ nvim_create_augroups({
 		{
 			"FileType",
 			"plantuml",
-			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":silent w !plantuml -p | ~/.config/nvim/scripts/sxiv.sh<cr>\", {silent = true})",
+			"lua vim.api.nvim_buf_set_keymap(0, 'n', '<leader>r', \":silent w !plantuml -p | ~/.config/nvim/scripts/sxiv.sh<cr>\", {silent = true})",
 		},
 	},
 	rust = {
 		{
 			"FileType",
 			"rust",
-			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<CR>:TermExec cmd='cargo run'<CR>\", {})",
+			"lua vim.api.nvim_buf_set_keymap(0, 'n', '<leader>r', \":w<CR>:TermExec cmd='cargo run'<CR>\", {})",
 		},
 		{
 			"FileType",
 			"rust",
-			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>t', \":w<CR>:TermExec cmd='cargo test'<CR>\", {})",
+			"lua vim.api.nvim_buf_set_keymap(0, 'n', '<leader>t', \":w<CR>:TermExec cmd='cargo test'<CR>\", {})",
 		},
 	},
 	markdown = {
 		{
 			"FileType",
 			"markdown",
-			"lua vim.api.nvim_buf_set_keymap('0', 'n', '<leader>r', \":w<CR>:Glow<CR>\", {})",
+			"lua vim.api.nvim_buf_set_keymap(0, 'n', '<leader>r', \":w<CR>:Glow<CR>\", {})",
 		},
 	},
 	lua = {
