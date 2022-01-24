@@ -13,6 +13,7 @@
 	defaultBranch = main
 [commit]
 	gpgSign = true
+	template = /home/chris/.config/git/gitmessage
 [alias]
     s = status -s
     sh = show
