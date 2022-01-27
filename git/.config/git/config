@@ -17,6 +17,7 @@
 [alias]
     s = status -s
     sh = show
+    sw = switch
     l = log --decorate --graph --oneline
     a = add
     c = commit
