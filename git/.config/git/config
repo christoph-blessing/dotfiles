@@ -20,6 +20,7 @@
     c = commit
     ch = checkout
     d = diff
+    f = fetch
     l = log --decorate --graph --oneline
     m = merge
     pl = pull
