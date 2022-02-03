@@ -60,7 +60,7 @@ return require("packer").startup(function()
 		end,
 	})
 
-	use("morhetz/gruvbox")
+	use("ellisonleao/gruvbox.nvim")
 
 	use({
 		"hrsh7th/nvim-cmp",

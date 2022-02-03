@@ -1,3 +1,2 @@
-vim.g.gruvbox_contrast_dark = "soft"
-
+vim.o.background = "dark"
 vim.cmd("colorscheme gruvbox")
