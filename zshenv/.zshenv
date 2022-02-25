@@ -24,6 +24,7 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export PYLINTHOME="$XDG_CACHE_HOME"/pylint
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export MAILDIR="$XDG_DATA_HOME"/mail
+export SCRIPTDIR="$HOME"/scripts
 
 export GOPATH="$XDG_DATA_HOME/go"
 [[ ":$PATH:" != *":${GOPATH}/bin:"* ]] && PATH="${GOPATH}/bin:${PATH}"
