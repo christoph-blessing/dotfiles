@@ -12,7 +12,40 @@ local function reverse(list)
 	end
 end
 
+local function get_executable()
+	if vim.fn.filereadable("docker-compose.yml") then
+		local lines = vim.fn.readfile("docker-compose.yml")
+		for _, line in pairs(lines) do
+			if vim.trim(line) == "pytest:" then
+				return "docker-compose run --rm pytest"
+			end
+		end
+	end
+
+	if vim.fn.filereadable(".pdm.toml") then
+		return "pdm run pytest"
+	end
+
+	return "pytest"
+end
+
+local function run(args)
+	local command = get_executable()
+	if args ~= nil then
+		command = get_executable() .. " " .. args
+	end
+	require("toggleterm").exec(command)
+end
+
 local M = {}
+
+M.run_tests = function()
+	run()
+end
+
+M.run_tests_in_file = function()
+	run(vim.fn.expand("%"))
+end
 
 M.run_test_under_cursor = function()
 	local ts_utils = require("nvim-treesitter.ts_utils")
@@ -34,7 +67,7 @@ M.run_test_under_cursor = function()
 	local path = table.concat(parts, "::")
 
 	if path ~= "" then
-		require("toggleterm").exec("pytest " .. vim.fn.expand("%") .. "::" .. path)
+		run(vim.fn.expand("%") .. "::" .. path)
 	end
 end
 
