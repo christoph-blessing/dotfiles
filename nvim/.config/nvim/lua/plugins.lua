@@ -37,7 +37,13 @@ return require("packer").startup(function()
 			require("nv-lualine").setup()
 		end,
 	})
-	use("romgrk/barbar.nvim")
+	use({
+		"akinsho/bufferline.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("b-bufferline").setup()
+		end,
+	})
 	use({
 		"kyazdani42/nvim-tree.lua",
 		config = function()
