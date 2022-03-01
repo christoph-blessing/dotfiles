@@ -156,4 +156,10 @@ return require("packer").startup(function()
 			require("project").setup()
 		end,
 	})
+	use({
+		"rcarriga/nvim-notify",
+		config = function()
+			require("b-notify").setup()
+		end,
+	})
 end)
