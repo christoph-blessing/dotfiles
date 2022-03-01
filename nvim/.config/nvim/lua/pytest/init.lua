@@ -34,7 +34,9 @@ local function run(args)
 	if args ~= nil then
 		command = get_executable() .. " " .. args
 	end
-	require("toggleterm").exec(command)
+	local output = vim.fn.system(command)
+	local parsed = require("pytest.parse").parse(output)
+	require("pytest.display").display(parsed)
 end
 
 local M = {}
