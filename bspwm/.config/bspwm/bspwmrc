@@ -5,7 +5,7 @@ pgrep -x redshift > /dev/null || redshift &
 pgrep -x xss-lock > /dev/null || xss-lock ~/scripts/lock.sh &
 pgrep -xf '/bin/sh ~/scripts/notify_desktop_change.sh' > /dev/null || /bin/sh ~/scripts/notify_desktop_change.sh &
 
-bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor DP-0 -d I II III IV V VI VII VIII IX X
 
 BW=3
 bspc config border_width $BW
@@ -22,7 +22,13 @@ bspc config normal_border_color "#928374"
 bspc config focused_border_color "#b8bb26"
 bspc config presel_feedback_color "#b8bb26"
 
-if [ "$(cat /etc/hostname)" = 'archie-work' ]; then
+if [ "$1" -gt 0 ]; then
+    is_restart=true
+else
+    is_restart=false
+fi
+
+if [ "$(cat /etc/hostname)" = 'archie-work' ] && ! "$is_restart" ; then
     bspc node @^1:/ --insert-receptacle
     bspc node @^1:/ --presel-dir east --insert-receptacle
     bspc node @^DESKTOP:/ --insert-receptacle
