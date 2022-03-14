@@ -52,35 +52,10 @@ local sources = {
 			return utils.root_has_file(".flake8")
 		end,
 	}),
-}
-
-local mypy = {
-	method = null_ls.methods.DIAGNOSTICS,
-	name = "mypy",
-	filetypes = { "python" },
-	generator = helpers.generator_factory({
-		command = "/home/chris/.config/nvim/scripts/mypy.sh",
-		to_stdin = true,
-		args = { "$FILENAME" },
-		format = "line",
-		on_output = function(line, params)
-			local severities = { error = 1, warning = 2, note = 3 }
-			local patterns = {
-				[":(%d+):(%d+): (%w+): (.*)"] = {
-					"row",
-					"col",
-					"severity",
-					"message",
-				},
-				[":(%d+): (%w+): (.*)"] = { "row", "severity", "message" },
-			}
-			for pattern, groups in pairs(patterns) do
-				return find_entries(line, pattern, groups, severities)
-			end
-		end,
+	null_ls.builtins.diagnostics.mypy.with({
+		condition = create_condition("mypy"),
 	}),
 }
-table.insert(sources, create_conditional_source(mypy, "mypy"))
 
 local pylint = {
 	method = null_ls.methods.DIAGNOSTICS,
