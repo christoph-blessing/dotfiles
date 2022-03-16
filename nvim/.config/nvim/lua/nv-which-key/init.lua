@@ -6,7 +6,7 @@ M.setup = function()
 		w = { "<cmd>w!<cr>", "Write" },
 		q = { "<cmd>q!<cr>", "Quit" },
 		h = { "<cmd>nohlsearch<cr>", "Clear Highlight" },
-		c = { "<cmd>BufferClose!<cr>", "Close Buffer" },
+		c = { "<cmd>bdelete<cr>", "Close Buffer" },
 
 		l = {
 			name = "LSP",
