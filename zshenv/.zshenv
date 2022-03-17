@@ -48,8 +48,10 @@ if [ $? -eq 1 ]; then
     export TERM=xterm-256color
 fi
 
-systemctl --user import-environment \
-    XDG_DATA_HOME \
-    XDG_CONFIG_HOME \
-    XDG_CACHE_HOME \
-    GNUPGHOME
+if type systemctl > /dev/null; then
+    systemctl --user import-environment \
+        XDG_DATA_HOME \
+        XDG_CONFIG_HOME \
+        XDG_CACHE_HOME \
+        GNUPGHOME
+fi
