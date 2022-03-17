@@ -13,7 +13,7 @@ local function reverse(list)
 end
 
 local function get_executable()
-	if vim.fn.filereadable("docker-compose.yml") then
+	if vim.fn.filereadable("docker-compose.yml") == 1 then
 		local lines = vim.fn.readfile("docker-compose.yml")
 		for _, line in pairs(lines) do
 			if vim.trim(line) == "pytest:" then
@@ -22,7 +22,7 @@ local function get_executable()
 		end
 	end
 
-	if vim.fn.filereadable(".pdm.toml") then
+	if vim.fn.filereadable(".pdm.toml") == 1 then
 		return "pdm run pytest"
 	end
 
