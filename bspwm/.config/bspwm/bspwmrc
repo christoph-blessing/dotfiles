@@ -7,6 +7,10 @@ pgrep -xf "/bin/sh ${SCRIPTDIR}/notify_desktop_change.sh" > /dev/null || /bin/sh
 
 bspc monitor DP-0 -d I II III IV V VI VII VIII IX X
 
+if [ "$(cat /etc/hostname)" = 'archie-work' ]; then
+    bspc monitor HDMI-0 -d I II III IV V VI VII VIII IX X
+fi
+
 BW=3
 bspc config border_width $BW
 bspc config window_gap -$BW
