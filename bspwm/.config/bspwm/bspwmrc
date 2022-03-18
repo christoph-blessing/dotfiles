@@ -5,11 +5,10 @@ pgrep -x redshift > /dev/null || redshift &
 pgrep -x xss-lock > /dev/null || xss-lock ~/scripts/lock.sh &
 pgrep -xf "/bin/sh ${SCRIPTDIR}/notify_desktop_change.sh" > /dev/null || /bin/sh ~/scripts/notify_desktop_change.sh &
 
-bspc monitor DP-0 -d I II III IV V VI VII VIII IX X
-
-if [ "$(cat /etc/hostname)" = 'archie-work' ]; then
-    bspc monitor HDMI-0 -d I II III IV V VI VII VIII IX X
-fi
+monitors=$(xrandr --query | rg ' connected' | cut -d ' ' -f 1)
+echo "$monitors" | while read -r monitor; do
+    bspc monitor "$monitor" -d I II III IV V VI VII VIII IX X
+done
 
 BW=3
 bspc config border_width $BW
@@ -39,7 +38,7 @@ if [ "$(cat /etc/hostname)" = 'archie-work' ] && ! "$is_restart" ; then
 
     bspc rule --add Slack:slack --one-shot node=@^1:/1
     bspc rule --add KeePassXC:keepassxc --one-shot node=@^1:/2
-    bspc rule --add st-256color:st-256color --one-shot node=@^DESKTOP:/
+    bspc rule --add st-256color:st-256color --one-shot node=@^2:/
 
     slack &
     keepassxc &
