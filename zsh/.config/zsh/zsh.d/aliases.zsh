@@ -29,6 +29,7 @@ alias xbindkeys="xbindkeys -f $XDG_CONFIG_HOME/xbindkeys/config"
 
 alias cdd="cd $XDG_DATA_HOME/dotfiles/"
 alias cds="cd $XDG_DATA_HOME/scripts/"
+alias cdn="cd $XDG_DATA_HOME/blessed-nvim/"
 
 alias dc="docker-compose"
 
