@@ -20,6 +20,7 @@
     c = commit
     ch = checkout
     d = diff
+    ds = diff --staged
     f = fetch
     l = log --decorate --graph --oneline
     m = merge
@@ -31,5 +32,7 @@
     sh = show
     s = status -s
     st = stash
+    stp = stash pop
+    stl = stash list
     sw = switch
     t = tag
