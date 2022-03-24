@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/dotfiles
+          images: cblessing24/dotfiles
           tags: |
             type=sha
       - name: Build and push
