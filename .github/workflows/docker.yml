@@ -21,6 +21,8 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: cblessing24/dotfiles
+          flavor: |
+            latest=true
           tags: |
             type=sha
       - name: Build and push
