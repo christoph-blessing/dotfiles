@@ -57,7 +57,7 @@ RUN curl -O https://starship.rs/install.sh &&\
 RUN pip3 install --no-cache-dir thefuck --user
 
 COPY dotfiles dotfiles
-RUN stow --dir dotfiles --target /root zshenv zsh starship nvim
+RUN stow --dir dotfiles --target /root zshenv zsh starship nvim git
 
 ENV SHELL=/usr/bin/zsh
 ENV USER=root
