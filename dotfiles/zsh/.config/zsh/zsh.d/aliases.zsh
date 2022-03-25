@@ -37,3 +37,5 @@ alias_if_exists grep rg
 alias slock=~/scripts/lock.sh
 
 alias g=git
+
+alias d="docker"
