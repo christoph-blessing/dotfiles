@@ -155,4 +155,11 @@ return function(use)
 			require("b-notify").setup()
 		end,
 	})
+
+	use({
+		"github/copilot.vim",
+		config = function()
+			require("b-copilot").setup()
+		end,
+	})
 end
