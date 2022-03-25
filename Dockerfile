@@ -21,7 +21,6 @@ RUN apt-get update && apt-get install -y \
     wget \
     shellcheck \
     locales \
-    python3-neovim \
     python3-dev \
     python3-setuptools \
     python3-pip \
@@ -39,7 +38,7 @@ RUN curl -o- https://deb.nodesource.com/setup_16.x | bash &&\
 
 RUN git clone https://github.com/neovim/neovim &&\
     cd neovim &&\
-    make &&\
+    make CMAKE_BUILD_TYPE=RelWithDebInfo &&\
     make install &&\
     cd .. &&\
     rm -r neovim
@@ -54,7 +53,9 @@ RUN curl -O https://starship.rs/install.sh &&\
     sh install.sh --yes &&\
     rm install.sh
 
-RUN pip3 install --no-cache-dir thefuck --user
+RUN pip3 install --no-cache-dir thefuck neovim
+
+RUN npm install -g fd-find neovim
 
 COPY dotfiles dotfiles
 RUN stow --dir dotfiles --target /root zshenv zsh starship nvim git
