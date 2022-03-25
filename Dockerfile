@@ -36,7 +36,7 @@ ENV DEBIAN_FRONTEND=newt
 RUN curl -o- https://deb.nodesource.com/setup_16.x | bash &&\
     apt-get install -y nodejs
 
-RUN git clone https://github.com/neovim/neovim &&\
+RUN git clone --depth 1 https://github.com/neovim/neovim &&\
     cd neovim &&\
     make CMAKE_BUILD_TYPE=RelWithDebInfo &&\
     make install &&\
@@ -53,7 +53,7 @@ RUN curl -O https://starship.rs/install.sh &&\
     sh install.sh --yes &&\
     rm install.sh
 
-RUN pip3 install --no-cache-dir thefuck neovim
+RUN pip3 install --no-cache-dir thefuck neovim pre-commit
 
 RUN npm install -g fd-find neovim
 
