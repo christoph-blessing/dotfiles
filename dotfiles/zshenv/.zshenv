@@ -15,7 +15,6 @@ export MYCLI_HISTFILE="$XDG_DATA_HOME"/mycli/history
 export LESSHISTFILE="$XDG_DATA_HOME"/less/history
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
-export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
@@ -25,6 +24,12 @@ export PYLINTHOME="$XDG_CACHE_HOME"/pylint
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export MAILDIR="$XDG_DATA_HOME"/mail
 export SCRIPTDIR="$HOME"/scripts
+
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+if [[ ! -d "$GNUPGHOME" ]]; then
+  mkdir -p "$GNUPGHOME"
+  chmod 700 "$GNUPGHOME"
+fi
 
 export GOPATH="$XDG_DATA_HOME/go"
 [[ ":$PATH:" != *":${GOPATH}/bin:"* ]] && PATH="${GOPATH}/bin:${PATH}"
