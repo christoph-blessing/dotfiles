@@ -26,7 +26,11 @@ RUN apt-get update && apt-get install -y \
     python3-setuptools \
     python3-pip \
     zsh \
-    stow
+    stow \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
 
 ENV DEBIAN_FRONTEND=newt
 
@@ -39,6 +43,12 @@ RUN git clone https://github.com/neovim/neovim &&\
     make install &&\
     cd .. &&\
     rm -r neovim
+
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg &&\
+    echo \
+        "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+        $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null &&\
+    apt-get update && apt-get install -y docker-ce-cli
 
 RUN curl -O https://starship.rs/install.sh &&\
     sh install.sh --yes &&\
