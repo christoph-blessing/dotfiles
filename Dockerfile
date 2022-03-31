@@ -63,6 +63,10 @@ RUN stow --dir dotfiles --target /root zshenv zsh starship nvim git
 ENV SHELL=/usr/bin/zsh
 ENV USER=root
 
+RUN zsh -c 'echo allow-preset-passphrase > $GNUPGHOME/gpg-agent.conf'
+
+COPY docker /opt/docker
+
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen &&\
     locale-gen
 ENV LANG=en_US.UTF-8
@@ -70,4 +74,4 @@ ENV LC_ALL=en_US.UTF-8
 
 RUN nvim --headless -c 'autocmd User PackerComplete quitall'
 
-ENTRYPOINT ["nvim"]
+ENTRYPOINT ["/opt/docker/entrypoint.sh"]
