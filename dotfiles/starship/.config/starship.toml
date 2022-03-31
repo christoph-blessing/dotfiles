@@ -2,4 +2,4 @@
 disabled = true
 
 [container]
-disabled = true
+format = "[$symbol]($style) "
