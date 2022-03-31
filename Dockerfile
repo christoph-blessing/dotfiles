@@ -65,7 +65,6 @@ ENV USER=root
 
 RUN zsh -c 'echo allow-preset-passphrase > $GNUPGHOME/gpg-agent.conf'
 
-COPY docker /opt/docker
 
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen &&\
     locale-gen
@@ -74,4 +73,7 @@ ENV LC_ALL=en_US.UTF-8
 
 RUN nvim --headless -c 'autocmd User PackerComplete quitall'
 
-ENTRYPOINT ["/opt/docker/entrypoint.sh"]
+ARG entrypoint_dir=/opt/entrypoint
+COPY entrypoint $entrypoint_dir
+ENV ENTRYPOINT_DIR=$entrypoint_dir
+ENTRYPOINT ["sh", "-c", "exec ${ENTRYPOINT_DIR}/entrypoint.sh \"${@}\"", "--"]
