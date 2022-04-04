@@ -10,4 +10,4 @@ if [ ! -f ".pre-commit-config.yaml" ]; then
   exit 1
 fi
 
-pre-commit
+pre-commit > /dev/null
