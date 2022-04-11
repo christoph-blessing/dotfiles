@@ -25,6 +25,9 @@ export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export MAILDIR="$XDG_DATA_HOME"/mail
 export SCRIPTDIR="$HOME"/scripts
 
+export MCFLY_KEY_SCHEME=vim
+export MCFLY_FUZZY=2
+
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 if [[ ! -d "$GNUPGHOME" ]]; then
   mkdir -p "$GNUPGHOME"
