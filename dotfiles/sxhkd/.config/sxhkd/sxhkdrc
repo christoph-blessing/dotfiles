@@ -186,3 +186,6 @@ alt + k
 
 alt + m
     ~/scripts/open_mailbox.sh
+
+alt + t
+    ~/scripts/pomodoro/pomodoro.sh 25
