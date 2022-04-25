@@ -41,4 +41,11 @@ nvim_create_augroups({
 			"lua require('cmp').setup.buffer {sources = {{name = 'buffer'}, {name = 'nvim_lua'}, {name = 'path'}, {name = 'vsnip'}}}",
 		},
 	},
+	javascriptreact = {
+		{
+			"FileType",
+			"javascriptreact",
+			"lua vim.opt['shiftwidth'] = 2",
+		},
+	},
 })
