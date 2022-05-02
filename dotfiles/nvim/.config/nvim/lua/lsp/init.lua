@@ -8,7 +8,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
 	buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
 
-	if client.resolved_capabilities.document_highlight then
+	if client.server_capabilities.document_highlight then
 		vim.api.nvim_exec(
 			[[
       hi LspReferenceRead cterm=bold ctermbg=red guibg=#464646
@@ -24,7 +24,7 @@ local on_attach = function(client, bufnr)
 		)
 	end
 
-	client.resolved_capabilities.document_formatting = false
+	client.server_capabilities.document_formatting = false
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
