@@ -1,51 +1,49 @@
-require("utils")
+local utils = require("utils")
 
-nvim_create_augroups({
+utils.nvim_create_augroups({
 	python = {
 		{
-			"BufEnter",
-			"*.py",
-			"lua require('b-which-key.python').setup()",
-		},
-	},
-	plantuml = {
-		{
-			"FileType",
-			"plantuml",
-			"lua vim.api.nvim_buf_set_keymap(0, 'n', '<leader>r', \":silent w !plantuml -p | ~/.config/nvim/scripts/sxiv.sh<cr>\", {silent = true})",
+			event = "BufEnter",
+			pattern = "*.py",
+			callback = function()
+				require("b-which-key.python").setup()
+			end,
 		},
 	},
 	rust = {
 		{
-			"FileType",
-			"rust",
-			"lua vim.api.nvim_buf_set_keymap(0, 'n', '<leader>r', \":w<CR>:TermExec cmd='cargo run'<CR>\", {})",
+			event = "FileType",
+			pattern = "rust",
+			callback = function()
+				vim.api.nvim_buf_set_keymap(0, "n", "<leader>r", ":w<CR>:TermExec cmd='cargo run'<CR>", {})
+			end,
 		},
 		{
-			"FileType",
-			"rust",
-			"lua vim.api.nvim_buf_set_keymap(0, 'n', '<leader>t', \":w<CR>:TermExec cmd='cargo test'<CR>\", {})",
-		},
-	},
-	markdown = {
-		{
-			"FileType",
-			"markdown",
-			"lua vim.api.nvim_buf_set_keymap(0, 'n', '<leader>r', \":w<CR>:Glow<CR>\", {})",
+			event = "FileType",
+			pattern = "rust",
+			callback = function()
+				vim.api.nvim_buf_set_keymap(0, "n", "<leader>t", ":w<CR>:TermExec cmd='cargo test'<CR>", {})
+			end,
 		},
 	},
 	lua = {
 		{
-			"FileType",
-			"lua",
-			"lua require('cmp').setup.buffer {sources = {{name = 'buffer'}, {name = 'nvim_lua'}, {name = 'path'}, {name = 'vsnip'}}}",
+			event = "FileType",
+			pattern = "lua",
+			callback = function()
+				require("cmp").setup.buffer({
+					sources = { { name = "buffer" }, { name = "nvim_lua" }, { name = "path" }, { name = "vsnip" } },
+				})
+			end,
 		},
 	},
 	javascriptreact = {
 		{
-			"FileType",
-			"javascriptreact",
-			"lua vim.opt['shiftwidth'] = 2",
+			event = "FileType",
+			pattern = "javascriptreact",
+			callback = function()
+				vim.opt["shiftwidth"] = 2
+			end,
 		},
 	},
 })
