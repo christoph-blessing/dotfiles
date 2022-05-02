@@ -2,7 +2,13 @@ local M = {}
 
 M.setup = function()
 	local wk = require("which-key")
-	local mappings = {
+
+	wk.register({
+		["]t"] = { "<Plug>(ultest-next-fail)", "Go To Next Test Failure" },
+		["[t"] = { "<Plug>(ultest-prev-fail)", "Go To Previous Test Failure" },
+	}, {})
+
+	wk.register({
 		w = { "<cmd>w!<cr>", "Write" },
 		q = { "<cmd>q!<cr>", "Quit" },
 		h = { "<cmd>nohlsearch<cr>", "Clear Highlight" },
@@ -96,10 +102,9 @@ M.setup = function()
 			a = { "<cmd>TermExec cmd='!!'<cr>", "Run Last Command Again" },
 			c = { "<cmd>TermExec cmd='clear'<cr>", "Clear Terminal" },
 		},
-	}
-
-	local opts = { prefix = "<leader>" }
-	wk.register(mappings, opts)
+	}, {
+		prefix = "<leader>",
+	})
 
 	wk.setup()
 end
