@@ -6,6 +6,8 @@ M.setup = function()
 	wk.register({
 		["]t"] = { "<Plug>(ultest-next-fail)", "Go To Next Test Failure" },
 		["[t"] = { "<Plug>(ultest-prev-fail)", "Go To Previous Test Failure" },
+		["]d"] = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Go To Next Diagnostic" },
+		["[d"] = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Go To Previous Diagnostic" },
 	}, {})
 
 	wk.register({

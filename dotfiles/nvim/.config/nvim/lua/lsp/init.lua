@@ -1,12 +1,4 @@
 local on_attach = function(client, bufnr)
-	local function buf_set_keymap(...)
-		vim.api.nvim_buf_set_keymap(bufnr, ...)
-	end
-
-	local opts = { noremap = true, silent = true }
-	buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-	buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
-
 	if client.supports_method("textDocument/documentHighlight") then
 		local augroup = vim.api.nvim_create_augroup("LspDocumentHighlight", {})
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
