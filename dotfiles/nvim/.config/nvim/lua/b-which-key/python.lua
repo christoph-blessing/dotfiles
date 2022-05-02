@@ -5,9 +5,10 @@ M.setup = function()
 	local mappings = {
 		t = {
 			name = "Testing",
-			a = { "<cmd>w<cr><cmd>lua require('pytest').run_tests()<cr>", "Run All Tests" },
-			d = { "<cmd>w<cr><cmd>lua require('pytest').run_tests_in_file()<cr>", "Run All Tests In File" },
-			c = { "<cmd>w<cr><cmd>lua require('pytest').run_test_under_cursor()<cr>", "Run Test Under Cursor" },
+			f = { "<cmd>w<cr><cmd>Ultest<cr>" ,"Run All Tests In File" },
+			n = { "<cmd>w<cr><cmd>UltestNearest<cr>", "Run Nearest Test" },
+			l = { "<cmd>w<cr><cmd>UltestLast<cr>", "Run Last Ran Test" },
+			c = { "<cmd>w<cr><cmd>UltestClear<cr>", "Clear Test Output" },
 		},
 		r = { "<cmd>w<cr><cmd>TermExec cmd='python3 %'<cr>", "Run Current File" },
 	}
