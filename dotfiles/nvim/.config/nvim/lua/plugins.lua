@@ -108,20 +108,6 @@ return function(use)
 	})
 
 	use({
-		"weirongxu/plantuml-previewer.vim",
-		ft = { "plantuml" },
-		requires = { "tyru/open-browser.vim" },
-	})
-
-	use({
-		"ellisonleao/glow.nvim",
-		ft = { "markdown" },
-		run = function()
-			require("glow").download_glow()
-		end,
-	})
-
-	use({
 		"akinsho/toggleterm.nvim",
 		event = "BufWinEnter",
 		config = function()
@@ -131,7 +117,7 @@ return function(use)
 
 	use({
 		"zeertzjq/which-key.nvim",
-        branch = "fix-prefix",
+		branch = "fix-prefix",
 		config = function()
 			require("b-which-key").setup()
 		end,
@@ -163,5 +149,13 @@ return function(use)
 			require("b-copilot").setup()
 		end,
 	})
-	use({ "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins", setup = function() require("b-ultest").setup() end })
+
+	use({
+		"rcarriga/vim-ultest",
+		requires = { "vim-test/vim-test" },
+		run = ":UpdateRemotePlugins",
+		setup = function()
+			require("b-ultest").setup()
+		end,
+	})
 end
