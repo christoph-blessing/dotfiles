@@ -163,4 +163,5 @@ return function(use)
 			require("b-copilot").setup()
 		end,
 	})
+	use({ "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins", setup = function() require("b-ultest").setup() end })
 end
