@@ -37,13 +37,15 @@ local sources = {
 	}),
 }
 
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 local on_attach = function(client, bufnr)
-	local opts = { noremap = true, silent = true }
-	if client.server_capabilities.document_formatting then
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
-	elseif client.server_capabilities.document_range_formatting then
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+	if client.supports_method("textDocument/formatting") then
+		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd(
+			"BufWritePre",
+			{ group = augroup, buffer = bufnr, callback = vim.lsp.buf.formatting_sync }
+		)
 	end
 end
 
