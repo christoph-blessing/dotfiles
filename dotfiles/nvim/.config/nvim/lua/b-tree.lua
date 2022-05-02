@@ -1,7 +1,6 @@
 local M = {}
 
 M.setup = function()
-	vim.g.nvim_tree_indent_markers = 1
 	vim.g.nvim_tree_width = 30
 	vim.g.nvim_tree_respect_buf_cwd = 1
 
@@ -18,8 +17,11 @@ M.setup = function()
 		},
 		actions = {
 			open_file = {
-				quit_on_open = 1,
+				quit_on_open = true,
 			},
+		},
+		renderer = {
+			indent_markers = { enable = true },
 		},
 	})
 end
