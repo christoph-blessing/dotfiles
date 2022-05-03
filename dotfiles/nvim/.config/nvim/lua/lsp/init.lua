@@ -18,8 +18,6 @@ local on_attach = function(client, bufnr)
 		vim.api.nvim_set_hl(0, "LspReferenceText", { fg = "#282828", bg = "#b8bb26", reverse = false })
 		vim.api.nvim_set_hl(0, "LspReferenceWrite", { fg = "#282828", bg = "#83a598", reverse = false })
 	end
-
-	client.server_capabilities.document_formatting = false
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -40,10 +38,10 @@ capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 local lsp_installer = require("nvim-lsp-installer")
 
 lsp_installer.on_server_ready(function(server)
-	local config = require("lsp." .. server.name)
+	local config = require("lsp.configs." .. server.name)
 	config.on_attach = on_attach
 	config.capabilities = capabilities
 	server:setup(config)
 end)
 
-require("lsp.null-ls")
+require("lsp.b-null-ls")
