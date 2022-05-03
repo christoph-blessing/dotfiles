@@ -106,6 +106,16 @@ M.setup = function()
 			a = { "<cmd>TermExec cmd='!!'<cr>", "Run Last Command Again" },
 			c = { "<cmd>TermExec cmd='clear'<cr>", "Clear Terminal" },
 		},
+
+		t = {
+			name = "Testing",
+			c = { "<cmd>w<cr><cmd>UltestClear<cr>", "Clear Test Output" },
+			f = { "<cmd>w<cr><cmd>Ultest<cr>", "Run All Tests In File" },
+			l = { "<cmd>w<cr><cmd>UltestLast<cr>", "Run Last Ran Test" },
+			n = { "<cmd>w<cr><cmd>UltestNearest<cr>", "Run Nearest Test" },
+			o = { "<cmd>w<cr><cmd>UltestOutput<cr>", "Show Output" },
+			s = { "<cmd>w<cr><cmd>UltestSummary<cr>", "Toggle Summary" },
+		},
 	}, {
 		prefix = "<leader>",
 	})
