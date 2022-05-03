@@ -8,6 +8,8 @@ M.setup = function()
 		["[t"] = { "<Plug>(ultest-prev-fail)", "Go To Previous Test Failure" },
 		["]d"] = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Go To Next Diagnostic" },
 		["[d"] = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Go To Previous Diagnostic" },
+		["]c"] = { "<cmd>lua require('gitsigns').next_hunk()<cr>", "Go To Next Hunk" },
+		["[c"] = { "<cmd>lua require('gitsigns').prev_hunk()<cr>", "Go To Previous Hunk" },
 	}, {})
 
 	wk.register({
