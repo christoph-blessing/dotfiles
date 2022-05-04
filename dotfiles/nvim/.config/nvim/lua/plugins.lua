@@ -116,8 +116,7 @@ return function(use)
 	})
 
 	use({
-		"zeertzjq/which-key.nvim",
-		branch = "fix-prefix",
+		"folke/which-key.nvim",
 		config = function()
 			require("b-which-key").setup()
 		end,
