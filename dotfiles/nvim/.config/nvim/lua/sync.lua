@@ -9,7 +9,7 @@ end
 local M = {}
 
 M.sync = function()
-	local hosts = require("file").lines_from(".hosts")
+	local hosts = require("utils.file").lines_from(".hosts")
 	for _, host in pairs(hosts) do
 		sync_host(host)
 	end

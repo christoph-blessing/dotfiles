@@ -1,4 +1,4 @@
-local utils = require("utils")
+local utils = require("utils.autocmd")
 
 utils.nvim_create_augroups({
 	python = {
@@ -43,6 +43,15 @@ utils.nvim_create_augroups({
 			pattern = "javascriptreact",
 			callback = function()
 				vim.opt["shiftwidth"] = 2
+			end,
+		},
+	},
+	slack_app = {
+		{
+			event = "BufWritePost",
+			pattern = "/**/slack-app/**/*.py",
+			callback = function()
+				require("sync").sync()
 			end,
 		},
 	},
