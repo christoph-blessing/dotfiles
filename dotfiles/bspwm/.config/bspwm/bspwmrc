@@ -4,10 +4,10 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x redshift > /dev/null || redshift &
 pgrep -x xss-lock > /dev/null || xss-lock ~/scripts/lock.sh &
 
-monitors=$(xrandr --query | rg ' connected' | cut -d ' ' -f 1)
-echo "$monitors" | while read -r monitor; do
-    bspc monitor "$monitor" -d I II III IV V VI VII VIII IX X
-done
+if [ "$(cat /etc/hostname)" = 'archie-work' ]; then
+    bspc monitor DP-0 -d I II III IV V
+    bspc monitor HDMI-0 -d VI VII VIII IX X
+fi
 
 pgrep -x "/bin/bash ${SCRIPTDIR}/lemonbar/lemonbar.sh" > /dev/null || "${SCRIPTDIR}/lemonbar/lemonbar.sh" &
 
@@ -35,13 +35,13 @@ fi
 if [ "$(cat /etc/hostname)" = 'archie-work' ] && ! "$is_restart" ; then
     bspc node @^1:/ --insert-receptacle
     bspc node @^1:/ --presel-dir east --insert-receptacle
-    bspc node @^DESKTOP:/ --insert-receptacle
+    bspc node @^6:/ --insert-receptacle
 
-    bspc rule --add Slack:slack --one-shot node=@^1:/1
-    bspc rule --add KeePassXC:keepassxc --one-shot node=@^1:/2
-    bspc rule --add st-256color:st-256color --one-shot node=@^2:/
+    bspc rule --add KeePassXC:keepassxc --one-shot node=@^1:/1
+    bspc rule --add Marvin:marvin --one-shot node=@^1:/2
+    bspc rule --add Slack:slack --one-shot node=@^6:/
 
     slack &
     keepassxc &
-    st &
+    amazingmarvin &
 fi
