@@ -3,12 +3,13 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x redshift > /dev/null || redshift &
 pgrep -x xss-lock > /dev/null || xss-lock ~/scripts/lock.sh &
-pgrep -x "/bin/bash ${SCRIPTDIR}/lemonbar/lemonbar.sh" > /dev/null || "${SCRIPTDIR}/lemonbar/lemonbar.sh" &
 
 monitors=$(xrandr --query | rg ' connected' | cut -d ' ' -f 1)
 echo "$monitors" | while read -r monitor; do
     bspc monitor "$monitor" -d I II III IV V VI VII VIII IX X
 done
+
+pgrep -x "/bin/bash ${SCRIPTDIR}/lemonbar/lemonbar.sh" > /dev/null || "${SCRIPTDIR}/lemonbar/lemonbar.sh" &
 
 BW=3
 bspc config border_width $BW
