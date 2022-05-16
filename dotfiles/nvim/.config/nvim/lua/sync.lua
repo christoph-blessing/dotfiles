@@ -1,8 +1,12 @@
 local function sync_host(host)
-	local cwd_stem = string.match(vim.fn.getcwd(), "[%w-_]+$")
-	local src = vim.fn.expand("%")
-	local dest = cwd_stem .. "/" .. src
-	local cmd = string.format("rsync -av %s %s:%s", src, host, dest)
+	if not string.find(host, ":") then
+		host = host .. ":"
+	end
+	local cmd = string.format(
+		[[rsync -av --delete --exclude=".git" --filter="dir-merge,- .gitignore" %s %s]],
+		vim.fn.getcwd(),
+		host
+	)
 	vim.cmd(string.format("TermExec open=0 cmd='%s'", cmd))
 end
 
