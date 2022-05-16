@@ -24,3 +24,5 @@ vim.opt["smartindent"] = true
 
 vim.opt["foldmethod"] = "expr"
 vim.opt["foldexpr"] = "nvim_treesitter#foldexpr()"
+
+vim.g.python3_host_prog = require("provider").python()
