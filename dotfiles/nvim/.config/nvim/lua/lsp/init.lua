@@ -44,4 +44,6 @@ lsp_installer.on_server_ready(function(server)
 	server:setup(config)
 end)
 
+vim.diagnostic.config({ virtual_text = { prefix = "💡" } })
+
 require("lsp.b-null-ls")
