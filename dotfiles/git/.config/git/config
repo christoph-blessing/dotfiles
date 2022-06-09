@@ -29,6 +29,7 @@
     rb = rebase
     r = reset
     rs = restore
+    rss = restore --staged
     sh = show
     s = status -s
     st = stash
