@@ -7,6 +7,11 @@ M.setup = function()
 		options = {
 			diagnostics = "nvim_lsp",
 			offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "left" } },
+			custom_filter = function(buf_number, buf_numbers)
+				if vim.bo[buf_number].filetype ~= "qf" then
+					return true
+				end
+			end,
 		},
 	})
 end
