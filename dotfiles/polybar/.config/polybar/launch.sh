@@ -7,7 +7,12 @@ polybar-msg cmd quit
 # killall -q polybar
 
 # Launch bar1 and bar2
-echo "---" | tee -a /tmp/default_bar.log
-polybar default 2>&1 | tee -a /tmp/default_bar.log & disown
+echo "---" | tee -a /tmp/primary_bar.log
+polybar primary 2>&1 | tee -a /tmp/primary_bar.log & disown
+
+if [ "$(cat /etc/hostname)" = 'archie-work' ]; then
+    echo "---" | tee -a /tmp/secondary_bar.log
+    polybar secondary 2>&1 | tee -a /tmp/secondary_bar.log & disown
+fi
 
 echo "Bars launched..."
