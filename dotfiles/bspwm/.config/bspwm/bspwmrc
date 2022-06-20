@@ -4,12 +4,12 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x redshift > /dev/null || redshift &
 pgrep -x xss-lock > /dev/null || xss-lock ~/scripts/lock.sh &
 
+"$XDG_CONFIG_HOME"/polybar/launch.sh
+
 if [ "$(cat /etc/hostname)" = 'archie-work' ]; then
     bspc monitor DP-0 -d I II III IV V
     bspc monitor HDMI-0 -d VI VII VIII IX X
 fi
-
-pgrep -x "/bin/bash ${SCRIPTDIR}/lemonbar/lemonbar.sh" > /dev/null || "${SCRIPTDIR}/lemonbar/lemonbar.sh" &
 
 BW=3
 bspc config border_width $BW
