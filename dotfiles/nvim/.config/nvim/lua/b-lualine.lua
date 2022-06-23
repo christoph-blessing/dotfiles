@@ -7,7 +7,7 @@ M.setup = function()
 			theme = "auto",
 			component_separators = { left = "", right = "" },
 			section_separators = { left = "", right = "" },
-			disabled_filetypes = { "toggleterm", "NvimTree" },
+			disabled_filetypes = { "toggleterm", "NvimTree", "neotest-summary" },
 		},
 		sections = {
 			lualine_a = { "mode" },
