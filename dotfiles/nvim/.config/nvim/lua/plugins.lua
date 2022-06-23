@@ -149,12 +149,24 @@ return function(use)
 		end,
 	})
 
+	use({ "antoinemadec/FixCursorHold.nvim" })
+
 	use({
-		"rcarriga/vim-ultest",
-		requires = { "vim-test/vim-test" },
-		run = ":UpdateRemotePlugins",
-		setup = function()
-			require("b-ultest").setup()
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"antoinemadec/FixCursorHold.nvim",
+		},
+		config = function()
+			require("b-neotest").setup()
 		end,
+	})
+
+	use({
+		"nvim-neotest/neotest-python",
+		requires = {
+			"nvim-neotest/neotest",
+		},
 	})
 end

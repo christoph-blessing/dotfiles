@@ -4,8 +4,8 @@ M.setup = function()
 	local wk = require("which-key")
 
 	wk.register({
-		["]t"] = { "<Plug>(ultest-next-fail)", "Go To Next Test Failure" },
-		["[t"] = { "<Plug>(ultest-prev-fail)", "Go To Previous Test Failure" },
+		["]t"] = { "<cmd>lua require('neotest').jump.next({ status = 'failed' })<cr>", "Go To Next Test Failure" },
+		["[t"] = { "<cmd>lua require('neotest').jump.prev({ status = 'failed' })<cr>", "Go To Previous Test Failure" },
 		["]d"] = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Go To Next Diagnostic" },
 		["[d"] = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Go To Previous Diagnostic" },
 		["]c"] = { "<cmd>lua require('gitsigns').next_hunk()<cr>", "Go To Next Hunk" },
@@ -109,12 +109,11 @@ M.setup = function()
 
 		t = {
 			name = "Testing",
-			c = { "<cmd>w<cr><cmd>UltestClear<cr>", "Clear Test Output" },
-			f = { "<cmd>w<cr><cmd>Ultest<cr>", "Run All Tests In File" },
-			l = { "<cmd>w<cr><cmd>UltestLast<cr>", "Run Last Ran Test" },
-			n = { "<cmd>w<cr><cmd>UltestNearest<cr>", "Run Nearest Test" },
-			o = { "<cmd>w<cr><cmd>UltestOutput<cr>", "Show Output" },
-			s = { "<cmd>w<cr><cmd>UltestSummary<cr>", "Toggle Summary" },
+			f = { "<cmd>w<cr><cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run All Tests In File" },
+			l = { "<cmd>w<cr><cmd>lua require('neotest').run.run_last()<cr>", "Run Last Ran Test" },
+			n = { "<cmd>w<cr><cmd>lua require('neotest').run.run()<cr>", "Run Nearest Test" },
+			o = { "<cmd>w<cr><cmd>lua require('neotest').output.open()<cr>", "Show Output" },
+			s = { "<cmd>w<cr><cmd>lua require('neotest').summary.toggle()<cr>", "Toggle Summary" },
 		},
 	}, {
 		prefix = "<leader>",
