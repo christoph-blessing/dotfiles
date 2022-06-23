@@ -185,3 +185,6 @@ alt + m
 
 alt + t
     ~/scripts/pomodoro/pomodoro.sh 25
+
+Print
+    ~/scripts/create_windowshot.sh
