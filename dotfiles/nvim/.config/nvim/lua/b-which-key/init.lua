@@ -112,8 +112,8 @@ M.setup = function()
 			f = { "<cmd>w<cr><cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run All Tests In File" },
 			l = { "<cmd>w<cr><cmd>lua require('neotest').run.run_last()<cr>", "Run Last Ran Test" },
 			n = { "<cmd>w<cr><cmd>lua require('neotest').run.run()<cr>", "Run Nearest Test" },
-			o = { "<cmd>w<cr><cmd>lua require('neotest').output.open()<cr>", "Show Output" },
-			s = { "<cmd>w<cr><cmd>lua require('neotest').summary.toggle()<cr>", "Toggle Summary" },
+			o = { "<cmd>lua require('neotest').output.open()<cr>", "Show Output" },
+			s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle Summary" },
 		},
 	}, {
 		prefix = "<leader>",
