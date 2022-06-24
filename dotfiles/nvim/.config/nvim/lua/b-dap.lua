@@ -4,7 +4,7 @@ M.setup = function()
 	local dap = require("dap")
 	dap.adapters.python = {
 		type = "executable",
-		command = "/home/" .. vim.env.USER .. "/venv/debugpy/bin/python",
+		command = "python",
 		args = { "-m", "debugpy.adapter" },
 	}
 
