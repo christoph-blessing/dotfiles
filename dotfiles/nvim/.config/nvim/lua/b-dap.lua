@@ -19,6 +19,12 @@ M.setup = function()
 			end,
 		},
 	}
+
+	vim.fn.sign_define("DapBreakpoint", { text = "😠" })
+	vim.fn.sign_define("DapBreakpointCondition", { text = "😤" })
+	vim.fn.sign_define("DapLogPoint", { text = "👀" })
+	vim.fn.sign_define("DapStopped", { text = "👉" })
+	vim.fn.sign_define("DapBreakpointRejected", { text = "🤬" })
 end
 
 return M
