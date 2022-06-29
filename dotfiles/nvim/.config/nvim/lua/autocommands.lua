@@ -1,6 +1,15 @@
 local utils = require("utils.autocmd")
 
 utils.nvim_create_augroups({
+	general = {
+		{
+			event = "TextYankPost",
+			pattern = "*",
+			callback = function()
+				require("vim.highlight").on_yank({ higroup = "Search", timeout = 200 })
+			end,
+		},
+	},
 	python = {
 		{
 			event = "BufEnter",
