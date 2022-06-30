@@ -35,15 +35,19 @@ M.setup = function()
 				"<cmd>lua require('telescope.builtin').lsp_document_diagnostics(require('telescope.themes').get_ivy({}))<cr>",
 				"Show Document Diagnostics",
 			},
-			w = {
-				"<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics(require('telescope.themes').get_ivy({}))<cr>",
-				"Show Workspace Diagnostics",
-			},
 			t = { "<cmd>lua require('diagnostics').toggle_buffer_diagnostics(0)<cr>", "Toggle Buffer Diagnostics" },
 		},
 
 		f = {
 			name = "Find",
+			b = {
+				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy({}))<cr>",
+				"Find Buffer",
+			},
+			d = {
+				"<cmd>lua require('telescope.builtin').diagnostics(require('telescope.themes').get_ivy({}))<cr>",
+				"Find Diagnostics",
+			},
 			f = {
 				"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({}))<cr>",
 				"Find File",
@@ -52,21 +56,17 @@ M.setup = function()
 				"<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))<cr>",
 				"Find Text",
 			},
-			b = {
-				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy({}))<cr>",
-				"Find Buffer",
-			},
 			h = {
 				"<cmd>lua require('telescope.builtin').help_tags(require('telescope.themes').get_ivy({}))<cr>",
 				"Find Help",
 			},
-			r = {
-				"<cmd>lua require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy({}))<cr>",
-				"Find References",
-			},
 			p = {
 				"<cmd>lua require('telescope').extensions.projects.projects(require('telescope.themes').get_ivy({}))<cr>",
 				"Find Projects",
+			},
+			r = {
+				"<cmd>lua require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy({}))<cr>",
+				"Find References",
 			},
 		},
 
