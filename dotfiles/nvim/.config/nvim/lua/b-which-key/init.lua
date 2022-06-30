@@ -6,8 +6,8 @@ M.setup = function()
 	wk.register({
 		["]t"] = { "<cmd>lua require('neotest').jump.next({ status = 'failed' })<cr>", "Go To Next Test Failure" },
 		["[t"] = { "<cmd>lua require('neotest').jump.prev({ status = 'failed' })<cr>", "Go To Previous Test Failure" },
-		["]d"] = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Go To Next Diagnostic" },
-		["[d"] = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Go To Previous Diagnostic" },
+		["]d"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Go To Next Diagnostic" },
+		["[d"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Go To Previous Diagnostic" },
 		["]c"] = { "<cmd>lua require('gitsigns').next_hunk()<cr>", "Go To Next Hunk" },
 		["[c"] = { "<cmd>lua require('gitsigns').prev_hunk()<cr>", "Go To Previous Hunk" },
 	}, {})
