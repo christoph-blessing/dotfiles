@@ -16,7 +16,7 @@ M.setup = function()
 		w = { "<cmd>w!<cr>", "Write" },
 		q = { "<cmd>q!<cr>", "Quit" },
 		h = { "<cmd>nohlsearch<cr>", "Clear Highlight" },
-		c = { "<cmd>bdelete<cr>", "Close Buffer" },
+		c = { "<cmd>buffer#<bar>bdelete#<cr>", "Close Buffer" },
 
 		l = {
 			name = "LSP",
@@ -109,6 +109,7 @@ M.setup = function()
 
 		t = {
 			name = "Testing",
+			a = { "<cmd>w<cr><cmd>lua require('neotest').run.run(vim.fn.getcwd())<cr>", "Run All Tests" },
 			d = { "<cmd>w<cr><cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug Nearest Test" },
 			f = { "<cmd>w<cr><cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run All Tests In File" },
 			l = { "<cmd>w<cr><cmd>lua require('neotest').run.run_last()<cr>", "Run Last Ran Test" },
