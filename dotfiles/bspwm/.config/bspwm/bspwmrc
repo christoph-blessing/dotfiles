@@ -32,6 +32,8 @@ else
     is_restart=false
 fi
 
+bspc rule --add Peek:peek state=floating focus=on center=on
+
 if [ "$(cat /etc/hostname)" = 'archie-work' ] && ! "$is_restart" ; then
     bspc node @^1:/ --insert-receptacle
     bspc node @^1:/ --presel-dir east --insert-receptacle
