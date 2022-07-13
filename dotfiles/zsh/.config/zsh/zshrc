@@ -3,3 +3,7 @@ fpath=( $ZDOTDIR/zfunc "${fpath[@]}" )
 for file in $(ls -1 "$ZDOTDIR"/zsh.d/); do
     source "$ZDOTDIR/zsh.d/$file"
 done
+
+if (( ${+ZSHRC_HOOK} )); then
+    source "$ZSHRC_HOOK"
+fi
