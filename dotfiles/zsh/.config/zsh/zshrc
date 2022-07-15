@@ -1,9 +1,13 @@
 fpath=( $ZDOTDIR/zfunc "${fpath[@]}" )
 
+logfile=/tmp/zshrc.log
+
 for file in $(ls -1 "$ZDOTDIR"/zsh.d/); do
-    source "$ZDOTDIR/zsh.d/$file"
+    echo "Sourcing $ZDOTDIR/zsh.d/$file" >> "$logfile"
+    source "$ZDOTDIR/zsh.d/$file" >> "$logfile" 2>&1
 done
 
 if (( ${+ZSHRC_HOOK} )); then
-    source "$ZSHRC_HOOK"
+    echo "Sourcing $ZSHRC_HOOK" >> "$logfile"
+    source "$ZSHRC_HOOK" >> "$logfile" 2>&1
 fi
