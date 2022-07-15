@@ -30,8 +30,6 @@ alias xbindkeys="xbindkeys -f $XDG_CONFIG_HOME/xbindkeys/config"
 alias cdd="cd $XDG_DATA_HOME/dotfiles/"
 alias cds="cd $XDG_DATA_HOME/scripts/"
 
-alias dc="docker-compose"
-
 alias_if_exists grep rg
 
 alias slock=~/scripts/lock.sh
@@ -39,3 +37,4 @@ alias slock=~/scripts/lock.sh
 alias g=git
 
 alias d="docker"
+alias dc="docker compose"
