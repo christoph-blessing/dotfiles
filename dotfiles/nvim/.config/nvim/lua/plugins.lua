@@ -131,12 +131,6 @@ return function(use)
 	})
 
 	use({
-		"ahmedkhalf/project.nvim",
-		config = function()
-			require("project").setup()
-		end,
-	})
-	use({
 		"rcarriga/nvim-notify",
 		config = function()
 			require("b-notify").setup()
