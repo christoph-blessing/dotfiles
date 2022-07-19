@@ -6,3 +6,4 @@ dotfiles/systemd/.config/systemd/user/*.socket
 
 dotfiles/zsh/.config/zsh/.chpwd-recent-dirs
 dotfiles/zsh/.config/zsh/.zcompdump
+dotfiles/gh/.config/gh/hosts.yml
