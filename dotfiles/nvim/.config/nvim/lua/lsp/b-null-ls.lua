@@ -31,6 +31,20 @@ local sources = {
 	}),
 	null_ls.builtins.diagnostics.mypy.with({
 		condition = create_condition("mypy"),
+		args = function(params)
+			return {
+				"--hide-error-codes",
+				"--hide-error-context",
+				"--no-color-output",
+				"--show-column-numbers",
+				"--show-error-codes",
+				"--no-error-summary",
+				"--no-pretty",
+				"--shadow-file",
+				params.bufname,
+				params.temp_path,
+			}
+		end,
 	}),
 	null_ls.builtins.diagnostics.pylint.with({
 		condition = create_condition("pylint.master"),
