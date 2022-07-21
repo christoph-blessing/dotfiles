@@ -1,6 +1,6 @@
 # docker-dev
 
-[![docker](https://github.com/cblessing24/docker-dev/actions/workflows/docker.yml/badge.svg)](https://github.com/cblessing24/docker-dev/actions/workflows/docker.yml)
+[![docker](https://github.com/cblessing24/dotfiles/actions/workflows/docker.yml/badge.svg)](https://github.com/cblessing24/dotfiles/actions/workflows/docker.yml)
 
 Docker image used for software development.
 
