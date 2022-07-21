@@ -70,15 +70,11 @@ ENV LC_ALL=en_US.UTF-8
 
 ENV SHELL=/usr/bin/zsh
 
-ARG DOTFILES_REF
-LABEL dotfiles.ref=$DOTFILES_REF
-ENV DOTFILES_DIR=/root/dotfiles
-RUN git clone https://github.com/cblessing24/dotfiles $DOTFILES_DIR &&\
-    cd $DOTFILES_DIR &&\
-    git checkout $DOTFILES_REF &&\
-    stow --dir $DOTFILES_DIR/dotfiles --target $HOME zshenv zsh starship nvim git gh
-
 RUN zsh -c 'echo allow-preset-passphrase > $GNUPGHOME/gpg-agent.conf'
+
+ENV DOTFILES_DIR=/root/dotfiles
+COPY dotfiles $DOTFILES_DIR
+RUN stow --dir $DOTFILES_DIR --target $HOME zshenv zsh starship nvim git gh
 
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' &&\
     nvim --headless +'LspInstall --sync pyright' +'quitall'
@@ -86,6 +82,6 @@ RUN nvim --headless -c 'autocmd User PackerComplete quitall' &&\
 ENV SHELL=/usr/bin/zsh
 
 ENV ZSH_DIR=/root/zsh
-COPY zsh $ZSH_DIR
+COPY docker/zsh $ZSH_DIR
 ENV ZSHRC_HOOK=$ZSH_DIR/zshrc
 ENTRYPOINT ["/usr/bin/zsh"]
