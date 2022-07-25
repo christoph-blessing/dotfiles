@@ -20,22 +20,22 @@ M.setup = function()
 
 		l = {
 			name = "LSP",
-			g = {
-				name = "Go To",
-				D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go To Declaration" },
-				d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go To Definition" },
-				t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Go To Type Definition" },
-			},
-			h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Show Hover Text" },
-			i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Show Implementations" },
-			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-			q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-			e = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Show Line Diagnostics" },
 			d = {
-				"<cmd>lua require('telescope.builtin').lsp_document_diagnostics(require('telescope.themes').get_ivy({}))<cr>",
-				"Show Document Diagnostics",
+				"<cmd>lua require('telescope.builtin').lsp_definitions(require('telescope.themes').get_ivy({}))<cr>",
+				"Go To Definition",
 			},
-			t = { "<cmd>lua require('diagnostics').toggle_buffer_diagnostics(0)<cr>", "Toggle Buffer Diagnostics" },
+			e = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Show Line Diagnostics" },
+			h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Show Hover Text" },
+			i = {
+				"<cmd>lua require('telescope.builtin').lsp_implementations(require('telescope.themes').get_ivy({}))<cr>",
+				"Go To Implementation",
+			},
+			q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+			t = {
+				"<cmd>lua require('telescope.builtin').lsp_type_definitions(require('telescope.themes').get_ivy({}))<cr>",
+				"Go To Type Definition",
+			},
 		},
 
 		f = {
@@ -43,6 +43,10 @@ M.setup = function()
 			b = {
 				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy({}))<cr>",
 				"Find Buffer",
+			},
+			c = {
+				"<cmd>lua require('telescope.builtin').git_commits(require('telescope.themes').get_ivy({}))<cr>",
+				"Find Git Commits",
 			},
 			d = {
 				"<cmd>lua require('telescope.builtin').diagnostics(require('telescope.themes').get_ivy({}))<cr>",
@@ -60,13 +64,21 @@ M.setup = function()
 				"<cmd>lua require('telescope.builtin').help_tags(require('telescope.themes').get_ivy({}))<cr>",
 				"Find Help",
 			},
-			p = {
-				"<cmd>lua require('telescope').extensions.projects.projects(require('telescope.themes').get_ivy({}))<cr>",
-				"Find Projects",
+			i = {
+				"<cmd>lua require('telescope.builtin').lsp_incoming_calls(require('telescope.themes').get_ivy({}))<cr>",
+				"Find Incoming Calls",
+			},
+			o = {
+				"<cmd>lua require('telescope.builtin').lsp_outgoing_calls(require('telescope.themes').get_ivy({}))<cr>",
+				"Find Outgoing Calls",
 			},
 			r = {
 				"<cmd>lua require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy({}))<cr>",
 				"Find References",
+			},
+			s = {
+				"<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols(require('telescope.themes').get_ivy({}))<cr>",
+				"Find Workspace Symbols",
 			},
 		},
 
@@ -115,6 +127,7 @@ M.setup = function()
 			l = { "<cmd>w<cr><cmd>lua require('neotest').run.run_last()<cr>", "Run Last Ran Test" },
 			n = { "<cmd>w<cr><cmd>lua require('neotest').run.run()<cr>", "Run Nearest Test" },
 			o = { "<cmd>lua require('neotest').output.open()<cr>", "Show Output" },
+			O = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Show Output" },
 			s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle Summary" },
 		},
 	}, {
