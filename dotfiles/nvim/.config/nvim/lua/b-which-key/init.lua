@@ -121,7 +121,8 @@ M.setup = function()
 
 		t = {
 			name = "Testing",
-			a = { "<cmd>w<cr><cmd>lua require('neotest').run.run(vim.fn.getcwd())<cr>", "Run All Tests" },
+			a = { "<cmd>w<cr><cmd>NeotestSuite notslow<cr>", "Run All Fast Tests" },
+			A = { "<cmd>w<cr><cmd>NeotestSuite<cr>", "Run All Tests" },
 			d = { "<cmd>w<cr><cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug Nearest Test" },
 			f = { "<cmd>w<cr><cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run All Tests In File" },
 			l = { "<cmd>w<cr><cmd>lua require('neotest').run.run_last()<cr>", "Run Last Ran Test" },
