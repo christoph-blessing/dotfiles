@@ -84,7 +84,8 @@ return function(use)
 	})
 
 	use({
-		"nvim-telescope/telescope.nvim",
+		"cblessing24/telescope.nvim", -- until #2098 is fixed
+		branch = "fix_issue_2098",
 		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
 		config = function()
 			require("b-telescope").setup()
