@@ -90,6 +90,11 @@ return function(use)
 			require("b-telescope").setup()
 		end,
 	})
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		requires = { "nvim-telescope/telescope.nvim" },
+		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	})
 
 	use({
 		"mfussenegger/nvim-dap",
