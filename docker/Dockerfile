@@ -62,7 +62,7 @@ RUN curl -O https://starship.rs/install.sh &&\
 
 RUN pip3 install --no-cache-dir thefuck neovim pre-commit
 
-RUN npm install --location=global fd-find neovim
+RUN npm install --location=global fd-find neovim tldr
 
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen &&\
     locale-gen
