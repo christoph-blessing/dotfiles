@@ -12,13 +12,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	})
 end
 
-require("packer").startup(function(use)
-	require("plugins")(use)
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
-end)
-
-if not PACKER_BOOTSTRAP then
+local packer = require("packer")
+packer.init({ snapshot = "default", snapshot_path = table.concat({ vim.fn.stdpath("config"), "snapshots" }, "/") })
+require("plugins")(packer.use)
+if PACKER_BOOTSTRAP then
+	require("packer").sync()
+else
 	require("config")
 end
