@@ -1,67 +1,52 @@
 vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")
 
-return function(use)
-	use("wbthomason/packer.nvim")
+local plugins = {
+	{ "wbthomason/packer.nvim" },
 
-	use("neovim/nvim-lspconfig")
-	use("williamboman/nvim-lsp-installer")
-	use({
+	{ "neovim/nvim-lspconfig" },
+	{ "williamboman/nvim-lsp-installer" },
+	{
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { { "nvim-lua/plenary.nvim" }, { "neovim/nvim-lspconfig" } },
-	})
-
-	use({
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("b-treesitter").setup()
 		end,
-		run = ":TSUpdate",
-	})
-
-	use({
-		"nvim-treesitter/playground",
-		config = function()
-			require("b-treesitter-playground").setup()
-		end,
-		after = "nvim-treesitter",
-		run = ":TSInstall query",
-	})
-
-	use("L3MON4D3/LuaSnip")
-	use({ "rafamadriz/friendly-snippets", event = "InsertCharPre" })
-
-	use({
+		-- run = ":TSUpdate",
+	},
+	{ "L3MON4D3/LuaSnip" },
+	{ "rafamadriz/friendly-snippets", event = "InsertCharPre" },
+	{
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		config = function()
 			require("b-lualine").setup()
 		end,
-	})
-	use({
+	},
+	{
 		"akinsho/bufferline.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("b-bufferline").setup()
 		end,
-	})
-	use({
+	},
+	{
 		"kyazdani42/nvim-tree.lua",
 		config = function()
 			require("b-tree").setup()
 		end,
-	})
-
-	use("tpope/vim-surround")
-	use({
+	},
+	{ "tpope/vim-surround" },
+	{
 		"windwp/nvim-autopairs",
 		config = function()
 			require("b-autopairs").setup()
 		end,
-	})
-
-	use("ellisonleao/gruvbox.nvim")
-
-	use({
+	},
+	{ "ellisonleao/gruvbox.nvim" },
+	{
 		"hrsh7th/nvim-cmp",
 		requires = {
 			{ "hrsh7th/cmp-buffer" },
@@ -71,87 +56,74 @@ return function(use)
 			{ "hrsh7th/cmp-cmdline" },
 			{ "saadparwaiz1/cmp_luasnip" },
 		},
-	})
-
-	use("kyazdani42/nvim-web-devicons")
-
-	use({
+	},
+	{ "kyazdani42/nvim-web-devicons" },
+	{
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("b-gitsigns").setup()
 		end,
-	})
-
-	use({
+	},
+	{
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
 		config = function()
 			require("b-telescope").setup()
 		end,
-	})
-	use({
+	},
+	{
 		"nvim-telescope/telescope-fzf-native.nvim",
 		requires = { "nvim-telescope/telescope.nvim" },
 		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-	})
-
-	use({
+	},
+	{
 		"mfussenegger/nvim-dap",
 		config = function()
 			require("b-dap").setup()
 		end,
-	})
-
-	use({ "lukas-reineke/indent-blankline.nvim" })
-
-	use({
+	},
+	{ "lukas-reineke/indent-blankline.nvim" },
+	{
 		"numToStr/Comment.nvim",
 		event = "BufRead",
 		config = function()
 			require("b-comment").setup()
 		end,
-	})
-
-	use({
+	},
+	{
 		"akinsho/toggleterm.nvim",
 		event = "BufWinEnter",
 		config = function()
 			require("b-toggleterm").setup()
 		end,
-	})
-
-	use({
+	},
+	{
 		"folke/which-key.nvim",
 		config = function()
 			require("b-which-key").setup()
 		end,
-	})
-
-	use({
+	},
+	{
 		"norcalli/nvim-colorizer.lua",
 		config = function()
 			require("b-colorizer").setup()
 		end,
-	})
-
-	use({
+	},
+	{
 		"rcarriga/nvim-notify",
 		config = function()
 			require("b-notify").setup()
 		end,
-	})
-
-	use({
+	},
+	{
 		"github/copilot.vim",
 		config = function()
 			require("b-copilot").setup()
 		end,
-	})
-
-	use({ "antoinemadec/FixCursorHold.nvim" })
-
-	use({
+	},
+	{ "antoinemadec/FixCursorHold.nvim" },
+	{
 		"nvim-neotest/neotest",
 		requires = {
 			"nvim-lua/plenary.nvim",
@@ -161,12 +133,17 @@ return function(use)
 		config = function()
 			require("b-neotest").setup()
 		end,
-	})
-
-	use({
+	},
+	{
 		"nvim-neotest/neotest-python",
 		requires = {
 			"nvim-neotest/neotest",
 		},
-	})
+	},
+}
+
+return function(use)
+	for _, plugin in ipairs(plugins) do
+		use(plugin)
+	end
 end
