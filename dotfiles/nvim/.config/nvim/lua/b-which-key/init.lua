@@ -16,7 +16,7 @@ M.setup = function()
 		w = { "<cmd>w!<cr>", "Write" },
 		q = { "<cmd>q!<cr>", "Quit" },
 		h = { "<cmd>nohlsearch<cr>", "Clear Highlight" },
-		c = { "<cmd>buffer#<bar>bdelete#<cr>", "Close Buffer" },
+		c = { "<cmd>bdelete<cr>", "Close Buffer" },
 
 		l = {
 			name = "LSP",
@@ -30,7 +30,7 @@ M.setup = function()
 				"<cmd>lua require('telescope.builtin').lsp_implementations(require('telescope.themes').get_ivy({}))<cr>",
 				"Go To Implementation",
 			},
-			q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+			q = { "<cmd>lua vim.lsp.diagnostic.setloclist()<cr>", "Quickfix" },
 			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 			t = {
 				"<cmd>lua require('telescope.builtin').lsp_type_definitions(require('telescope.themes').get_ivy({}))<cr>",
@@ -42,43 +42,47 @@ M.setup = function()
 			name = "Find",
 			b = {
 				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy({}))<cr>",
-				"Find Buffer",
+				"Buffer",
 			},
 			c = {
 				"<cmd>lua require('telescope.builtin').git_commits(require('telescope.themes').get_ivy({}))<cr>",
-				"Find Git Commits",
+				"Git Commits",
 			},
 			d = {
 				"<cmd>lua require('telescope.builtin').diagnostics(require('telescope.themes').get_ivy({}))<cr>",
-				"Find Diagnostics",
+				"Diagnostics",
 			},
 			f = {
 				"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({}))<cr>",
-				"Find File",
+				"File",
 			},
 			g = {
 				"<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))<cr>",
-				"Find Text",
+				"Text",
 			},
 			h = {
 				"<cmd>lua require('telescope.builtin').help_tags(require('telescope.themes').get_ivy({}))<cr>",
-				"Find Help",
+				"Help",
 			},
 			i = {
 				"<cmd>lua require('telescope.builtin').lsp_incoming_calls(require('telescope.themes').get_ivy({}))<cr>",
-				"Find Incoming Calls",
+				"Incoming Calls",
 			},
 			o = {
 				"<cmd>lua require('telescope.builtin').lsp_outgoing_calls(require('telescope.themes').get_ivy({}))<cr>",
-				"Find Outgoing Calls",
+				"Outgoing Calls",
+			},
+			q = {
+				"<cmd>lua require('telescope.builtin').quickfix(require('telescope.themes').get_ivy({}))<cr>",
+				"Quickfix",
 			},
 			r = {
 				"<cmd>lua require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy({}))<cr>",
-				"Find References",
+				"References",
 			},
 			s = {
 				"<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols(require('telescope.themes').get_ivy({}))<cr>",
-				"Find Workspace Symbols",
+				"Workspace Symbols",
 			},
 		},
 
