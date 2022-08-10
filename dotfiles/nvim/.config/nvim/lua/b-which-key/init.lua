@@ -10,6 +10,8 @@ M.setup = function()
 		["[d"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Go To Previous Diagnostic" },
 		["]c"] = { "<cmd>lua require('gitsigns').next_hunk()<cr>", "Go To Next Hunk" },
 		["[c"] = { "<cmd>lua require('gitsigns').prev_hunk()<cr>", "Go To Previous Hunk" },
+		["]q"] = { "<cmd>cnext<cr>", "Go To Next Quickfix Entry" },
+		["[q"] = { "<cmd>cprev<cr>", "Go To Previous Quickfix Entry" },
 	}, {})
 
 	wk.register({
@@ -30,7 +32,7 @@ M.setup = function()
 				"<cmd>lua require('telescope.builtin').lsp_implementations(require('telescope.themes').get_ivy({}))<cr>",
 				"Go To Implementation",
 			},
-			q = { "<cmd>lua vim.lsp.diagnostic.setloclist()<cr>", "Quickfix" },
+			q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 			t = {
 				"<cmd>lua require('telescope.builtin').lsp_type_definitions(require('telescope.themes').get_ivy({}))<cr>",
