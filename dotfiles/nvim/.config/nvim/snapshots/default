@@ -1,21 +1,21 @@
 {
   "Comment.nvim": {
-    "commit": "538dac1"
+    "commit": "fe9bbdb"
   },
   "FixCursorHold.nvim": {
     "commit": "5aa5ff1"
   },
   "LuaSnip": {
-    "commit": "d8cacf8"
+    "commit": "c599c56"
   },
   "bufferline.nvim": {
-    "commit": "21aeb94"
+    "commit": "2e5d92e"
   },
   "cmp-buffer": {
-    "commit": "62fc67a"
+    "commit": "3022dbc"
   },
   "cmp-cmdline": {
-    "commit": "c36ca4b"
+    "commit": "9c0e331"
   },
   "cmp-nvim-lsp": {
     "commit": "affe808"
@@ -30,13 +30,13 @@
     "commit": "a9de941"
   },
   "copilot.vim": {
-    "commit": "c2e75a3"
+    "commit": "da286d8"
   },
   "friendly-snippets": {
     "commit": "7339def"
   },
   "gitsigns.nvim": {
-    "commit": "9c3ca02"
+    "commit": "ce636fa"
   },
   "gruvbox.nvim": {
     "commit": "a78dbbe"
@@ -45,19 +45,19 @@
     "commit": "c15bbe9"
   },
   "lualine.nvim": {
-    "commit": "136a92c"
+    "commit": "c0510dd"
   },
   "neotest": {
-    "commit": "956ff67"
+    "commit": "42ba517"
   },
   "neotest-python": {
     "commit": "20df51e"
   },
   "null-ls.nvim": {
-    "commit": "4f9fd41"
+    "commit": "5b745e5"
   },
   "nvim-autopairs": {
-    "commit": "cc8f756"
+    "commit": "ca89ab9"
   },
   "nvim-cmp": {
     "commit": "706371f"
@@ -66,22 +66,22 @@
     "commit": "36c610a"
   },
   "nvim-dap": {
-    "commit": "172d4b1"
+    "commit": "66d33b7"
   },
   "nvim-lsp-installer": {
-    "commit": "9c022b7"
+    "commit": "469fe5c"
   },
   "nvim-lspconfig": {
-    "commit": "47a521e"
+    "commit": "da7461b"
   },
   "nvim-notify": {
     "commit": "60bb6bf"
   },
   "nvim-tree.lua": {
-    "commit": "1685484"
+    "commit": "261a5c3"
   },
   "nvim-treesitter": {
-    "commit": "c784720"
+    "commit": "e7b5e92"
   },
   "nvim-web-devicons": {
     "commit": "2d02a56"
@@ -99,10 +99,10 @@
     "commit": "6a33ece"
   },
   "telescope.nvim": {
-    "commit": "75a5e50"
+    "commit": "8f80e82"
   },
   "toggleterm.nvim": {
-    "commit": "5ea8233"
+    "commit": "6236642"
   },
   "vim-surround": {
     "commit": "bf3480d"
