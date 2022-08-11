@@ -1,16 +1,16 @@
 local M = {}
 
-M.nvim_create_augroups = function(definitions)
-	for augroup_name, definition in pairs(definitions) do
-		local augroup = vim.api.nvim_create_augroup(augroup_name, {})
-		vim.api.nvim_clear_autocmds({ group = augroup })
-		for _, def in ipairs(definition) do
-			vim.api.nvim_create_autocmd(def.event, {
-				group = augroup,
-				pattern = def.pattern,
-				callback = def.callback,
-			})
+M.define_autocmds = function(definitions)
+	for _, entry in ipairs(definitions) do
+		local evnet = entry[1]
+		local opts = entry[2]
+		if type(opts.group) == "string" and opts.group ~= "" then
+			local exists, _ = pcall(vim.api.nvim_get_autocmds, { group = opts.group })
+			if not exists then
+				vim.api.nvim_create_augroup(opts.group, {})
+			end
 		end
+		vim.api.nvim_create_autocmd(evnet, opts)
 	end
 end
 
