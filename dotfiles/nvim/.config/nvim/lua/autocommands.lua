@@ -10,6 +10,14 @@ utils.define_autocmds({
 			end,
 		},
 	},
+	-- https://github.com/nvim-telescope/telescope.nvim/issues/1277
+	{
+		"BufWinEnter",
+		{
+			group = "general",
+			command = "normal! zx",
+		},
+	},
 	{
 		"BufEnter",
 		{
