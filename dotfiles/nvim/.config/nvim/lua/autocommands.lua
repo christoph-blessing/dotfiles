@@ -1,63 +1,72 @@
 local utils = require("utils.autocmd")
 
-utils.nvim_create_augroups({
-	general = {
+utils.define_autocmds({
+	{
+		"TextYankPost",
 		{
-			event = "TextYankPost",
-			pattern = "*",
+			group = "general",
 			callback = function()
 				require("vim.highlight").on_yank({ higroup = "Search", timeout = 200 })
 			end,
 		},
 	},
-	python = {
+	{
+		"BufEnter",
 		{
-			event = "BufEnter",
+			group = "python",
 			pattern = "*.py",
 			callback = function()
 				require("b-which-key.python").setup()
 			end,
 		},
 	},
-	rust = {
+	{
+		"FileType",
 		{
-			event = "FileType",
+			group = "rust",
 			pattern = "rust",
 			callback = function()
 				vim.api.nvim_buf_set_keymap(0, "n", "<leader>r", ":w<CR>:TermExec cmd='cargo run'<CR>", {})
 			end,
 		},
+	},
+	{
+		"FileType",
 		{
-			event = "FileType",
+			group = "rust",
 			pattern = "rust",
 			callback = function()
 				vim.api.nvim_buf_set_keymap(0, "n", "<leader>t", ":w<CR>:TermExec cmd='cargo test'<CR>", {})
 			end,
 		},
 	},
-	lua = {
+	{
+		"FileType",
 		{
-			event = "FileType",
+			group = "lua",
 			pattern = "lua",
 			callback = function()
+				print("hi")
 				require("cmp").setup.buffer({
 					sources = { { name = "buffer" }, { name = "nvim_lua" }, { name = "path" }, { name = "vsnip" } },
 				})
 			end,
 		},
 	},
-	javascriptreact = {
+	{
+		"FileType",
 		{
-			event = "FileType",
+			group = "javascriptreact",
 			pattern = "javascriptreact",
 			callback = function()
 				vim.opt["shiftwidth"] = 2
 			end,
 		},
 	},
-	slack_app = {
+	{
+		"BufWritePost",
 		{
-			event = "BufWritePost",
+			group = "slack_app",
 			pattern = "/**/slack-app/**/*.py",
 			callback = function()
 				require("sync").sync()
