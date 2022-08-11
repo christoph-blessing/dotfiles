@@ -22,8 +22,8 @@ vim.opt["shiftwidth"] = 4
 vim.opt["tabstop"] = 4
 vim.opt["smartindent"] = true
 
-vim.opt["foldenable"] = false -- https://github.com/nvim-telescope/telescope.nvim/issues/1277
--- vim.opt["foldmethod"] = "expr"
--- vim.opt["foldexpr"] = "nvim_treesitter#foldexpr()"
+vim.opt["foldenable"] = true
+vim.opt["foldmethod"] = "expr"
+vim.opt["foldexpr"] = "nvim_treesitter#foldexpr()"
 
 vim.g.python3_host_prog = require("provider").python()
