@@ -1,15 +1,15 @@
 {
   "Comment.nvim": {
-    "commit": "fe9bbdb"
+    "commit": "728f38e"
   },
   "FixCursorHold.nvim": {
     "commit": "5aa5ff1"
   },
   "LuaSnip": {
-    "commit": "c599c56"
+    "commit": "04f9090"
   },
   "bufferline.nvim": {
-    "commit": "2e5d92e"
+    "commit": "fd53af1"
   },
   "cmp-buffer": {
     "commit": "3022dbc"
@@ -30,10 +30,10 @@
     "commit": "a9de941"
   },
   "friendly-snippets": {
-    "commit": "7339def"
+    "commit": "6227548"
   },
   "gitsigns.nvim": {
-    "commit": "ce636fa"
+    "commit": "1e107c9"
   },
   "gruvbox.nvim": {
     "commit": "a78dbbe"
@@ -42,49 +42,49 @@
     "commit": "c15bbe9"
   },
   "lualine.nvim": {
-    "commit": "c0510dd"
+    "commit": "3cf4540"
   },
   "neotest": {
-    "commit": "42ba517"
+    "commit": "8f4e4e3"
   },
   "neotest-python": {
-    "commit": "20df51e"
+    "commit": "c76e25d"
   },
   "null-ls.nvim": {
-    "commit": "5b745e5"
+    "commit": "753ad51"
   },
   "nvim-autopairs": {
-    "commit": "ca89ab9"
+    "commit": "0a18e10"
   },
   "nvim-cmp": {
-    "commit": "706371f"
+    "commit": "058100d"
   },
   "nvim-colorizer.lua": {
     "commit": "36c610a"
   },
   "nvim-dap": {
-    "commit": "66d33b7"
+    "commit": "618c068"
   },
   "nvim-lsp-installer": {
-    "commit": "469fe5c"
+    "commit": "ae913cb"
   },
   "nvim-lspconfig": {
-    "commit": "da7461b"
+    "commit": "4d61f9e"
   },
   "nvim-notify": {
-    "commit": "60bb6bf"
+    "commit": "df6fc96"
   },
   "nvim-tree.lua": {
-    "commit": "261a5c3"
+    "commit": "c3ea264"
   },
   "nvim-treesitter": {
-    "commit": "e7b5e92"
+    "commit": "c170310"
   },
   "nvim-web-devicons": {
     "commit": "2d02a56"
   },
   "packer.nvim": {
-    "commit": "afab895"
+    "commit": "3a9f980"
   },
   "plenary.nvim": {
     "commit": "31807ee"
@@ -93,13 +93,13 @@
     "commit": "b7404d3"
   },
   "telescope-fzf-native.nvim": {
-    "commit": "6a33ece"
+    "commit": "6791f74"
   },
   "telescope.nvim": {
-    "commit": "8f80e82"
+    "commit": "3e944f0"
   },
   "toggleterm.nvim": {
-    "commit": "6236642"
+    "commit": "62683d9"
   },
   "vim-surround": {
     "commit": "bf3480d"
