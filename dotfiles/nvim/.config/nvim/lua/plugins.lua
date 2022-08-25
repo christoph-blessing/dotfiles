@@ -116,12 +116,6 @@ local plugins = {
 			require("b-notify").setup()
 		end,
 	},
-	{
-		"github/copilot.vim",
-		config = function()
-			require("b-copilot").setup()
-		end,
-	},
 	{ "antoinemadec/FixCursorHold.nvim" },
 	{
 		"nvim-neotest/neotest",

@@ -29,9 +29,6 @@
   "cmp_luasnip": {
     "commit": "a9de941"
   },
-  "copilot.vim": {
-    "commit": "da286d8"
-  },
   "friendly-snippets": {
     "commit": "7339def"
   },
