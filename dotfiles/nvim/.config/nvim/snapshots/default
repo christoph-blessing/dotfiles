@@ -1,15 +1,15 @@
 {
   "Comment.nvim": {
-    "commit": "728f38e"
+    "commit": "30d23aa"
   },
   "FixCursorHold.nvim": {
     "commit": "5aa5ff1"
   },
   "LuaSnip": {
-    "commit": "04f9090"
+    "commit": "c6a7171"
   },
   "bufferline.nvim": {
-    "commit": "fd53af1"
+    "commit": "938908f"
   },
   "cmp-buffer": {
     "commit": "3022dbc"
@@ -30,64 +30,64 @@
     "commit": "a9de941"
   },
   "friendly-snippets": {
-    "commit": "6227548"
+    "commit": "e5a16f9"
   },
   "gitsigns.nvim": {
-    "commit": "1e107c9"
+    "commit": "d7e0bcb"
   },
   "gruvbox.nvim": {
-    "commit": "a78dbbe"
+    "commit": "c7aaa3e"
   },
   "indent-blankline.nvim": {
-    "commit": "c15bbe9"
+    "commit": "db7cbcb"
   },
   "lualine.nvim": {
     "commit": "3cf4540"
   },
   "neotest": {
-    "commit": "8f4e4e3"
+    "commit": "2a887fe"
   },
   "neotest-python": {
     "commit": "c76e25d"
   },
   "null-ls.nvim": {
-    "commit": "753ad51"
+    "commit": "08da35a"
   },
   "nvim-autopairs": {
     "commit": "0a18e10"
   },
   "nvim-cmp": {
-    "commit": "058100d"
+    "commit": "33fbb2c"
   },
   "nvim-colorizer.lua": {
     "commit": "36c610a"
   },
   "nvim-dap": {
-    "commit": "618c068"
+    "commit": "ea25d6d"
   },
   "nvim-lsp-installer": {
     "commit": "ae913cb"
   },
   "nvim-lspconfig": {
-    "commit": "4d61f9e"
+    "commit": "0fafc3e"
   },
   "nvim-notify": {
-    "commit": "df6fc96"
+    "commit": "6b779c9"
   },
   "nvim-tree.lua": {
-    "commit": "c3ea264"
+    "commit": "3e49d9b"
   },
   "nvim-treesitter": {
-    "commit": "c170310"
+    "commit": "223883f"
   },
   "nvim-web-devicons": {
     "commit": "2d02a56"
   },
   "packer.nvim": {
-    "commit": "3a9f980"
+    "commit": "6db20b4"
   },
   "plenary.nvim": {
-    "commit": "31807ee"
+    "commit": "4b66054"
   },
   "popup.nvim": {
     "commit": "b7404d3"
@@ -96,15 +96,15 @@
     "commit": "6791f74"
   },
   "telescope.nvim": {
-    "commit": "3e944f0"
+    "commit": "2584ff3"
   },
   "toggleterm.nvim": {
-    "commit": "62683d9"
+    "commit": "7807aeb"
   },
   "vim-surround": {
     "commit": "bf3480d"
   },
   "which-key.nvim": {
-    "commit": "bd4411a"
+    "commit": "25e0e7f"
   }
 }
