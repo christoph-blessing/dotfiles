@@ -31,11 +31,17 @@ RUN apt-get update && apt-get install -y \
     exa \
     less
 
-RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg &&\
-    chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg &&\
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null &&\
-    apt-get update &&\
-    apt-get install -y gh
+# https://github.com/cli/cli/issues/6175
+# RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg &&\
+#     chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg &&\
+#     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null &&\
+#     apt-get update &&\
+#     apt-get install -y gh
+RUN temp="/tmp/gh-$$.deb" &&\
+    curl -sSLo "$temp" "https://github.com$(curl -sSL "https://github.com/cli/cli/releases/latest" | grep -Po "(?<=href=\")/cli/cli/releases/download/[^\"]*$(dpkg --print-architecture)[.]deb(?=\")")" &&\
+    apt install -y "$temp" &&\
+    rm "$temp"
+
 
 ENV DEBIAN_FRONTEND=newt
 
