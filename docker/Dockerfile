@@ -77,11 +77,11 @@ ENV LC_ALL=en_US.UTF-8
 
 ENV SHELL=/usr/bin/zsh
 
-RUN zsh -c 'echo allow-preset-passphrase > $GNUPGHOME/gpg-agent.conf'
-
 ENV DOTFILES_DIR=/root/dotfiles
 COPY dotfiles $DOTFILES_DIR
 RUN stow --dir $DOTFILES_DIR --target $HOME zshenv zsh starship nvim git gh
+
+RUN zsh -c 'echo allow-preset-passphrase > $GNUPGHOME/gpg-agent.conf'
 
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' &&\
     nvim --headless +'LspInstall --sync pyright' +'quitall'
