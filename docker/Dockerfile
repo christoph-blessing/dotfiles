@@ -29,7 +29,11 @@ RUN apt-get update && apt-get install -y \
     gnupg \
     lsb-release \
     exa \
-    less
+    less \
+    bat
+
+RUN mkdir -p ~/.local/bin &&\
+    ln -s /usr/bin/batcat ~/.local/bin/bat
 
 RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg &&\
     chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg &&\
