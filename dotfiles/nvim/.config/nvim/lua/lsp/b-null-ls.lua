@@ -46,6 +46,9 @@ local sources = {
 			}
 		end,
 	}),
+	null_ls.builtins.diagnostics.pylint.with({
+		condition = create_condition("pylint.master"),
+	}),
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
