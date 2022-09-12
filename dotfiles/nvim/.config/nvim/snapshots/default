@@ -65,6 +65,9 @@
   "nvim-dap": {
     "commit": "ea25d6d"
   },
+  "nvim-dap-ui": {
+    "commit": "ebebd42"
+  },
   "nvim-lsp-installer": {
     "commit": "ae913cb"
   },

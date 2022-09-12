@@ -83,6 +83,13 @@ local plugins = {
 			require("b-dap").setup()
 		end,
 	},
+	{
+		"rcarriga/nvim-dap-ui",
+		requires = { "mfussenegger/nvim-dap" },
+		config = function()
+			require("b-dap-ui").setup()
+		end,
+	},
 	{ "lukas-reineke/indent-blankline.nvim" },
 	{
 		"numToStr/Comment.nvim",

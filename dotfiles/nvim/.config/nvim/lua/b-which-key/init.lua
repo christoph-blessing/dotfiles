@@ -117,6 +117,7 @@ M.setup = function()
 			},
 			r = { "<cmd>lua require('dap').repl.open()<cr>", "Open REPL" },
 			l = { "<cmd>lua require('dap').repl.run_last()<cr>", "Run Last" },
+			u = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" },
 		},
 
 		e = {
