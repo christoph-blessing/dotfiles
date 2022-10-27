@@ -12,6 +12,11 @@ M.setup = function()
 		["[c"] = { "<cmd>lua require('gitsigns').prev_hunk()<cr>", "Go To Previous Hunk" },
 		["]q"] = { "<cmd>cnext<cr>", "Go To Next Quickfix Entry" },
 		["[q"] = { "<cmd>cprev<cr>", "Go To Previous Quickfix Entry" },
+		["]r"] = { "<cmd>lua require('illuminate').goto_next_reference({wrap = true})<cr>", "Go to next reference" },
+		["[r"] = {
+			"<cmd>lua require('illuminate').goto_prev_reference({wrap = true})<cr>",
+			"Go to previous reference",
+		},
 	}, {})
 
 	wk.register({
@@ -141,6 +146,11 @@ M.setup = function()
 	}, {
 		prefix = "<leader>",
 	})
+
+	wk.register(
+		{ r = { "<cmd>lua require('illuminate').textobj_select()<cr>", "Reference Under Cursor" } },
+		{ mode = "o" }
+	)
 
 	wk.setup()
 end

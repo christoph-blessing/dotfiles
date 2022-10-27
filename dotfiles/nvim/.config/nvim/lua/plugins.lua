@@ -139,6 +139,12 @@ local plugins = {
 			"nvim-neotest/neotest",
 		},
 	},
+	{
+		"RRethy/vim-illuminate",
+		config = function()
+			require("b-illuminate").setup()
+		end,
+	},
 }
 
 return function(use)
