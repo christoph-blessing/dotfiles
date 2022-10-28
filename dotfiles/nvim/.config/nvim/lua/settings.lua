@@ -13,7 +13,6 @@ vim.opt["spell"] = true
 vim.opt["number"] = true
 vim.opt["relativenumber"] = true
 vim.opt["wrap"] = false
-vim.opt["cursorline"] = true
 vim.opt["signcolumn"] = "yes"
 
 vim.opt["expandtab"] = true
