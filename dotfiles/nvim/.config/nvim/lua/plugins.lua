@@ -145,6 +145,9 @@ local plugins = {
 			require("b-illuminate").setup()
 		end,
 	},
+	{
+		"SmiteshP/nvim-navic",
+	},
 }
 
 return function(use)
