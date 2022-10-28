@@ -13,6 +13,7 @@ M.setup = function()
 			"dapui_stacks",
 			"dap-repl",
 			"dapui_console",
+			"NvimTree",
 		},
 	})
 end
