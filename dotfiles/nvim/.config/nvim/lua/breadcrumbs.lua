@@ -3,7 +3,15 @@ local f = require("utils.functions")
 
 local M = {}
 
-M.winbar_excluded_filetypes = { "toggleterm" }
+M.winbar_excluded_filetypes = {
+	"toggleterm",
+	"packer",
+	"help",
+	"NvimTree",
+	"dap-repl",
+	"dap-terminal",
+	"dapui_console",
+}
 
 M.get_filename = function()
 	return vim.fn.expand("%:t")
