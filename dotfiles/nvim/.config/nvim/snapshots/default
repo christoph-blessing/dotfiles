@@ -3,10 +3,10 @@
     "commit": "ad7ffa8"
   },
   "LuaSnip": {
-    "commit": "663d544"
+    "commit": "619796e"
   },
   "bufferline.nvim": {
-    "commit": "028a879"
+    "commit": "d631817"
   },
   "cmp-buffer": {
     "commit": "3022dbc"
@@ -15,7 +15,7 @@
     "commit": "c66c379"
   },
   "cmp-nvim-lsp": {
-    "commit": "3cf38d9"
+    "commit": "78924d1"
   },
   "cmp-nvim-lua": {
     "commit": "d276254"
@@ -30,10 +30,10 @@
     "commit": "c93311f"
   },
   "gitsigns.nvim": {
-    "commit": "6321c88"
+    "commit": "2b4fc5e"
   },
   "gruvbox.nvim": {
-    "commit": "2fc4980"
+    "commit": "9002dc7"
   },
   "indent-blankline.nvim": {
     "commit": "db7cbcb"
@@ -42,19 +42,19 @@
     "commit": "3325d5d"
   },
   "neotest": {
-    "commit": "0be9899"
+    "commit": "f7db06d"
   },
   "neotest-python": {
-    "commit": "9e2db93"
+    "commit": "2768811"
   },
   "null-ls.nvim": {
-    "commit": "f1add23"
+    "commit": "1ac465b"
   },
   "nvim-autopairs": {
     "commit": "6b6e35f"
   },
   "nvim-cmp": {
-    "commit": "cdb7766"
+    "commit": "9bb8ee6"
   },
   "nvim-colorizer.lua": {
     "commit": "36c610a"
@@ -63,25 +63,25 @@
     "commit": "3d0d731"
   },
   "nvim-dap-ui": {
-    "commit": "f889edb"
+    "commit": "6a82715"
   },
   "nvim-lsp-installer": {
     "commit": "23820a8"
   },
   "nvim-lspconfig": {
-    "commit": "2315a39"
+    "commit": "5f4b1fa"
   },
   "nvim-navic": {
-    "commit": "9f7f0b7"
+    "commit": "2fad334"
   },
   "nvim-notify": {
-    "commit": "5e8d494"
+    "commit": "354e0eb"
   },
   "nvim-tree.lua": {
-    "commit": "65c2ba8"
+    "commit": "6ca6f99"
   },
   "nvim-treesitter": {
-    "commit": "287ffdc"
+    "commit": "58f61e5"
   },
   "nvim-web-devicons": {
     "commit": "9061e2d"
@@ -99,13 +99,13 @@
     "commit": "65c0ee3"
   },
   "telescope.nvim": {
-    "commit": "9784730"
+    "commit": "4bd4205"
   },
   "toggleterm.nvim": {
-    "commit": "8f302c9"
+    "commit": "3ba6838"
   },
   "vim-illuminate": {
-    "commit": "0603e75"
+    "commit": "fb83d83"
   },
   "vim-surround": {
     "commit": "3d188ed"
