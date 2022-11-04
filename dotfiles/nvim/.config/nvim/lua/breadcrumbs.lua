@@ -1,6 +1,9 @@
 local navic = require("nvim-navic")
+local f = require("utils.functions")
 
 local M = {}
+
+M.winbar_excluded_filetypes = { "toggleterm" }
 
 M.get_filename = function()
 	return vim.fn.expand("%:t")
@@ -11,17 +14,27 @@ M.get_location = function()
 		return ""
 	end
 	local location = navic.get_location()
-	if location == "" then
+	if f.isempty(location) then
 		return ""
 	end
 	return ">" .. " " .. location
 end
 
+local filetype_is_excluded = function()
+	return vim.tbl_contains(M.winbar_excluded_filetypes, vim.bo.filetype)
+end
+
 M.get_winbar = function()
+	if filetype_is_excluded() then
+		return
+	end
 	local value = M.get_filename()
+	if f.isempty(value) then
+		return
+	end
 	local location = M.get_location()
 	value = value .. " " .. location
-	vim.api.nvim_set_option_value("winbar", value, {})
+	return vim.api.nvim_set_option_value("winbar", value, { scope = "local" })
 end
 
 M.create_winbar = function()
