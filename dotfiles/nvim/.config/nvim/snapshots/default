@@ -6,13 +6,13 @@
     "commit": "619796e"
   },
   "bufferline.nvim": {
-    "commit": "d631817"
+    "commit": "7c07dee"
   },
   "cmp-buffer": {
     "commit": "3022dbc"
   },
   "cmp-cmdline": {
-    "commit": "c66c379"
+    "commit": "8bc9c4a"
   },
   "cmp-nvim-lsp": {
     "commit": "78924d1"
@@ -30,10 +30,10 @@
     "commit": "c93311f"
   },
   "gitsigns.nvim": {
-    "commit": "2b4fc5e"
+    "commit": "9ff7dfb"
   },
   "gruvbox.nvim": {
-    "commit": "9002dc7"
+    "commit": "99e4807"
   },
   "indent-blankline.nvim": {
     "commit": "db7cbcb"
@@ -42,49 +42,49 @@
     "commit": "3325d5d"
   },
   "neotest": {
-    "commit": "f7db06d"
+    "commit": "779e04f"
   },
   "neotest-python": {
-    "commit": "2768811"
+    "commit": "438744e"
   },
   "null-ls.nvim": {
-    "commit": "1ac465b"
+    "commit": "07d4ed4"
   },
   "nvim-autopairs": {
     "commit": "6b6e35f"
   },
   "nvim-cmp": {
-    "commit": "9bb8ee6"
+    "commit": "aee4011"
   },
   "nvim-colorizer.lua": {
     "commit": "36c610a"
   },
   "nvim-dap": {
-    "commit": "3d0d731"
+    "commit": "6164368"
   },
   "nvim-dap-ui": {
-    "commit": "6a82715"
+    "commit": "a861906"
   },
   "nvim-lsp-installer": {
-    "commit": "23820a8"
+    "commit": "17e0bfa"
   },
   "nvim-lspconfig": {
-    "commit": "5f4b1fa"
+    "commit": "2b802ab"
   },
   "nvim-navic": {
     "commit": "2fad334"
   },
   "nvim-notify": {
-    "commit": "354e0eb"
+    "commit": "43c54ae"
   },
   "nvim-tree.lua": {
-    "commit": "6ca6f99"
+    "commit": "cf90837"
   },
   "nvim-treesitter": {
-    "commit": "58f61e5"
+    "commit": "2072692"
   },
   "nvim-web-devicons": {
-    "commit": "9061e2d"
+    "commit": "c873091"
   },
   "packer.nvim": {
     "commit": "6afb674"
@@ -99,13 +99,13 @@
     "commit": "65c0ee3"
   },
   "telescope.nvim": {
-    "commit": "4bd4205"
+    "commit": "7a4ffef"
   },
   "toggleterm.nvim": {
     "commit": "3ba6838"
   },
   "vim-illuminate": {
-    "commit": "fb83d83"
+    "commit": "a6d0b28"
   },
   "vim-surround": {
     "commit": "3d188ed"
