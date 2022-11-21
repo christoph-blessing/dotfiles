@@ -148,6 +148,12 @@ local plugins = {
 	{
 		"SmiteshP/nvim-navic",
 	},
+	{
+		"ja-ford/delaytrain.nvim",
+		config = function()
+			require("b-delaytrain").setup()
+		end,
+	},
 }
 
 return function(use)
