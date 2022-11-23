@@ -7,6 +7,9 @@ M.setup = function()
 				find_command = { "fd", "--type=file" },
 				hidden = true,
 			},
+			live_grep = {
+				additional_args = { "--hidden" },
+			},
 		},
 	})
 
