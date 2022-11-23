@@ -3,7 +3,7 @@
     "commit": "5f01c1a"
   },
   "LuaSnip": {
-    "commit": "09ce9a7"
+    "commit": "79f6472"
   },
   "bufferline.nvim": {
     "commit": "4ecfa81"
@@ -45,10 +45,10 @@
     "commit": "3325d5d"
   },
   "neotest": {
-    "commit": "9a95067"
+    "commit": "274d9f0"
   },
   "neotest-python": {
-    "commit": "438744e"
+    "commit": "e53920d"
   },
   "null-ls.nvim": {
     "commit": "07d4ed4"
@@ -66,7 +66,7 @@
     "commit": "6164368"
   },
   "nvim-dap-ui": {
-    "commit": "69a3982"
+    "commit": "f7fc98e"
   },
   "nvim-lsp-installer": {
     "commit": "17e0bfa"
@@ -84,7 +84,7 @@
     "commit": "68a2a09"
   },
   "nvim-treesitter": {
-    "commit": "bbe90e93"
+    "commit": "18cc1216"
   },
   "nvim-web-devicons": {
     "commit": "3b1b794"
