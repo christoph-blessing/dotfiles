@@ -1,5 +1,5 @@
 [user]
-	email = chris24.blessing@gmail.com
+    email = 33834216+cblessing24@users.noreply.github.com
     name = Christoph Blessing
 	signingkey = 238EC530C6096DB9
 [core]
@@ -10,7 +10,7 @@
 [pull]
 	rebase = false
 [init]
-	defaultbranch = main
+	defaultBranch = main
 [commit]
 	gpgSign = true
 	template = ~/.config/git/gitmessage
