@@ -16,7 +16,12 @@ local plugins = {
 		end,
 		-- run = ":TSUpdate",
 	},
-	{ "L3MON4D3/LuaSnip" },
+	{
+		"L3MON4D3/LuaSnip",
+		config = function()
+			require("snippets").setup()
+		end,
+	},
 	{ "rafamadriz/friendly-snippets", event = "InsertCharPre" },
 	{
 		"nvim-lualine/lualine.nvim",
