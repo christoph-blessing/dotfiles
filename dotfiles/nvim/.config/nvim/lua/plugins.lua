@@ -159,6 +159,7 @@ local plugins = {
 			require("b-delaytrain").setup()
 		end,
 	},
+	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 }
 
 return function(use)
