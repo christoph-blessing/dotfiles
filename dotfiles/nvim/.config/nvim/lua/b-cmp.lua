@@ -26,7 +26,10 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end),
+		end, {
+			"i",
+			"s",
+		}),
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
@@ -35,7 +38,10 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end),
+		end, {
+			"i",
+			"s",
+		}),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<C-d>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
