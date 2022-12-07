@@ -66,4 +66,4 @@ local on_attach = function(client, bufnr)
 	end
 end
 
-null_ls.setup({ sources = sources, on_attach = on_attach, debug = false })
+null_ls.setup({ sources = sources, diagnostics_format = "[#{c}] #{m} (#{s})", on_attach = on_attach, debug = false })
