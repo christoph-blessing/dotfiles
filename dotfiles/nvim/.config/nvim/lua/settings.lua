@@ -8,6 +8,7 @@ vim.opt["splitright"] = true
 vim.opt["showmode"] = false
 vim.opt["shortmess"] = vim.o.shortmess .. "c"
 vim.opt["shell"] = "zsh"
+vim.opt["mouse"] = ""
 
 vim.opt["spell"] = true
 vim.opt["number"] = true
