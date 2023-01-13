@@ -1,9 +1,0 @@
-repos:
-  - repo: local
-    hooks:
-      - id: packer_snapshots
-        name: Format Packer Snapshots
-        entry: scripts/format_json.sh
-        language: script
-        files: "dotfiles/nvim/.config/nvim/snapshots/\\w+"
-        args: ["check"]

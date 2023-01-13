@@ -6,7 +6,7 @@ end
 local M = {}
 
 M.setup = function()
-	local paths = { join_paths(vim.fn.stdpath("data"), "site", "pack", "packer", "opt", "friendly-snippets") }
+	local paths = { join_paths(vim.fn.stdpath("data"), "lazy", "friendly-snippets") }
 	require("luasnip.loaders.from_vscode").lazy_load({ paths = paths })
 end
 

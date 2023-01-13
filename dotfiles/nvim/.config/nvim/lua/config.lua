@@ -1,5 +1,4 @@
 require("settings")
-require("colorscheme")
 require("keymappings")
 require("autocommands")
 require("commands")

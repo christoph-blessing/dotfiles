@@ -5,7 +5,7 @@ local M = {}
 
 M.winbar_excluded_filetypes = {
 	"toggleterm",
-	"packer",
+	"lazy",
 	"help",
 	"NvimTree",
 	"dap-repl",

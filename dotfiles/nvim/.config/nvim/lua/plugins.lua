@@ -1,20 +1,16 @@
-vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")
-
 local plugins = {
-	{ "wbthomason/packer.nvim" },
-
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/nvim-lsp-installer" },
 	{
 		"jose-elias-alvarez/null-ls.nvim",
-		requires = { { "nvim-lua/plenary.nvim" }, { "neovim/nvim-lspconfig" } },
+		dependencies = { { "nvim-lua/plenary.nvim" }, { "neovim/nvim-lspconfig" } },
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("b-treesitter").setup()
 		end,
-		-- run = ":TSUpdate",
+		build = ":TSUpdate",
 	},
 	{
 		"L3MON4D3/LuaSnip",
@@ -25,14 +21,14 @@ local plugins = {
 	{ "rafamadriz/friendly-snippets", event = "InsertCharPre" },
 	{
 		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
 		config = function()
 			require("statusline").setup()
 		end,
 	},
 	{
 		"akinsho/bufferline.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
+		dependencies = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("b-bufferline").setup()
 		end,
@@ -50,10 +46,17 @@ local plugins = {
 			require("b-autopairs").setup()
 		end,
 	},
-	{ "ellisonleao/gruvbox.nvim" },
+	{
+		"ellisonleao/gruvbox.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd([[colorscheme gruvbox]])
+		end,
+	},
 	{
 		"hrsh7th/nvim-cmp",
-		requires = {
+		dependencies = {
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-path" },
@@ -65,22 +68,22 @@ local plugins = {
 	{ "kyazdani42/nvim-web-devicons" },
 	{
 		"lewis6991/gitsigns.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("b-gitsigns").setup()
 		end,
 	},
 	{
 		"nvim-telescope/telescope.nvim",
-		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+		dependencies = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
 		config = function()
 			require("finder").setup()
 		end,
 	},
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
-		requires = { "nvim-telescope/telescope.nvim" },
-		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+		build = "make",
 	},
 	{
 		"mfussenegger/nvim-dap",
@@ -90,7 +93,7 @@ local plugins = {
 	},
 	{
 		"rcarriga/nvim-dap-ui",
-		requires = { "mfussenegger/nvim-dap" },
+		dependencies = { "mfussenegger/nvim-dap" },
 		config = function()
 			require("b-dap-ui").setup()
 		end,
@@ -130,7 +133,7 @@ local plugins = {
 	},
 	{
 		"nvim-neotest/neotest",
-		requires = {
+		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 		},
@@ -140,7 +143,7 @@ local plugins = {
 	},
 	{
 		"nvim-neotest/neotest-python",
-		requires = {
+		dependencies = {
 			"nvim-neotest/neotest",
 		},
 	},
@@ -162,8 +165,4 @@ local plugins = {
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 }
 
-return function(use)
-	for _, plugin in ipairs(plugins) do
-		use(plugin)
-	end
-end
+return plugins
