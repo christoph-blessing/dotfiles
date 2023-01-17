@@ -75,15 +75,16 @@ local plugins = {
 	},
 	{
 		"nvim-telescope/telescope.nvim",
-		dependencies = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+		dependencies = { "nvim-telescope/telescope-fzf-native.nvim", "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
 		config = function()
 			require("finder").setup()
 		end,
+		cmd = "Telescope",
 	},
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
 		build = "make",
+		lazy = true,
 	},
 	{
 		"mfussenegger/nvim-dap",
