@@ -1,8 +1,9 @@
 local plugins = {
-	{ "neovim/nvim-lspconfig" },
+	{ "neovim/nvim-lspconfig", lazy = true },
 	{ "williamboman/nvim-lsp-installer" },
 	{
 		"jose-elias-alvarez/null-ls.nvim",
+		lazy = true,
 		dependencies = { { "nvim-lua/plenary.nvim" }, { "neovim/nvim-lspconfig" } },
 	},
 	{
@@ -17,8 +18,10 @@ local plugins = {
 		config = function()
 			require("snippets").setup()
 		end,
+		event = "InsertEnter",
+		dependencies = { "friendly-snippets" },
 	},
-	{ "rafamadriz/friendly-snippets", event = "InsertCharPre" },
+	{ "rafamadriz/friendly-snippets", lazy = true },
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
@@ -45,6 +48,7 @@ local plugins = {
 		config = function()
 			require("b-autopairs").setup()
 		end,
+		event = "InsertEnter",
 	},
 	{
 		"ellisonleao/gruvbox.nvim",
@@ -64,7 +68,14 @@ local plugins = {
 			{ "hrsh7th/cmp-cmdline" },
 			{ "saadparwaiz1/cmp_luasnip" },
 		},
+		event = { "InsertEnter", "CmdlineEnter" },
 	},
+	{ "hrsh7th/cmp-nvim-lsp", lazy = true },
+	{ "saadparwaiz1/cmp_luasnip", lazy = true },
+	{ "hrsh7th/cmp-buffer", lazy = true },
+	{ "hrsh7th/cmp-path", lazy = true },
+	{ "hrsh7th/cmp-cmdline", lazy = true },
+	{ "hrsh7th/cmp-nvim-lua", lazy = true },
 	{ "kyazdani42/nvim-web-devicons" },
 	{
 		"lewis6991/gitsigns.nvim",
@@ -72,6 +83,7 @@ local plugins = {
 		config = function()
 			require("b-gitsigns").setup()
 		end,
+		event = "BufRead",
 	},
 	{
 		"nvim-telescope/telescope.nvim",
