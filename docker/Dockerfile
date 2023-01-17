@@ -81,8 +81,7 @@ RUN stow --dir $DOTFILES_DIR --target $HOME zshenv zsh starship nvim git gh
 
 RUN zsh -c 'echo allow-preset-passphrase > $GNUPGHOME/gpg-agent.conf'
 
-RUN nvim --headless -c 'autocmd User PackerComplete quitall' &&\
-    nvim --headless +'LspInstall --sync pyright' +'quitall'
+RUN nvim --headless "+Lazy! install" +qa
 
 ENV SHELL=/usr/bin/zsh
 
