@@ -4,7 +4,7 @@ M.setup = function()
 	require("telescope").setup({
 		pickers = {
 			find_files = {
-				find_command = { "fd", "--type=file" },
+				find_command = { "fd", "--type=file", "--exclude=.git" },
 				hidden = true,
 			},
 			live_grep = {
