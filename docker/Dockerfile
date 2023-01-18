@@ -81,6 +81,10 @@ ENV DOTFILES_DIR=/root/dotfiles
 COPY dotfiles $DOTFILES_DIR
 RUN stow --dir $DOTFILES_DIR --target $HOME zshenv zsh starship nvim git gh tmux
 
+ARG SCRIPTS_DIR=/root/scripts
+COPY docker/scripts $SCRIPTS_DIR
+ENV PATH=$SCRIPTS_DIR:${PATH}
+
 RUN zsh -c 'echo allow-preset-passphrase > $GNUPGHOME/gpg-agent.conf'
 
 RUN nvim --headless "+Lazy! install" +qa
