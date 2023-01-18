@@ -69,6 +69,8 @@ RUN pip3 install --no-cache-dir thefuck neovim pre-commit
 
 RUN npm install --location=global fd-find neovim tldr
 
+RUN curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sh -s -- --git cantino/mcfly
+
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen &&\
     locale-gen
 ENV LANG=en_US.UTF-8
