@@ -30,7 +30,8 @@ RUN apt-get update && apt-get install -y \
     lsb-release \
     exa \
     less \
-    bat
+    bat \
+    tmux
 
 RUN mkdir -p ~/.local/bin &&\
     ln -s /usr/bin/batcat ~/.local/bin/bat
@@ -74,10 +75,11 @@ ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
 ENV SHELL=/usr/bin/zsh
+ENV TERM=xterm-256color
 
 ENV DOTFILES_DIR=/root/dotfiles
 COPY dotfiles $DOTFILES_DIR
-RUN stow --dir $DOTFILES_DIR --target $HOME zshenv zsh starship nvim git gh
+RUN stow --dir $DOTFILES_DIR --target $HOME zshenv zsh starship nvim git gh tmux
 
 RUN zsh -c 'echo allow-preset-passphrase > $GNUPGHOME/gpg-agent.conf'
 
@@ -88,4 +90,4 @@ ENV SHELL=/usr/bin/zsh
 ENV ZSH_DIR=/root/zsh
 COPY docker/zsh $ZSH_DIR
 ENV ZSHRC_HOOK=$ZSH_DIR/zshrc
-ENTRYPOINT ["/usr/bin/zsh"]
+ENTRYPOINT ["tmux"]
