@@ -13,7 +13,6 @@
 	defaultBranch = main
 [commit]
 	gpgSign = true
-	template = ~/.config/git/gitmessage
 [alias]
     a = add
     b = branch
