@@ -28,6 +28,7 @@ M.setup = function()
 				end,
 			}),
 		},
+		quickfix = { enable = false, open = false },
 		icons = { passed = "✅", failed = "❌", running = "⚙", skipped = "⛔", unknown = "❓" },
 	})
 
