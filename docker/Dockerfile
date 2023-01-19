@@ -31,7 +31,8 @@ RUN apt-get update && apt-get install -y \
     exa \
     less \
     bat \
-    tmux
+    tmux \
+    man
 
 RUN mkdir -p ~/.local/bin &&\
     ln -s /usr/bin/batcat ~/.local/bin/bat
