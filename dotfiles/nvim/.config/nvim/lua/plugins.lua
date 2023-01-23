@@ -176,6 +176,12 @@ local plugins = {
 		"SmiteshP/nvim-navic",
 	},
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
+	{
+		"ggandor/leap.nvim",
+		config = function()
+			require("b-leap").setup()
+		end,
+	},
 }
 
 return plugins
