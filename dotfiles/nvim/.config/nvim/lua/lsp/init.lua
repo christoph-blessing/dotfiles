@@ -1,4 +1,4 @@
-vim.diagnostic.config({ float = { source = "always" } })
+vim.diagnostic.config({ float = { source = "always" }, virtual_text = { prefix = "💡" } })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	virtual_text = true,
@@ -21,14 +21,14 @@ local on_attach = function(client, bufnr)
 	end
 end
 
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-	local config = require("lsp.configs." .. server.name)
-	config.capabilities = capabilities
-	config.on_attach = on_attach
-	server:setup(config)
-end)
-
-vim.diagnostic.config({ virtual_text = { prefix = "💡" } })
+require("mason-lspconfig").setup({ ensure_installed = { "sumneko_lua", "pyright", "bashls", "rust_analyzer" } })
+require("lspconfig")["sumneko_lua"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = { Lua = { diagnostics = { globals = { "vim", "use" } } } },
+})
+require("lspconfig")["pyright"].setup({ on_attach = on_attach, capabilities = capabilities })
+require("lspconfig")["bashls"].setup({})
+require("lspconfig")["rust_analyzer"].setup({})
 
 require("lsp.b-null-ls")

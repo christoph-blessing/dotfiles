@@ -1,6 +1,12 @@
 local plugins = {
-	{ "neovim/nvim-lspconfig", lazy = true },
-	{ "williamboman/nvim-lsp-installer" },
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("b-mason").setup()
+		end,
+	},
+	{ "williamboman/mason-lspconfig.nvim", lazy = true, dependencies = { "williamboman/mason.nvim" } },
+	{ "neovim/nvim-lspconfig", lazy = true, dependencies = { "williamboman/mason-lspconfig.nvim" } },
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		lazy = true,
@@ -169,7 +175,6 @@ local plugins = {
 	{
 		"SmiteshP/nvim-navic",
 	},
-
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 }
 
