@@ -125,12 +125,6 @@ M.setup = function()
 			u = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" },
 		},
 
-		e = {
-			name = "Execute",
-			a = { "<cmd>TermExec cmd='!!'<cr>", "Run Last Command Again" },
-			c = { "<cmd>TermExec cmd='clear'<cr>", "Clear Terminal" },
-		},
-
 		t = {
 			name = "Testing",
 			a = { "<cmd>w<cr><cmd>NeotestSuite notslow<cr>", "Run All Fast Tests" },

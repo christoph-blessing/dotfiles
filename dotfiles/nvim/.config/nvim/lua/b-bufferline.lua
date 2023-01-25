@@ -1,4 +1,4 @@
-M = {}
+local M = {}
 
 M.setup = function()
 	vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<cr>", { noremap = true, silent = true })
@@ -6,7 +6,6 @@ M.setup = function()
 	require("bufferline").setup({
 		options = {
 			diagnostics = "nvim_lsp",
-			offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "left" } },
 			custom_filter = function(buf_number, buf_numbers)
 				if vim.bo[buf_number].filetype ~= "qf" and vim.bo[buf_number].filetype ~= "dap-repl" then
 					return true

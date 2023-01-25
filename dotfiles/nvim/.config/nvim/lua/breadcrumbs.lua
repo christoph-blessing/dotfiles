@@ -4,10 +4,8 @@ local f = require("utils.functions")
 local M = {}
 
 M.winbar_excluded_filetypes = {
-	"toggleterm",
 	"lazy",
 	"help",
-	"NvimTree",
 	"dap-repl",
 	"dap-terminal",
 	"dapui_console",

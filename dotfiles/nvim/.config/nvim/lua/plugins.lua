@@ -42,12 +42,6 @@ local plugins = {
 			require("b-bufferline").setup()
 		end,
 	},
-	{
-		"kyazdani42/nvim-tree.lua",
-		config = function()
-			require("b-tree").setup()
-		end,
-	},
 	{ "tpope/vim-surround" },
 	{
 		"windwp/nvim-autopairs",
@@ -123,13 +117,6 @@ local plugins = {
 		event = "BufRead",
 		config = function()
 			require("b-comment").setup()
-		end,
-	},
-	{
-		"akinsho/toggleterm.nvim",
-		event = "BufWinEnter",
-		config = function()
-			require("b-toggleterm").setup()
 		end,
 	},
 	{
