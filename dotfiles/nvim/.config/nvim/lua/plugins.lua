@@ -42,7 +42,6 @@ local plugins = {
 			require("b-bufferline").setup()
 		end,
 	},
-	{ "tpope/vim-surround" },
 	{
 		"windwp/nvim-autopairs",
 		config = function()
