@@ -91,6 +91,7 @@ ENV PATH=$SCRIPTS_DIR:${PATH}
 RUN zsh -c 'echo allow-preset-passphrase > $GNUPGHOME/gpg-agent.conf'
 
 RUN nvim --headless "+Lazy! install" +qa
+RUN nvim --headless -c "MasonInstall pyright debugpy" -c qall
 
 ENV SHELL=/usr/bin/zsh
 
