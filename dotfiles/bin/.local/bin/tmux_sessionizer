@@ -1,0 +1,28 @@
+#!/bin/sh
+
+target=$(fd . "$HOME/projects" --min-depth 1 --type directory --max-depth 1 | fzf-tmux)
+
+target_name=$(basename "$target")
+
+tmux has-session -t "$target_name" 2> /dev/null
+target_exists=$?
+
+if [ -z "$TMUX" ] && [ "$target_exists" -eq 0 ]
+then
+    tmux attach -t "$target_name"
+    exit 0
+fi
+
+if [ -z "$TMUX" ]  && [ "$target_exists" -ne 0 ]
+then
+    tmux new-session -s "$target_name" -c "$target"
+    exit 0
+fi
+
+
+if [ -n "$TMUX" ] && [ "$target_exists" -ne 0 ]
+then
+    tmux new-session -ds "$target_name" -c "$target"
+fi
+
+tmux switch-client -t "$target_name"
