@@ -21,7 +21,6 @@ local on_attach = function(client, bufnr)
 	end
 end
 
-require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "pyright", "bashls", "rust_analyzer" } })
 require("lspconfig")["lua_ls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
