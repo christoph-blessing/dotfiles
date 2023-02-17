@@ -164,7 +164,7 @@ alt + g
     ~/scripts/search_google.sh
 
 # lock screen
-alt + l
+Pause
     ~/scripts/lock.sh
 
 # copy oath code to clipboard
