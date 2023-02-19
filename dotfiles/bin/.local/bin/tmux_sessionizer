@@ -1,6 +1,11 @@
 #!/bin/sh
 
-target=$(fd . "$HOME/projects" --min-depth 1 --type directory --max-depth 1 | fzf-tmux)
+if [ $# -eq 1 ]
+then
+    target="$1"
+else
+    target=$(fd . "$HOME/projects" --min-depth 1 --type directory --max-depth 1 | fzf-tmux)
+fi
 
 target_name=$(basename "$target")
 
