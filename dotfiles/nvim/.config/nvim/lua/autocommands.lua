@@ -10,19 +10,6 @@ utils.define_autocmds({
 			end,
 		},
 	},
-	-- https://github.com/nvim-telescope/telescope.nvim/issues/1277
-	{
-		"BufRead",
-		{
-			group = "general",
-			callback = function()
-				vim.api.nvim_create_autocmd("BufWinEnter", {
-					command = "normal! zx",
-					once = true,
-				})
-			end,
-		},
-	},
 	{
 		"BufEnter",
 		{
