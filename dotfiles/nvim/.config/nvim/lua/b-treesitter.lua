@@ -1,11 +1,11 @@
-M = {}
+local M = {}
 
 M.setup = function()
 	require("nvim-treesitter.configs").setup({
-		ensure_installed = { "python", "lua", "rust" },
+		ensure_installed = { "python", "lua", "rust", "bash", "yaml", "toml", "dockerfile", "markdown" },
 		sync_install = true,
 		highlight = { enable = true },
-		indent = { enable = true, disable = { "python" } },
+		indent = { enable = false },
 		textobjects = {
 			select = {
 				enable = true,
@@ -53,6 +53,10 @@ M.setup = function()
 			},
 		},
 	})
+
+	vim.o.foldmethod = "expr"
+	vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+	vim.o.foldenable = false
 end
 
 return M
