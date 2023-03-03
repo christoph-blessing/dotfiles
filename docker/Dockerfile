@@ -48,6 +48,14 @@ ENV DEBIAN_FRONTEND=newt
 RUN curl -o- https://deb.nodesource.com/setup_16.x | bash &&\
     apt-get install -y nodejs
 
+RUN curl -s https://api.github.com/repos/dandavison/delta/releases/latest \
+    | rg -e "browser_download_url.*git-delta-musl" \
+    | cut -d : -f 2,3 \
+    | tr -d \",' ' \
+    | xargs curl -L -o delta.deb &&\
+    dpkg -i delta.deb &&\
+    rm delta.deb
+
 RUN git clone --depth 1 https://github.com/neovim/neovim &&\
     cd neovim &&\
     make CMAKE_BUILD_TYPE=RelWithDebInfo &&\
