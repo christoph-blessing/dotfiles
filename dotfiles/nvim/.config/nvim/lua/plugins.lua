@@ -168,14 +168,6 @@ local plugins = {
 			require("b-leap").setup()
 		end,
 	},
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("b-copilot").setup()
-		end,
-	},
 }
 
 return plugins
