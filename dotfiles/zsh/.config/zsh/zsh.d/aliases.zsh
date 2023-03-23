@@ -27,9 +27,6 @@ alias gpg2="gpg2 --homedir $XDG_DATA_HOME/gnupg"
 
 alias xbindkeys="xbindkeys -f $XDG_CONFIG_HOME/xbindkeys/config"
 
-alias cdd="cd $XDG_DATA_HOME/dotfiles/"
-alias cds="cd $XDG_DATA_HOME/scripts/"
-
 alias_if_exists grep rg
 
 alias slock=~/scripts/lock.sh
