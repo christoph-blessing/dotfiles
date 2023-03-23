@@ -4,7 +4,12 @@ if [ $# -eq 1 ]
 then
     target="$1"
 else
-    target=$(fd . "$HOME/projects" --min-depth 1 --type directory --max-depth 1 | fzf-tmux)
+    target=$(fd . "$HOME/projects" --min-depth 1 --type directory --max-depth 1 | fzf-tmux -p 50%,50%)
+fi
+
+if [ -z "$target" ]
+then
+    exit
 fi
 
 target_name=$(basename "$target")
