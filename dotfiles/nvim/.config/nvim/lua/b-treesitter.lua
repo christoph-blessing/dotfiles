@@ -24,7 +24,7 @@ M.setup = function()
 				},
 			},
 			swap = {
-				enable = true,
+				enable = false,
 				swap_next = {
 					["<leader>a"] = { query = "@parameter.inner", desc = "Swap with next parameter" },
 				},
