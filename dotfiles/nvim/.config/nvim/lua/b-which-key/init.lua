@@ -27,6 +27,7 @@ M.setup = function()
 
 		l = {
 			name = "LSP",
+			c = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Execute Code Action" },
 			d = {
 				"<cmd>lua require('telescope.builtin').lsp_definitions(require('telescope.themes').get_ivy({}))<cr>",
 				"Go To Definition",
@@ -39,6 +40,7 @@ M.setup = function()
 			},
 			q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+			s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Show Signature Help" },
 			t = {
 				"<cmd>lua require('telescope.builtin').lsp_type_definitions(require('telescope.themes').get_ivy({}))<cr>",
 				"Go To Type Definition",
