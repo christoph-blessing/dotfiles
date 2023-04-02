@@ -168,6 +168,12 @@ local plugins = {
 			require("b-leap").setup()
 		end,
 	},
+	{
+		"ThePrimeagen/harpoon",
+		config = function()
+			require("b-harpoon").setup()
+		end,
+	},
 }
 
 return plugins

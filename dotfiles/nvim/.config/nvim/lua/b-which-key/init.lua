@@ -17,9 +17,13 @@ M.setup = function()
 			"<cmd>lua require('illuminate').goto_prev_reference({wrap = true})<cr>",
 			"Go to previous reference",
 		},
+		["]h"] = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Go To Next Mark" },
+		["[h"] = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Go To Previous Mark" },
 	}, {})
 
 	wk.register({
+		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+		m = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Show Marks" },
 		w = { "<cmd>w!<cr>", "Write" },
 		q = { "<cmd>q!<cr>", "Quit" },
 		h = { "<cmd>nohlsearch<cr>", "Clear Highlight" },
@@ -147,6 +151,13 @@ M.setup = function()
 		{ r = { "<cmd>lua require('illuminate').textobj_select()<cr>", "Reference Under Cursor" } },
 		{ mode = "o" }
 	)
+
+	wk.register({
+		["<C-h>"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Go To First Mark" },
+		["<C-j>"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Go To Second Mark" },
+		["<C-k>"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Go To Third Mark" },
+		["<C-l>"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Go To Fourth Mark" },
+	}, {})
 
 	wk.setup()
 end
