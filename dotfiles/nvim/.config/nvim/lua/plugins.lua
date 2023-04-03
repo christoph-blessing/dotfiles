@@ -36,13 +36,6 @@ local plugins = {
 		end,
 	},
 	{
-		"akinsho/bufferline.nvim",
-		dependencies = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("b-bufferline").setup()
-		end,
-	},
-	{
 		"windwp/nvim-autopairs",
 		config = function()
 			require("b-autopairs").setup()
