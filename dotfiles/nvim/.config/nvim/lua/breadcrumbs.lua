@@ -12,7 +12,7 @@ M.winbar_excluded_filetypes = {
 }
 
 M.get_filename = function()
-	return vim.fn.expand("%:t")
+	return vim.fn.expand("%")
 end
 
 M.get_location = function()
