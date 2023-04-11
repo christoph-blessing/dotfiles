@@ -1,3 +1,0 @@
-for file in $(ls -1 "$ZSH_DIR"/zsh.d/); do
-    source "$ZSH_DIR/zsh.d/$file"
-done
