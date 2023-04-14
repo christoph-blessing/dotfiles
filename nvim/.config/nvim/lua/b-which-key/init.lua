@@ -28,7 +28,6 @@ M.setup = function()
 		q = { "<cmd>q!<cr>", "Quit" },
 		h = { "<cmd>nohlsearch<cr>", "Clear Highlight" },
 		c = { "<cmd>bdelete<cr>", "Close Buffer" },
-
 		l = {
 			name = "LSP",
 			c = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Execute Code Action" },
@@ -50,7 +49,6 @@ M.setup = function()
 				"Go To Type Definition",
 			},
 		},
-
 		f = {
 			name = "Find",
 			b = {
@@ -98,7 +96,6 @@ M.setup = function()
 				"Workspace Symbols",
 			},
 		},
-
 		g = {
 			name = "Git",
 			s = { "<cmd>lua require('gitsigns').stage_hunk()<cr>", "Stage Hunk" },
@@ -110,7 +107,6 @@ M.setup = function()
 			S = { "<cmd>lua require('gitsigns').stage_buffer()<cr>", "Stage Buffer" },
 			U = { "<cmd>lua require('gitsigns').reset_buffer_index()<cr>", "Reset Buffer Index" },
 		},
-
 		d = {
 			name = "Debug",
 			c = { "<cmd>lua require('dap').continue()<cr>", "Continue" },
@@ -130,7 +126,6 @@ M.setup = function()
 			l = { "<cmd>lua require('dap').repl.run_last()<cr>", "Run Last" },
 			u = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" },
 		},
-
 		t = {
 			name = "Testing",
 			a = { "<cmd>w<cr><cmd>NeotestSuite notslow<cr>", "Run All Fast Tests" },
@@ -143,6 +138,7 @@ M.setup = function()
 			O = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Show Output" },
 			s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle Summary" },
 		},
+		x = { "<cmd>!chmod +x %<cr>", "Make File Executable" },
 	}, {
 		prefix = "<leader>",
 	})
@@ -158,6 +154,15 @@ M.setup = function()
 		["<C-k>"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Go To Third Mark" },
 		["<C-l>"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Go To Fourth Mark" },
 	}, {})
+
+	wk.register({
+		y = { '"+y', "Yank To System Clipboard" },
+		Y = { '"+Y', "Yank Line To System Clipboard" },
+	}, {
+		prefix = "<leader>",
+	})
+
+	wk.register({ y = { '"+y', "Yank To System Clipboard" } }, { mode = "v", prefix = "<leader>" })
 
 	wk.setup()
 end
