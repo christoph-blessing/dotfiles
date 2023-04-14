@@ -1,4 +1,3 @@
-vim.opt["clipboard"] = "unnamedplus"
 vim.opt["updatetime"] = 50
 vim.opt["timeoutlen"] = 200
 vim.opt["termguicolors"] = true
