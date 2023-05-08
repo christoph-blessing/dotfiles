@@ -162,7 +162,17 @@ M.setup = function()
 		prefix = "<leader>",
 	})
 
-	wk.register({ y = { '"+y', "Yank To System Clipboard" } }, { mode = "v", prefix = "<leader>" })
+	wk.register({
+		y = { '"+y', "Yank To System Clipboard" },
+		g = {
+			name = "Git",
+			s = { "<cmd>lua require('gitsigns').stage_hunk({vim.fn.line('.'), vim.fn.line('v')})<cr>", "Stage Hunk" },
+			r = { "<cmd>lua require('gitsigns').reset_hunk({vim.fn.line('.'), vim.fn.line('v')})<cr>", "Reset Hunk" },
+		},
+	}, {
+		mode = "v",
+		prefix = "<leader>",
+	})
 
 	wk.setup()
 end
