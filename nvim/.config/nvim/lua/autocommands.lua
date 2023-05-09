@@ -72,4 +72,18 @@ utils.define_autocmds({
 			end,
 		},
 	},
+	{
+		"FileType",
+		{
+			group = "plantuml",
+			pattern = "plantuml",
+			callback = function()
+				require("which-key").register({
+					r = { require("plantuml").show_diagram, "Show Diagram" },
+				}, {
+					prefix = "<leader>",
+				})
+			end,
+		},
+	},
 })
