@@ -14,7 +14,7 @@ fi
 
 target_name=$(basename "$target")
 
-tmux has-session -t "$target_name" 2> /dev/null
+tmux has-session -t "=$target_name" 2> /dev/null
 target_exists=$?
 
 if [ -z "$TMUX" ] && [ "$target_exists" -eq 0 ]
