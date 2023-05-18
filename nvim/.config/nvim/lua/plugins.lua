@@ -167,6 +167,12 @@ local plugins = {
 			require("b-harpoon").setup()
 		end,
 	},
+	{
+		"sindrets/diffview.nvim",
+		config = function()
+			require("b-diffview").setup()
+		end,
+	},
 }
 
 return plugins
