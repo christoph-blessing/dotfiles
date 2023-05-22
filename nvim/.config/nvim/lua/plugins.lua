@@ -173,6 +173,16 @@ local plugins = {
 			require("b-diffview").setup()
 		end,
 	},
+	{
+		"iamcco/markdown-preview.nvim",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+		ft = "markdown",
+		config = function()
+			require("b-markdown-preview").setup()
+		end,
+	},
 }
 
 return plugins
