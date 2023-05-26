@@ -43,18 +43,6 @@ utils.define_autocmds({
 	{
 		"FileType",
 		{
-			group = "lua",
-			pattern = "lua",
-			callback = function()
-				require("cmp").setup.buffer({
-					sources = { { name = "buffer" }, { name = "nvim_lua" }, { name = "path" }, { name = "vsnip" } },
-				})
-			end,
-		},
-	},
-	{
-		"FileType",
-		{
 			group = "javascriptreact",
 			pattern = "javascriptreact",
 			callback = function()
