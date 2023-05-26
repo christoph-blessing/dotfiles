@@ -61,6 +61,9 @@ local plugins = {
 			{ "saadparwaiz1/cmp_luasnip" },
 		},
 		event = { "InsertEnter", "CmdlineEnter" },
+		config = function()
+			require("b-cmp").setup()
+		end,
 	},
 	{ "hrsh7th/cmp-nvim-lsp", lazy = true },
 	{ "saadparwaiz1/cmp_luasnip", lazy = true },
