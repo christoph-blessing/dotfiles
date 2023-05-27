@@ -26,7 +26,12 @@ require("lspconfig")["lua_ls"].setup({
 	capabilities = capabilities,
 	settings = { Lua = { diagnostics = { globals = { "vim", "use" } } } },
 })
-require("lspconfig")["pyright"].setup({ on_attach = on_attach, capabilities = capabilities })
+-- require("lspconfig")["pyright"].setup({ on_attach = on_attach, capabilities = capabilities })
+require("lspconfig")["pylsp"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = { pylsp = { plugins = { pycodestyle = { enabled = false } } } },
+})
 require("lspconfig")["bashls"].setup({})
 require("lspconfig")["rust_analyzer"].setup({})
 require("lspconfig")["fsautocomplete"].setup({ on_attach = on_attach, capabilities = capabilities })
