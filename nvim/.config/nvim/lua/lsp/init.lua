@@ -31,4 +31,4 @@ require("lspconfig")["bashls"].setup({})
 require("lspconfig")["rust_analyzer"].setup({})
 require("lspconfig")["fsautocomplete"].setup({ on_attach = on_attach, capabilities = capabilities })
 
-require("lsp.b-null-ls")
+require("lsp.b-null-ls").setup()
