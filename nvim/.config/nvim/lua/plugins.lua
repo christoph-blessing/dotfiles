@@ -20,6 +20,11 @@ local plugins = {
 		build = ":TSUpdate",
 	},
 	{
+		"nvim-treesitter/nvim-treesitter-context",
+		config = true,
+		dependencies = { "nvim-treesitter" },
+	},
+	{
 		"L3MON4D3/LuaSnip",
 		config = function()
 			require("snippets").setup()
