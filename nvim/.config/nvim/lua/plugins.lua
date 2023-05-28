@@ -141,12 +141,14 @@ local plugins = {
 		config = function()
 			require("b-neotest").setup()
 		end,
+		lazy = true,
 	},
 	{
 		"nvim-neotest/neotest-python",
 		dependencies = {
 			"nvim-neotest/neotest",
 		},
+		ft = "python",
 	},
 	{
 		"RRethy/vim-illuminate",
@@ -169,12 +171,14 @@ local plugins = {
 		config = function()
 			require("b-harpoon").setup()
 		end,
+		lazy = true,
 	},
 	{
 		"sindrets/diffview.nvim",
 		config = function()
 			require("b-diffview").setup()
 		end,
+		cmd = "DiffviewOpen",
 	},
 	{
 		"iamcco/markdown-preview.nvim",
