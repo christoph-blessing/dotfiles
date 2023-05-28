@@ -1,4 +1,4 @@
-M = {}
+local M = {}
 
 M.setup = function()
 	require("lualine").setup({
@@ -12,7 +12,7 @@ M.setup = function()
 		sections = {
 			lualine_a = { "mode" },
 			lualine_b = { "branch", "diff", { "diagnostics", sources = { "nvim_diagnostic" } } },
-			lualine_c = {},
+			lualine_c = { "filename" },
 			lualine_x = { "encoding", "fileformat", "filetype" },
 			lualine_y = { "progress" },
 			lualine_z = { "location" },
