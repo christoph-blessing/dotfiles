@@ -39,6 +39,7 @@ require("lspconfig")["pylsp"].setup({
 				pycodestyle = { enabled = false },
 				pyflakes = { enabled = false },
 				pylint = { enabled = false },
+				rope_autoimport = { enabled = true, memory = true },
 				yapf = { enabled = false },
 			},
 		},
