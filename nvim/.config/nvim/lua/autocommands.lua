@@ -70,4 +70,15 @@ utils.define_autocmds({
 			end,
 		},
 	},
+	{
+		"BufEnter",
+		{
+			group = "fsharp",
+			pattern = "*.fsx",
+			callback = function()
+				local wk = require("which-key")
+				wk.register({ r = { "<cmd>!dotnet fsi %<cr>", "Run File" } }, { prefix = "<leader>" })
+			end,
+		},
+	},
 })
