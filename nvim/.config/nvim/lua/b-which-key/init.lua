@@ -8,8 +8,6 @@ M.setup = function()
 		["[t"] = { "<cmd>lua require('neotest').jump.prev({ status = 'failed' })<cr>", "Go To Previous Test Failure" },
 		["]d"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Go To Next Diagnostic" },
 		["[d"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Go To Previous Diagnostic" },
-		["]c"] = { "<cmd>lua require('gitsigns').next_hunk()<cr>", "Go To Next Hunk" },
-		["[c"] = { "<cmd>lua require('gitsigns').prev_hunk()<cr>", "Go To Previous Hunk" },
 		["]q"] = { "<cmd>cnext<cr>", "Go To Next Quickfix Entry" },
 		["[q"] = { "<cmd>cprev<cr>", "Go To Previous Quickfix Entry" },
 		["]r"] = { "<cmd>lua require('illuminate').goto_next_reference({wrap = true})<cr>", "Go to next reference" },
@@ -96,17 +94,6 @@ M.setup = function()
 				"Workspace Symbols",
 			},
 		},
-		g = {
-			name = "Git",
-			s = { "<cmd>lua require('gitsigns').stage_hunk()<cr>", "Stage Hunk" },
-			u = { "<cmd>lua require('gitsigns').undo_stage_hunk()<cr>", "Undo Stage Hunk" },
-			r = { "<cmd>lua require('gitsigns').reset_hunk()<cr>", "Reset Hunk" },
-			R = { "<cmd>lua require('gitsigns').reset_buffer()<cr>", "Reset Buffer" },
-			p = { "<cmd>lua require('gitsigns').preview_hunk()<cr>", "Preview Hunk" },
-			b = { "<cmd>lua require('gitsigns').blame_line()<cr>", "Blame Line" },
-			S = { "<cmd>lua require('gitsigns').stage_buffer()<cr>", "Stage Buffer" },
-			U = { "<cmd>lua require('gitsigns').reset_buffer_index()<cr>", "Reset Buffer Index" },
-		},
 		d = {
 			name = "Debug",
 			c = { "<cmd>lua require('dap').continue()<cr>", "Continue" },
@@ -164,11 +151,6 @@ M.setup = function()
 
 	wk.register({
 		y = { '"+y', "Yank To System Clipboard" },
-		g = {
-			name = "Git",
-			s = { "<cmd>lua require('gitsigns').stage_hunk({vim.fn.line('.'), vim.fn.line('v')})<cr>", "Stage Hunk" },
-			r = { "<cmd>lua require('gitsigns').reset_hunk({vim.fn.line('.'), vim.fn.line('v')})<cr>", "Reset Hunk" },
-		},
 	}, {
 		mode = "v",
 		prefix = "<leader>",
