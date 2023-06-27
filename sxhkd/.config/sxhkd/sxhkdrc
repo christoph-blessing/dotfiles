@@ -153,35 +153,3 @@ XF86AudioNext
 
 XF86AudioPrev
         spt playback --previous
-
-
-#
-# other
-#
-
-# search web using Google
-alt + g
-    ~/scripts/search_google.sh
-
-# lock screen
-Pause
-    lock
-
-# copy oath code to clipboard
-alt + o
-    ~/scripts/oath_code.sh
-
-alt + {r,p,s}
-    systemctl {reboot,poweroff,suspend}
-
-alt + n
-    dunstctl set-paused toggle
-
-alt + m
-    ~/scripts/open_mailbox.sh
-
-alt + t
-    ~/scripts/pomodoro/pomodoro.sh 25
-
-Print
-    ~/scripts/screenshot.sh
