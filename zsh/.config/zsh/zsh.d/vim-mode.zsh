@@ -22,6 +22,3 @@ function zle-line-init zle-keymap-select {
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
-
-# Enter normal mode by pressing jj
-bindkey 'jj' vi-cmd-mode
