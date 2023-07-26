@@ -161,9 +161,6 @@ local plugins = {
 			require("b-illuminate").setup()
 		end,
 	},
-	{
-		"SmiteshP/nvim-navic",
-	},
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{
 		"ggandor/leap.nvim",
