@@ -176,13 +176,6 @@ local plugins = {
 		lazy = true,
 	},
 	{
-		"sindrets/diffview.nvim",
-		config = function()
-			require("b-diffview").setup()
-		end,
-		cmd = "DiffviewOpen",
-	},
-	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
 			vim.fn["mkdp#util#install"]()
