@@ -126,12 +126,6 @@ local plugins = {
 		end,
 	},
 	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("b-colorizer").setup()
-		end,
-	},
-	{
 		"rcarriga/nvim-notify",
 		config = function()
 			require("b-notify").setup()
