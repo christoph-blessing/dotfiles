@@ -126,12 +126,6 @@ local plugins = {
 		end,
 	},
 	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("b-colorizer").setup()
-		end,
-	},
-	{
 		"rcarriga/nvim-notify",
 		config = function()
 			require("b-notify").setup()
@@ -174,13 +168,6 @@ local plugins = {
 			require("b-harpoon").setup()
 		end,
 		lazy = true,
-	},
-	{
-		"sindrets/diffview.nvim",
-		config = function()
-			require("b-diffview").setup()
-		end,
-		cmd = "DiffviewOpen",
 	},
 	{
 		"iamcco/markdown-preview.nvim",
