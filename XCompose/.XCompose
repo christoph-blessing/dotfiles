@@ -1,0 +1,10 @@
+include "%L"
+
+<Multi_key> <S> <S>        : "ẞ"
+<Multi_key> <s> <s>        : "ß"
+<Multi_key> <A> <quotedbl> : "Ä"
+<Multi_key> <a> <quotedbl> : "ä"
+<Multi_key> <O> <quotedbl> : "Ö"
+<Multi_key> <o> <quotedbl> : "ö"
+<Multi_key> <U> <quotedbl> : "Ü"
+<Multi_key> <u> <quotedbl> : "ü"
