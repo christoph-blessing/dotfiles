@@ -82,3 +82,4 @@ $env.NU_PLUGIN_DIRS = [
 $env.PATH = ($env.PATH | split row (char esep) | prepend $"($env.HOME)/.local/bin")
 
 $env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
+$env.EDITOR = nvim
