@@ -1,12 +1,10 @@
 #!/bin/sh
 
 is_paused=$(dunstctl is-paused)
-layout=$(xkb-switch)
 
 dunstctl set-paused true
-xkb-switch -s us
 
+xset dpms force off
 slock
 
 dunstctl set-paused "$is_paused"
-xkb-switch -s "$layout"
