@@ -84,3 +84,5 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend $"($env.HOME)/.local/bi
 $env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
 $env.XDG_DATA_HOME = $"($env.HOME)/.local/share"
 $env.EDITOR = nvim
+$env.GNUPGHOME = $"($env.XDG_DATA_HOME)/gnupg"
+
