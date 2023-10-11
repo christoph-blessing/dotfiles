@@ -809,3 +809,5 @@ $env.config = {
 }
 
 alias sudo = doas
+
+source /home/chris/.config/broot/launcher/nushell/br
