@@ -809,5 +809,7 @@ $env.config = {
 }
 
 alias sudo = doas
+alias mutt = neomutt
+alias vim = nvim
 
 source /home/chris/.config/broot/launcher/nushell/br
