@@ -807,3 +807,5 @@ $env.config = {
         }
     ]
 }
+
+alias sudo = doas
