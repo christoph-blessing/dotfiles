@@ -153,3 +153,6 @@ XF86AudioNext
 
 XF86AudioPrev
         spt playback --previous
+
+XF86ScreenSaver
+        lock
