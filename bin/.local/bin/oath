@@ -1,0 +1,5 @@
+#!/usr/bin/env nu
+
+let account = ykman oath accounts list | rofi -dmenu -i -p oath -only-match
+if $account == "" { exit 1 }
+ykman oath accounts code --single $account | xclip -selection clipboard
