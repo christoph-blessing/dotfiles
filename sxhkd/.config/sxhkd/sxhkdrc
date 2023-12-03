@@ -156,3 +156,6 @@ XF86AudioPrev
 
 XF86ScreenSaver
         lock
+
+alt + o
+        oath
