@@ -78,12 +78,14 @@ $env.NU_PLUGIN_DIRS = [
     # ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
-# To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-$env.PATH = ($env.PATH | split row (char esep) | prepend $"($env.HOME)/.local/bin")
-
 $env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
 $env.XDG_DATA_HOME = $"($env.HOME)/.local/share"
 $env.XDG_CACHE_HOME = $"($env.HOME)/.cache"
 $env.EDITOR = nvim
 $env.GNUPGHOME = $"($env.XDG_DATA_HOME)/gnupg"
 
+# To add entries to PATH (on Windows you might use Path), you can use the following pattern:
+$env.PATH = ($env.PATH | split row (char esep) | prepend [
+    $"($env.HOME)/.local/bin"
+    $"($env.XDG_DATA_HOME)/cargo/bin"
+])
