@@ -1,10 +1,10 @@
 #!/bin/sh
 
-is_paused=$(dunstctl is-paused)
+is_paused=$(/usr/bin/dunstctl is-paused)
 
-dunstctl set-paused true
+/usr/bin/dunstctl set-paused true
 
-xset dpms force off
-slock
+/usr/bin/xset dpms force off
+env XSECURELOCK_PAM_SERVICE=xsecurelock /usr/bin/xsecurelock
 
-dunstctl set-paused "$is_paused"
+/usr/bin/dunstctl set-paused "$is_paused"
