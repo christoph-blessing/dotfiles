@@ -4,7 +4,6 @@ is_paused=$(/usr/bin/dunstctl is-paused)
 
 /usr/bin/dunstctl set-paused true
 
-/usr/bin/xset dpms force off
 env XSECURELOCK_PAM_SERVICE=xsecurelock /usr/bin/xsecurelock
 
 /usr/bin/dunstctl set-paused "$is_paused"
