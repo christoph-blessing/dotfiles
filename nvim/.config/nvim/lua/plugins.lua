@@ -8,7 +8,7 @@ local plugins = {
 	{ "williamboman/mason-lspconfig.nvim", lazy = true, dependencies = { "williamboman/mason.nvim" } },
 	{ "neovim/nvim-lspconfig", lazy = true, dependencies = { "williamboman/mason-lspconfig.nvim" } },
 	{
-		"jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		lazy = true,
 		dependencies = { { "nvim-lua/plenary.nvim" }, { "neovim/nvim-lspconfig" } },
 	},
