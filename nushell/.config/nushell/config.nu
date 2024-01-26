@@ -808,4 +808,9 @@ alias sudo = doas
 alias mutt = neomutt
 alias vim = nvim
 
+def nvim-kickstart [...rest] {
+  $env.NVIM_APPNAME = nvim-kickstart
+  nvim ...$rest
+}
+
 source /home/chris/.config/broot/launcher/nushell/br
