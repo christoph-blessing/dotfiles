@@ -83,9 +83,10 @@ $env.XDG_DATA_HOME = $"($env.HOME)/.local/share"
 $env.XDG_CACHE_HOME = $"($env.HOME)/.cache"
 $env.EDITOR = nvim
 $env.GNUPGHOME = $"($env.XDG_DATA_HOME)/gnupg"
+$env.CARGO_HOME = $"($env.XDG_DATA_HOME)/cargo"
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 $env.PATH = ($env.PATH | split row (char esep) | prepend [
     $"($env.HOME)/.local/bin"
-    $"($env.XDG_DATA_HOME)/cargo/bin"
+    #$"($env.CARGO_HOME)/bin"
 ])
