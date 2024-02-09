@@ -1,0 +1,150 @@
+############################################
+############## Account gmail ###############
+############################################
+
+IMAPAccount gmail
+Host imap.gmail.com
+Port 993
+UserCmd "gpg2 --no-tty --homedir ~/.local/share/gnupg -q -d ~/.config/mail-credentials/gmail-user.asc"
+PassCmd "gpg2 --no-tty --homedir ~/.local/share/gnupg -q -d ~/.config/mail-credentials/gmail-password.asc"
+SSLType IMAPS
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Path ~/.local/share/mail/gmail/
+Inbox ~/.local/share/mail/gmail/inbox
+SubFolders Verbatim
+
+Channel gmail-inbox
+Far :gmail-remote:INBOX
+Near :gmail-local:inbox
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Channel gmail-sent
+Far :gmail-remote:"[Gmail]/Sent Mail"
+Near :gmail-local:sent
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Channel gmail-drafts
+Far :gmail-remote:"[Gmail]/Drafts"
+Near :gmail-local:drafts
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Channel gmail-important
+Far :gmail-remote:"[Gmail]/Important"
+Near :gmail-local:important
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Channel gmail-starred
+Far :gmail-remote:"[Gmail]/Starred"
+Near :gmail-local:starred
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Channel gmail-spam
+Far :gmail-remote:"[Gmail]/Spam"
+Near :gmail-local:spam
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Channel gmail-trash
+Far :gmail-remote:"[Gmail]/Bin"
+Near :gmail-local:trash
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Group gmail
+Channel gmail-inbox
+Channel gmail-sent
+Channel gmail-drafts
+Channel gmail-important
+Channel gmail-starred
+Channel gmail-spam
+Channel gmail-trash
+
+############################################
+############## Account gwdg ################
+############################################
+
+IMAPAccount gwdg
+Host email.gwdg.de
+Port 993
+UserCmd "gpg2 --no-tty --homedir ~/.local/share/gnupg -q -d ~/.config/mail-credentials/gwdg-user.asc"
+PassCmd "gpg2 --no-tty --homedir ~/.local/share/gnupg -q -d ~/.config/mail-credentials/gwdg-password.asc"
+SSLType IMAPS
+AuthMech LOGIN
+
+IMAPStore gwdg-remote
+Account gwdg
+
+MaildirStore gwdg-local
+Path ~/.local/share/mail/gwdg/
+Inbox ~/.local/share/mail/gwdg/inbox
+SubFolders Verbatim
+
+Channel gwdg-inbox
+Far :gwdg-remote:INBOX
+Near :gwdg-local:inbox
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Channel gwdg-sent
+Far :gwdg-remote:"Sent Items"
+Near :gwdg-local:sent
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Channel gwdg-drafts
+Far :gwdg-remote:Drafts
+Near :gwdg-local:drafts
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Channel gwdg-archive
+Far :gwdg-remote:Archive
+Near :gwdg-local:archive
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Channel gwdg-trash
+Far :gwdg-remote:"Deleted Items"
+Near :gwdg-local:trash
+Create Both
+Remove Both
+Expunge Both
+SyncState *
+
+Group gwdg
+Channel gwdg-inbox
+Channel gwdg-sent
+Channel gwdg-drafts
+Channel gwdg-archive
+Channel gwdg-trash
