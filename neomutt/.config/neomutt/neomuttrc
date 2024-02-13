@@ -14,11 +14,12 @@ set wait_key            = no
 set mailcap_path        = $XDG_CONFIG_HOME/neomutt/mailcap
 set signature           = $XDG_CONFIG_HOME/neomutt/signature
 
-mailboxes =gmail/inbox =gmail/important =gmail/starred =gmail/drafts =gmail/sent =gmail/trash
+mailboxes =gmail/inbox =gmail/drafts =gmail/sent =gmail/trash =gmail/spam
 mailboxes =gwdg/inbox =gwdg/archive =gwdg/drafts =gwdg/sent =gwdg/trash
 mailboxes =proton/inbox =proton/archive =proton/drafts =proton/sent =proton/trash
 
 set sidebar_visible
+set sidebar_new_mail_only
 set sidebar_format      = "%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
 

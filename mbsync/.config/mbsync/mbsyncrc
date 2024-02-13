@@ -41,22 +41,6 @@ Remove Both
 Expunge Both
 SyncState *
 
-Channel gmail-important
-Far :gmail-remote:"[Gmail]/Important"
-Near :gmail-local:important
-Create Both
-Remove Both
-Expunge Both
-SyncState *
-
-Channel gmail-starred
-Far :gmail-remote:"[Gmail]/Starred"
-Near :gmail-local:starred
-Create Both
-Remove Both
-Expunge Both
-SyncState *
-
 Channel gmail-spam
 Far :gmail-remote:"[Gmail]/Spam"
 Near :gmail-local:spam
@@ -77,8 +61,6 @@ Group gmail
 Channel gmail-inbox
 Channel gmail-sent
 Channel gmail-drafts
-Channel gmail-important
-Channel gmail-starred
 Channel gmail-spam
 Channel gmail-trash
 
