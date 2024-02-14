@@ -13,6 +13,8 @@ set timeout             = 3
 set wait_key            = no
 set mailcap_path        = $XDG_CONFIG_HOME/neomutt/mailcap
 set signature           = $XDG_CONFIG_HOME/neomutt/signature
+set new_mail_command	= "dunstify 'New Mail'"
+set check_new
 
 mailboxes =gmail/inbox =gmail/drafts =gmail/sent =gmail/trash =gmail/spam
 mailboxes =gwdg/inbox =gwdg/archive =gwdg/drafts =gwdg/sent =gwdg/trash
