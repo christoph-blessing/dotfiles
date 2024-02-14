@@ -3,7 +3,7 @@ Description=Sync mail.
 
 [Service]
 Type=oneshot
-ExecStart=/home/chris/scripts/sync_mail.sh
+ExecStart=/usr/bin/mbsync -V --config /home/chris/.config/mbsync/mbsyncrc --all
 
 [Install]
 WantedBy=default.target
