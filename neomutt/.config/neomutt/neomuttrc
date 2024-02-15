@@ -31,6 +31,6 @@ folder-hook proton/* source $XDG_CONFIG_HOME/neomutt/accounts/proton
 
 source $XDG_CONFIG_HOME/neomutt/accounts/gmail
 
-macro index,pager S "<shell-escape>$HOME/scripts/sync_mail.sh --no-notify<enter>" "sync all mail"
+macro index,pager S "<shell-escape>mbsync --config $XDG_CONFIG_HOME/mbsync/mbsyncrc --all<enter>" "sync all mail"
 macro pager \cb "<pipe-entry>urlscan<enter>" "call urlview to extract URLs out of a message"
 macro index,pager X "<pipe-message>ripmime -i - -d "
